@@ -1,0 +1,719 @@
+/* ==========================================================
+   BETTER RESULT HOME TUITION
+   ABOUT SECTION — PREMIUM THREE CARD DESIGN
+   Desktop | Tablet | Mobile
+========================================================== */
+
+.br-about {
+  --br-blue: #2459d3;
+  --br-blue-dark: #1747b5;
+  --br-navy: #152c4c;
+  --br-muted: #63748b;
+  --br-orange: #f16b35;
+  --br-purple: #7756d8;
+
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  padding: clamp(54px, 6.5vw, 88px) 24px;
+  overflow: clip;
+  color: var(--br-navy);
+  background:
+    radial-gradient(
+      ellipse at 50% 0%,
+      rgba(36, 89, 211, 0.075),
+      transparent 55%
+    ),
+    linear-gradient(
+      180deg,
+      #ffffff 0%,
+      #fbfcff 55%,
+      #ffffff 100%
+    );
+}
+
+.br-about,
+.br-about * {
+  box-sizing: border-box;
+}
+
+.br-about::before,
+.br-about::after {
+  position: absolute;
+  z-index: -1;
+  right: 0;
+  left: 0;
+  height: 1px;
+  content: "";
+  pointer-events: none;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(36, 89, 211, 0.2) 25%,
+    rgba(241, 107, 53, 0.2) 75%,
+    transparent
+  );
+}
+
+.br-about::before {
+  top: 0;
+}
+
+.br-about::after {
+  bottom: 0;
+}
+
+/* ==========================================================
+   CONTAINER
+========================================================== */
+
+.br-about-container {
+  width: 100%;
+  max-width: 1240px;
+  margin-inline: auto;
+}
+
+/* ==========================================================
+   CENTERED HEADER
+========================================================== */
+
+.br-about-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  text-align: center;
+  animation: brAboutEnter 700ms ease-out both;
+}
+
+.br-about-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 21px;
+  color: var(--br-blue);
+  font-size: 11px;
+  font-weight: 850;
+  letter-spacing: 2.5px;
+  line-height: 1.5;
+}
+
+.br-about-eyebrow-line {
+  width: 25px;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--br-blue)
+  );
+}
+
+.br-about-eyebrow-line:last-child {
+  transform: rotate(180deg);
+}
+
+.br-about-eyebrow-star {
+  color: var(--br-orange);
+  font-size: 16px;
+}
+
+.br-about-title {
+  max-width: 900px;
+  margin: 0;
+  color: var(--br-navy);
+  font-size: clamp(38px, 4.5vw, 61px);
+  font-weight: 900;
+  letter-spacing: -2.2px;
+  line-height: 1.13;
+  text-wrap: balance;
+  overflow-wrap: anywhere;
+}
+
+.br-about-title > span {
+  display: block;
+  margin-top: 5px;
+  color: var(--br-blue);
+}
+
+.br-about-title-accent {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  margin-top: 21px;
+}
+
+.br-about-title-accent span {
+  width: 20px;
+  height: 4px;
+  border-radius: 20px;
+  background: #dce7ff;
+}
+
+.br-about-title-accent span:nth-child(2) {
+  width: 39px;
+  background: linear-gradient(
+    90deg,
+    var(--br-blue),
+    #5b8bf2
+  );
+}
+
+.br-about-title-accent span:nth-child(3) {
+  background: #ffd8c4;
+}
+
+.br-about-subtitle {
+  max-width: 650px;
+  margin: 18px 0 0;
+  color: var(--br-muted);
+  font-size: 15px;
+  line-height: 1.9;
+  text-wrap: pretty;
+}
+
+/* ==========================================================
+   INTRODUCTION
+========================================================== */
+
+.br-about-intro {
+  max-width: 850px;
+  margin: 29px auto 0;
+  padding-top: 23px;
+  border-top: 1px solid #e6ecf6;
+  text-align: center;
+  animation: brAboutEnter 750ms 100ms ease-out both;
+}
+
+.br-about-intro p {
+  margin: 0;
+  color: #536781;
+  font-size: 14px;
+  line-height: 2;
+  text-wrap: pretty;
+}
+
+/* ==========================================================
+   THREE-COLUMN CARD GRID
+========================================================== */
+
+.br-about-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 22px;
+  margin-top: 37px;
+}
+
+/* ==========================================================
+   INDIVIDUAL CARDS
+========================================================== */
+
+.br-about-card {
+  --br-card-accent: var(--br-blue);
+  --br-card-tint: #edf3ff;
+  --br-card-glow: rgba(36, 89, 211, 0.09);
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 0;
+  min-height: 315px;
+  padding: 25px 23px 19px;
+  overflow: hidden;
+  border: 1px solid #e4eaf5;
+  border-radius: 22px;
+  background: #ffffff;
+  box-shadow: 0 9px 28px rgba(24, 48, 84, 0.045);
+  animation: brAboutCardEnter 650ms ease-out both;
+  animation-delay: calc(var(--br-card-index, 0) * 120ms);
+  transition:
+    transform 250ms ease,
+    border-color 250ms ease,
+    box-shadow 250ms ease;
+}
+
+.br-about-card::before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 4px;
+  content: "";
+  background: linear-gradient(
+    90deg,
+    var(--br-card-accent),
+    color-mix(in srgb, var(--br-card-accent) 45%, white)
+  );
+}
+
+.br-about-card::after {
+  position: absolute;
+  top: -58px;
+  right: -58px;
+  width: 145px;
+  height: 145px;
+  border-radius: 50%;
+  background: var(--br-card-glow);
+  content: "";
+  pointer-events: none;
+}
+
+/* Card color variations */
+
+.br-about-card-blue {
+  --br-card-accent: #2860df;
+  --br-card-tint: #edf3ff;
+  --br-card-glow: rgba(36, 89, 211, 0.1);
+}
+
+.br-about-card-orange {
+  --br-card-accent: #ef6938;
+  --br-card-tint: #fff1e9;
+  --br-card-glow: rgba(241, 107, 53, 0.1);
+}
+
+.br-about-card-purple {
+  --br-card-accent: #7756d8;
+  --br-card-tint: #f2efff;
+  --br-card-glow: rgba(119, 86, 216, 0.1);
+}
+
+/* Card top */
+
+.br-about-card-top {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 24px;
+}
+
+.br-about-card-icon {
+  display: grid;
+  place-items: center;
+  width: 49px;
+  height: 49px;
+  border: 1px solid color-mix(
+    in srgb,
+    var(--br-card-accent) 12%,
+    white
+  );
+  border-radius: 15px;
+  background: var(--br-card-tint);
+  color: var(--br-card-accent);
+  font-size: 25px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.br-about-card-number {
+  color: #91a0b6;
+  font-size: 11px;
+  font-weight: 850;
+  letter-spacing: 1.5px;
+}
+
+/* Card content */
+
+.br-about-card-label {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 10px;
+  color: var(--br-card-accent);
+  font-size: 9px;
+  font-weight: 850;
+  letter-spacing: 1.4px;
+  line-height: 1.6;
+}
+
+.br-about-card h3 {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  color: var(--br-navy);
+  font-size: clamp(17px, 1.45vw, 21px);
+  font-weight: 850;
+  letter-spacing: -0.5px;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+
+.br-about-card-description {
+  position: relative;
+  z-index: 1;
+  margin: 12px 0 0;
+  color: var(--br-muted);
+  font-size: 12px;
+  line-height: 1.9;
+  overflow-wrap: anywhere;
+}
+
+/* Category chips inside cards */
+
+.br-about-card-tags {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: 18px;
+}
+
+.br-about-card-tags span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 27px;
+  padding: 6px 9px;
+  border: 1px solid color-mix(
+    in srgb,
+    var(--br-card-accent) 12%,
+    white
+  );
+  border-radius: 8px;
+  background: var(--br-card-tint);
+  color: var(--br-card-accent);
+  font-size: 10px;
+  font-weight: 650;
+  line-height: 1.4;
+}
+
+/* Card footer */
+
+.br-about-card-bottom {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  margin-top: auto;
+  padding-top: 22px;
+}
+
+.br-about-card-bottom-line {
+  height: 1px;
+  flex: 1;
+  background: #e9edf5;
+}
+
+.br-about-card-bottom-icon {
+  display: grid;
+  place-items: center;
+  width: 29px;
+  height: 29px;
+  flex: 0 0 29px;
+  border: 1px solid color-mix(
+    in srgb,
+    var(--br-card-accent) 16%,
+    white
+  );
+  border-radius: 50%;
+  background: var(--br-card-tint);
+  color: var(--br-card-accent);
+  font-size: 15px;
+  transition:
+    transform 220ms ease,
+    background 220ms ease;
+}
+
+/* ==========================================================
+   CLOSING STATEMENT
+========================================================== */
+
+.br-about-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 11px;
+  margin-top: 32px;
+  animation: brAboutEnter 700ms 300ms ease-out both;
+}
+
+.br-about-footer p {
+  margin: 0;
+  color: #536984;
+  font-size: 12px;
+  font-weight: 750;
+  line-height: 1.7;
+  text-align: center;
+}
+
+.br-about-footer-dot {
+  width: 7px;
+  height: 7px;
+  flex: 0 0 7px;
+  border-radius: 50%;
+  background: #269e78;
+}
+
+/* ==========================================================
+   HOVER EFFECTS
+========================================================== */
+
+@media (hover: hover) and (pointer: fine) {
+  .br-about-card:hover {
+    transform: translateY(-6px);
+    border-color: color-mix(
+      in srgb,
+      var(--br-card-accent) 25%,
+      white
+    );
+    box-shadow:
+      0 20px 42px rgba(24, 48, 84, 0.09),
+      0 0 0 3px var(--br-card-tint);
+  }
+
+  .br-about-card:hover .br-about-card-bottom-icon {
+    transform: translate(2px, -2px);
+    background: #ffffff;
+  }
+}
+
+/* ==========================================================
+   TABLETS & SMALL LAPTOPS
+========================================================== */
+
+@media (max-width: 1000px) {
+  .br-about {
+    padding: 62px 22px;
+  }
+
+  .br-about-title {
+    font-size: clamp(38px, 5vw, 52px);
+    letter-spacing: -1.8px;
+  }
+
+  .br-about-grid {
+    gap: 15px;
+    margin-top: 30px;
+  }
+
+  .br-about-card {
+    min-height: 320px;
+    padding: 21px 17px 17px;
+    border-radius: 19px;
+  }
+
+  .br-about-card-top {
+    margin-bottom: 20px;
+  }
+
+  .br-about-card h3 {
+    font-size: 17px;
+  }
+
+  .br-about-card-description {
+    font-size: 11.5px;
+  }
+}
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width: 700px) {
+  .br-about {
+    padding: 43px 18px 38px;
+  }
+
+  .br-about-container {
+    max-width: 540px;
+  }
+
+  .br-about-eyebrow {
+    gap: 8px;
+    margin-bottom: 17px;
+    font-size: 10px;
+    letter-spacing: 2px;
+  }
+
+  .br-about-eyebrow-line {
+    width: 19px;
+  }
+
+  .br-about-title {
+    max-width: 520px;
+    font-size: clamp(32px, 7.2vw, 44px);
+    letter-spacing: -1.3px;
+    line-height: 1.17;
+  }
+
+  .br-about-title > span {
+    margin-top: 4px;
+  }
+
+  .br-about-title-accent {
+    margin-top: 17px;
+  }
+
+  .br-about-subtitle {
+    max-width: 450px;
+    margin-top: 14px;
+    font-size: 13px;
+    line-height: 1.85;
+  }
+
+  .br-about-intro {
+    margin-top: 23px;
+    padding-top: 19px;
+  }
+
+  .br-about-intro p {
+    font-size: 12.5px;
+    line-height: 1.9;
+  }
+
+  .br-about-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 14px;
+    margin-top: 25px;
+  }
+
+  .br-about-card {
+    min-height: auto;
+    padding: 21px 20px 16px;
+    border-radius: 19px;
+  }
+
+  .br-about-card-top {
+    margin-bottom: 17px;
+  }
+
+  .br-about-card-icon {
+    width: 43px;
+    height: 43px;
+    border-radius: 13px;
+    font-size: 23px;
+  }
+
+  .br-about-card-label {
+    margin-bottom: 7px;
+    font-size: 9px;
+  }
+
+  .br-about-card h3 {
+    font-size: 19px;
+  }
+
+  .br-about-card-description {
+    max-width: 460px;
+    margin-top: 9px;
+    font-size: 12px;
+    line-height: 1.85;
+  }
+
+  .br-about-card-tags {
+    gap: 7px;
+    margin-top: 14px;
+  }
+
+  .br-about-card-tags span {
+    font-size: 10px;
+  }
+
+  .br-about-card-bottom {
+    padding-top: 17px;
+  }
+
+  .br-about-footer {
+    gap: 9px;
+    margin-top: 25px;
+  }
+
+  .br-about-footer p {
+    font-size: 10px;
+  }
+}
+
+/* ==========================================================
+   VERY SMALL PHONES
+========================================================== */
+
+@media (max-width: 380px) {
+  .br-about {
+    padding: 35px 14px 32px;
+  }
+
+  .br-about-eyebrow {
+    gap: 7px;
+    font-size: 9px;
+    letter-spacing: 1.6px;
+  }
+
+  .br-about-title {
+    font-size: clamp(28px, 8vw, 31px);
+    letter-spacing: -1px;
+    line-height: 1.2;
+  }
+
+  .br-about-subtitle {
+    font-size: 12px;
+  }
+
+  .br-about-intro p {
+    font-size: 12px;
+  }
+
+  .br-about-card {
+    padding: 18px 16px 14px;
+  }
+
+  .br-about-card h3 {
+    font-size: 17px;
+  }
+
+  .br-about-card-description {
+    font-size: 11.5px;
+  }
+
+  .br-about-footer {
+    gap: 7px;
+  }
+
+  .br-about-footer p {
+    font-size: 9px;
+  }
+}
+
+/* ==========================================================
+   ANIMATIONS
+========================================================== */
+
+@keyframes brAboutEnter {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes brAboutCardEnter {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ==========================================================
+   REDUCED MOTION ACCESSIBILITY
+========================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .br-about *,
+  .br-about *::before,
+  .br-about *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}

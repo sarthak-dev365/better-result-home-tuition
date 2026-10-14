@@ -1,0 +1,726 @@
+
+/* ==========================================================
+   BETTER RESULT HOME TUITION
+   TUTOR REGISTRATION — FINAL RESPONSIVE STYLES
+========================================================== */
+
+.br-tutor-registration {
+  --br-tutor-blue: #2459d3;
+  --br-tutor-blue-dark: #1747b5;
+  --br-tutor-navy: #172d4c;
+  --br-tutor-muted: #687990;
+  --br-tutor-border: #e2e8f2;
+
+  width: 100%;
+  padding: clamp(44px, 6vw, 78px) 22px;
+  color: var(--br-tutor-navy);
+  background:
+    radial-gradient(
+      ellipse at 50% 0%,
+      rgba(36, 89, 211, 0.07),
+      transparent 55%
+    ),
+    linear-gradient(180deg, #f8faff 0%, #ffffff 100%);
+}
+
+.br-tutor-registration,
+.br-tutor-registration * {
+  box-sizing: border-box;
+}
+
+.br-tutor-container {
+  width: 100%;
+  max-width: 940px;
+  margin-inline: auto;
+}
+
+/* ==========================================================
+   HEADER
+========================================================== */
+
+.br-tutor-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto 32px;
+  text-align: center;
+}
+
+.br-tutor-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 15px;
+  padding: 8px 13px;
+  border: 1px solid #dce7ff;
+  border-radius: 100px;
+  color: var(--br-tutor-blue);
+  background: #edf3ff;
+  font-size: 10px;
+  font-weight: 850;
+  letter-spacing: 1.5px;
+}
+
+.br-tutor-eyebrow span {
+  color: #f16b35;
+  font-size: 14px;
+}
+
+.br-tutor-header h2 {
+  margin: 0;
+  color: var(--br-tutor-navy);
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 900;
+  letter-spacing: -1.5px;
+  line-height: 1.2;
+  text-wrap: balance;
+}
+
+.br-tutor-header h2 span {
+  color: var(--br-tutor-blue);
+}
+
+.br-tutor-header > p {
+  max-width: 610px;
+  margin: 14px 0 0;
+  color: var(--br-tutor-muted);
+  font-size: 14px;
+  line-height: 1.85;
+  text-wrap: pretty;
+}
+
+.br-tutor-header-accent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  margin-top: 18px;
+}
+
+.br-tutor-header-accent span {
+  width: 18px;
+  height: 4px;
+  border-radius: 10px;
+  background: #dce7ff;
+}
+
+.br-tutor-header-accent span:nth-child(2) {
+  width: 38px;
+  background: var(--br-tutor-blue);
+}
+
+.br-tutor-header-accent span:nth-child(3) {
+  background: #ffd8c4;
+}
+
+/* ==========================================================
+   MAIN FORM
+========================================================== */
+
+.br-tutor-form {
+  padding: clamp(20px, 4vw, 38px);
+  border: 1px solid #e5eaf3;
+  border-radius: 24px;
+  background: #ffffff;
+  box-shadow:
+    0 18px 55px rgba(26, 49, 82, 0.07),
+    0 2px 8px rgba(26, 49, 82, 0.025);
+}
+
+.br-tutor-form-section + .br-tutor-form-section {
+  margin-top: 32px;
+  padding-top: 29px;
+  border-top: 1px solid #edf0f6;
+}
+
+/* ==========================================================
+   SECTION HEADINGS AND LUCIDE ICONS
+========================================================== */
+
+.br-tutor-section-heading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 23px;
+}
+
+.br-tutor-section-icon {
+  display: grid;
+  place-items: center;
+  width: 43px;
+  height: 43px;
+  flex: 0 0 43px;
+  border: 1px solid #dce7ff;
+  border-radius: 13px;
+  color: var(--br-tutor-blue);
+  background: #edf3ff;
+}
+
+.br-tutor-section-icon svg,
+.br-tutor-upload-icon svg {
+  display: block;
+  flex-shrink: 0;
+}
+
+.br-tutor-form-section:nth-of-type(2)
+.br-tutor-section-icon {
+  color: #19966e;
+  border-color: #d8f1e5;
+  background: #eaf8f1;
+}
+
+.br-tutor-form-section:nth-of-type(3)
+.br-tutor-section-icon {
+  color: #8655d6;
+  border-color: #e9dfff;
+  background: #f4efff;
+}
+
+.br-tutor-form-section:nth-of-type(4)
+.br-tutor-section-icon {
+  color: #d87532;
+  border-color: #ffe4d0;
+  background: #fff3e9;
+}
+
+.br-tutor-section-heading h3 {
+  margin: 0;
+  color: var(--br-tutor-navy);
+  font-size: 17px;
+  font-weight: 850;
+  line-height: 1.4;
+}
+
+.br-tutor-section-heading p {
+  margin: 4px 0 0;
+  color: #8390a3;
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+/* ==========================================================
+   FORM FIELDS
+========================================================== */
+
+.br-tutor-fields-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 19px 17px;
+}
+
+.br-tutor-field {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.br-tutor-field-full {
+  grid-column: 1 / -1;
+}
+
+.br-tutor-field > label {
+  margin-bottom: 8px;
+  color: #344861;
+  font-size: 12px;
+  font-weight: 750;
+  line-height: 1.5;
+}
+
+.br-tutor-required {
+  color: #d84b42;
+}
+
+.br-tutor-field input,
+.br-tutor-field select,
+.br-tutor-field textarea {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  min-height: 48px;
+  margin: 0;
+  padding: 12px 14px;
+  border: 1px solid #dce3ed;
+  border-radius: 11px;
+  outline: none;
+  color: #263b55;
+  background: #ffffff;
+  font-family: inherit;
+  font-size: 13px;
+  line-height: 1.5;
+  transition:
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    background-color 180ms ease;
+}
+
+.br-tutor-field textarea {
+  min-height: 91px;
+  resize: vertical;
+}
+
+.br-tutor-field input::placeholder,
+.br-tutor-field textarea::placeholder {
+  color: #9aa6b7;
+  opacity: 1;
+}
+
+.br-tutor-field input:focus,
+.br-tutor-field select:focus,
+.br-tutor-field textarea:focus {
+  border-color: var(--br-tutor-blue);
+  box-shadow: 0 0 0 3px rgba(36, 89, 211, 0.1);
+}
+
+.br-tutor-field input[readonly] {
+  color: #536780;
+  background: #f5f7fb;
+  cursor: default;
+}
+
+.br-tutor-field select {
+  cursor: pointer;
+}
+
+.br-tutor-field-help {
+  margin-top: 7px;
+  color: #7c899c;
+  font-size: 10px;
+  line-height: 1.6;
+}
+
+/* ==========================================================
+   DOCUMENT UPLOAD CARDS
+========================================================== */
+
+.br-tutor-document-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 8px;
+}
+
+.br-tutor-document {
+  min-width: 0;
+}
+
+.br-tutor-document .br-tutor-upload-box {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 205px;
+  padding: 24px 16px;
+  overflow: hidden;
+  border: 1.5px dashed #cbd7e8;
+  border-radius: 16px;
+  color: #53657e;
+  background: #f9fbff;
+  text-align: center;
+  cursor: pointer;
+  transition:
+    border-color 180ms ease,
+    background-color 180ms ease,
+    transform 180ms ease;
+}
+
+.br-tutor-document .br-tutor-upload-box:hover {
+  border-color: var(--br-tutor-blue);
+  background: #f1f5ff;
+}
+
+.br-tutor-document .br-tutor-upload-box:focus-within {
+  outline: 2px solid var(--br-tutor-blue);
+  outline-offset: 3px;
+}
+
+/* Keep the native file input accessible and clickable. */
+
+.br-tutor-document .br-tutor-upload-box input[type="file"] {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  padding: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.br-tutor-upload-icon {
+  display: grid;
+  place-items: center;
+  width: 45px;
+  height: 45px;
+  flex: 0 0 45px;
+  border: 1px solid #dfe8ff;
+  border-radius: 13px;
+  color: var(--br-tutor-blue);
+  background: #eaf0ff;
+}
+
+.br-tutor-document .br-tutor-upload-box strong {
+  max-width: 100%;
+  color: #344861;
+  font-size: 12px;
+  font-weight: 750;
+  overflow-wrap: anywhere;
+}
+
+.br-tutor-document .br-tutor-upload-hint {
+  color: #64748b;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.br-tutor-upload-filename {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  color: var(--br-tutor-blue);
+  font-size: 12px;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.br-tutor-error {
+  margin: 8px 0 0;
+  color: #c62828;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+/* ==========================================================
+   TERMS AND CONDITIONS
+========================================================== */
+
+.br-tutor-terms {
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+  margin-top: 28px;
+}
+
+.br-tutor-terms input {
+  width: 18px;
+  height: 18px;
+  flex: 0 0 18px;
+  margin: 2px 0 0;
+  accent-color: var(--br-tutor-blue);
+  cursor: pointer;
+}
+
+.br-tutor-terms label {
+  color: #5f7086;
+  font-size: 11px;
+  line-height: 1.8;
+  cursor: pointer;
+}
+
+.br-tutor-terms a {
+  color: var(--br-tutor-blue);
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.br-tutor-terms a:hover {
+  text-decoration: underline;
+}
+
+/* ==========================================================
+   SUBMIT BUTTON
+========================================================== */
+
+.br-tutor-submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  min-height: 54px;
+  margin-top: 23px;
+  padding: 13px 20px;
+  border: 0;
+  border-radius: 12px;
+  color: #ffffff;
+  background: linear-gradient(105deg, #2459d3, #3979e8);
+  box-shadow: 0 9px 21px rgba(36, 89, 211, 0.2);
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 850;
+  cursor: pointer;
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    background 180ms ease;
+}
+
+.br-tutor-submit span:last-child {
+  font-size: 20px;
+  line-height: 1;
+}
+
+.br-tutor-submit:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(105deg, #1747b5, #2864d8);
+  box-shadow: 0 13px 27px rgba(36, 89, 211, 0.25);
+}
+
+.br-tutor-submit:focus-visible {
+  outline: 3px solid #f5820b;
+  outline-offset: 3px;
+}
+
+.br-tutor-form-message {
+  margin: 14px 0 0;
+  padding: 12px 14px;
+  border: 1px solid #d6e3ff;
+  border-radius: 10px;
+  color: #1747a5;
+  background: #f2f6ff;
+  font-size: 13px;
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}
+
+.br-tutor-secure-note {
+  margin: 17px 0 0;
+  color: #8995a6;
+  font-size: 10px;
+  line-height: 1.8;
+  text-align: center;
+}
+
+/* ==========================================================
+   TABLET
+========================================================== */
+
+@media (max-width: 700px) {
+  .br-tutor-registration {
+    padding: 43px 16px;
+  }
+
+  .br-tutor-header {
+    margin-bottom: 25px;
+  }
+
+  .br-tutor-header h2 {
+    font-size: clamp(31px, 7vw, 40px);
+    letter-spacing: -1px;
+  }
+
+  .br-tutor-header > p {
+    font-size: 12px;
+    line-height: 1.8;
+  }
+
+  .br-tutor-form {
+    padding: 24px 20px;
+    border-radius: 19px;
+  }
+
+  .br-tutor-form-section + .br-tutor-form-section {
+    margin-top: 27px;
+    padding-top: 24px;
+  }
+
+  .br-tutor-section-heading {
+    gap: 10px;
+    margin-bottom: 19px;
+  }
+
+  .br-tutor-section-icon {
+    width: 39px;
+    height: 39px;
+    flex-basis: 39px;
+    border-radius: 12px;
+  }
+
+  .br-tutor-section-heading h3 {
+    font-size: 15px;
+  }
+
+  .br-tutor-fields-grid {
+    gap: 16px 12px;
+  }
+
+  .br-tutor-field > label {
+    font-size: 11px;
+  }
+
+  .br-tutor-field input,
+  .br-tutor-field select,
+  .br-tutor-field textarea {
+    min-height: 46px;
+    padding: 11px;
+    font-size: 12px;
+  }
+
+  .br-tutor-field textarea {
+    min-height: 85px;
+  }
+}
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width: 600px) {
+  .br-tutor-document-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 14px;
+  }
+
+  .br-tutor-document .br-tutor-upload-box {
+    min-height: 180px;
+    padding: 20px 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .br-tutor-registration {
+    padding: 36px 13px;
+  }
+
+  .br-tutor-eyebrow {
+    margin-bottom: 13px;
+    font-size: 9px;
+  }
+
+  .br-tutor-header h2 {
+    font-size: clamp(29px, 8vw, 36px);
+  }
+
+  .br-tutor-header > p {
+    margin-top: 11px;
+    font-size: 11.5px;
+  }
+
+  .br-tutor-form {
+    padding: 21px 15px;
+    border-radius: 17px;
+  }
+
+  .br-tutor-form-section + .br-tutor-form-section {
+    margin-top: 24px;
+    padding-top: 22px;
+  }
+
+  .br-tutor-section-heading {
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 17px;
+  }
+
+  .br-tutor-section-icon {
+    width: 36px;
+    height: 36px;
+    flex-basis: 36px;
+    border-radius: 11px;
+  }
+
+  .br-tutor-section-icon svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .br-tutor-section-heading h3 {
+    font-size: 14px;
+  }
+
+  .br-tutor-section-heading p {
+    font-size: 10px;
+  }
+
+  .br-tutor-fields-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 15px;
+  }
+
+  .br-tutor-field-full {
+    grid-column: auto;
+  }
+
+  .br-tutor-field > label {
+    margin-bottom: 7px;
+    font-size: 11px;
+  }
+
+  .br-tutor-field input,
+  .br-tutor-field select,
+  .br-tutor-field textarea {
+    min-height: 47px;
+    padding: 12px;
+    font-size: 12px;
+  }
+
+  .br-tutor-field textarea {
+    min-height: 85px;
+  }
+
+  .br-tutor-upload-icon {
+    width: 42px;
+    height: 42px;
+    flex-basis: 42px;
+  }
+
+  .br-tutor-terms {
+    gap: 9px;
+    margin-top: 23px;
+  }
+
+  .br-tutor-terms label {
+    font-size: 10px;
+    line-height: 1.8;
+  }
+
+  .br-tutor-submit {
+    min-height: 50px;
+    margin-top: 20px;
+    font-size: 12px;
+  }
+
+  .br-tutor-secure-note {
+    font-size: 9px;
+  }
+}
+
+/* ==========================================================
+   SMALL PHONES
+========================================================== */
+
+@media (max-width: 340px) {
+  .br-tutor-registration {
+    padding-inline: 10px;
+  }
+
+  .br-tutor-form {
+    padding: 18px 12px;
+  }
+
+  .br-tutor-section-heading h3 {
+    font-size: 13px;
+  }
+
+  .br-tutor-field input,
+  .br-tutor-field select,
+  .br-tutor-field textarea {
+    font-size: 11px;
+  }
+}
+
+/* ==========================================================
+   REDUCED MOTION ACCESSIBILITY
+========================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .br-tutor-registration *,
+  .br-tutor-registration *::before,
+  .br-tutor-registration *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}

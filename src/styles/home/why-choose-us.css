@@ -1,0 +1,344 @@
+
+/* =====================================================
+   BETTER RESULT HOME TUITION
+   WHY CHOOSE US — ROYAL BLUE DESIGN
+===================================================== */
+
+.br-why,
+.br-why * {
+  box-sizing: border-box;
+}
+
+.br-why {
+  --why-white: #ffffff;
+  --why-muted: #d2ddf5;
+
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  padding: clamp(48px, 6vw, 76px) 24px;
+  overflow: hidden;
+  color: var(--why-white);
+
+  background:
+    radial-gradient(
+      ellipse at 50% 0%,
+      rgba(101, 145, 255, 0.2),
+      transparent 65%
+    ),
+    linear-gradient(125deg, #203eaa 0%, #2549bc 52%, #17368f 100%);
+}
+
+.br-why-container {
+  width: 100%;
+  max-width: 1240px;
+  margin-inline: auto;
+}
+
+/* Heading */
+
+.br-why-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.br-why-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 34px;
+  padding: 7px 15px;
+
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.11);
+
+  color: #e1eaff;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
+
+.br-why-header h2 {
+  margin: 17px 0 0;
+  color: #ffffff;
+  font-size: clamp(34px, 4vw, 49px);
+  font-weight: 900;
+  letter-spacing: -1.5px;
+  line-height: 1.2;
+  text-wrap: balance;
+}
+
+.br-why-header h2 span {
+  color: #b9d1ff;
+}
+
+.br-why-header > p {
+  max-width: 610px;
+  margin: 13px 0 0;
+  color: var(--why-muted);
+  font-size: 14px;
+  line-height: 1.8;
+  text-wrap: pretty;
+}
+
+/* Cards */
+
+.br-why-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+  margin-top: 42px;
+}
+
+.br-why-card {
+  --why-accent: #ffb33d;
+  --why-tint: rgba(255, 179, 61, 0.16);
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 0;
+  min-height: 235px;
+  padding: 25px 19px 22px;
+  overflow: hidden;
+
+  border: 1px solid rgba(255, 255, 255, 0.11);
+  border-radius: 19px;
+  background: rgba(255, 255, 255, 0.105);
+
+  box-shadow: 0 10px 30px rgba(10, 27, 85, 0.1);
+
+  text-align: center;
+
+  transition:
+    transform 220ms ease,
+    background 220ms ease,
+    border-color 220ms ease;
+}
+
+.br-why-card-orange {
+  --why-accent: #ffb438;
+  --why-tint: rgba(255, 180, 56, 0.17);
+}
+
+.br-why-card-green {
+  --why-accent: #5af0ae;
+  --why-tint: rgba(90, 240, 174, 0.16);
+}
+
+.br-why-card-pink {
+  --why-accent: #ff80d0;
+  --why-tint: rgba(255, 128, 208, 0.17);
+}
+
+.br-why-card-cyan {
+  --why-accent: #61e5f5;
+  --why-tint: rgba(97, 229, 245, 0.16);
+}
+
+/* Icon */
+
+.br-why-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.br-why-icon {
+  display: grid;
+  place-items: center;
+  width: 59px;
+  height: 59px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 50%;
+
+  background: var(--why-tint);
+  color: var(--why-accent);
+
+  font-size: 27px;
+  font-weight: 800;
+  line-height: 1;
+  box-shadow: 0 5px 17px rgba(9, 26, 81, 0.12);
+}
+
+.br-why-number {
+  position: absolute;
+  top: 23px;
+  right: 19px;
+  color: rgba(255, 255, 255, 0.63);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+/* Text */
+
+.br-why-card h3 {
+  margin: 0;
+  color: #ffffff;
+  font-size: clamp(15px, 1.35vw, 19px);
+  font-weight: 850;
+  letter-spacing: -0.25px;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+}
+
+.br-why-card > p {
+  margin: 11px 0 20px;
+  color: #d5e0f8;
+  font-size: 12px;
+  line-height: 1.8;
+  overflow-wrap: anywhere;
+}
+
+.br-why-card-line {
+  width: 42px;
+  height: 3px;
+  margin-top: auto;
+  border-radius: 10px;
+  background: var(--why-accent);
+  opacity: 0.9;
+}
+
+/* Desktop hover */
+
+@media (hover: hover) and (pointer: fine) {
+  .br-why-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(255, 255, 255, 0.28);
+    background: rgba(255, 255, 255, 0.15);
+  }
+}
+
+/* Laptop and tablet */
+
+@media (max-width: 1000px) {
+  .br-why {
+    padding-inline: 22px;
+  }
+
+  .br-why-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    margin-top: 32px;
+  }
+
+  .br-why-card {
+    min-height: 220px;
+    padding: 23px 20px 20px;
+  }
+
+  .br-why-card h3 {
+    font-size: 18px;
+  }
+
+  .br-why-card > p {
+    max-width: 310px;
+    font-size: 12px;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 560px) {
+  .br-why {
+    padding: 39px 16px 36px;
+  }
+
+  .br-why-container {
+    max-width: 440px;
+  }
+
+  .br-why-badge {
+    min-height: 31px;
+    padding: 6px 12px;
+    font-size: 10px;
+  }
+
+  .br-why-header h2 {
+    margin-top: 14px;
+    font-size: clamp(30px, 8vw, 37px);
+    letter-spacing: -1px;
+    line-height: 1.2;
+  }
+
+  .br-why-header > p {
+    margin-top: 10px;
+    font-size: 12px;
+    line-height: 1.8;
+  }
+
+  .br-why-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
+    margin-top: 25px;
+  }
+
+  .br-why-card {
+    min-height: 0;
+    padding: 19px 18px 17px;
+    border-radius: 16px;
+  }
+
+  .br-why-card-top {
+    margin-bottom: 13px;
+  }
+
+  .br-why-icon {
+    width: 49px;
+    height: 49px;
+    font-size: 23px;
+  }
+
+  .br-why-number {
+    top: 18px;
+    right: 17px;
+    font-size: 9px;
+  }
+
+  .br-why-card h3 {
+    font-size: 17px;
+  }
+
+  .br-why-card > p {
+    max-width: 360px;
+    margin-top: 7px;
+    margin-bottom: 14px;
+    font-size: 12px;
+    line-height: 1.8;
+  }
+}
+
+/* Extra-small phones */
+
+@media (max-width: 360px) {
+  .br-why {
+    padding-right: 12px;
+    padding-left: 12px;
+  }
+
+  .br-why-card {
+    padding-right: 14px;
+    padding-left: 14px;
+  }
+
+  .br-why-card h3 {
+    font-size: 16px;
+  }
+}
+
+/* Accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+  .br-why *,
+  .br-why *::before,
+  .br-why *::after {
+    transition: none !important;
+  }
+}

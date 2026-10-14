@@ -1,0 +1,1115 @@
+
+/* ==========================================
+   BETTER RESULT HOME TUITION
+   Online Tuition Page
+   ========================================== */
+
+.ot-page {
+  --ot-blue: #07509b;
+  --ot-blue-dark: #06396f;
+  --ot-navy: #102f52;
+  --ot-orange: #f5820b;
+  --ot-text: #2a3c50;
+  --ot-muted: #6a7b8d;
+  --ot-border: #e3eaf2;
+  width: 100%;
+  overflow: hidden;
+  color: var(--ot-text);
+  background: #ffffff;
+}
+
+.ot-page *,
+.ot-page *::before,
+.ot-page *::after {
+  box-sizing: border-box;
+}
+
+.ot-container {
+  width: min(1160px, calc(100% - 48px));
+  margin: 0 auto;
+}
+
+/* Hero */
+
+.ot-hero {
+  position: relative;
+  padding: 82px 0 94px;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 82% 18%, rgba(245, 130, 11, 0.10), transparent 26%),
+    linear-gradient(135deg, #f3f8ff, #ffffff 60%, #f7faff);
+}
+
+.ot-hero-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  align-items: center;
+  gap: 55px;
+}
+
+.ot-hero-decoration {
+  position: absolute;
+  border: 1px solid rgba(7, 80, 155, 0.08);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.ot-decoration-one {
+  top: -130px;
+  right: 8%;
+  width: 320px;
+  height: 320px;
+}
+
+.ot-decoration-two {
+  right: -170px;
+  bottom: -200px;
+  width: 430px;
+  height: 430px;
+  background: rgba(7, 80, 155, 0.025);
+}
+
+.ot-eyebrow,
+.ot-section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--ot-blue);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1.15px;
+  line-height: 1.6;
+}
+
+.ot-eyebrow {
+  padding: 9px 13px;
+  border: 1px solid #dce8f7;
+  border-radius: 50px;
+  background: #ffffff;
+}
+
+.ot-hero-content h1 {
+  margin: 25px 0 20px;
+  color: var(--ot-navy);
+  font-size: clamp(38px, 4.3vw, 58px);
+  font-weight: 800;
+  line-height: 1.12;
+  letter-spacing: -1.7px;
+}
+
+.ot-hero-content h1 span {
+  display: block;
+  color: var(--ot-blue);
+}
+
+.ot-hero-description {
+  max-width: 540px;
+  margin: 0;
+  color: var(--ot-muted);
+  font-size: 16px;
+  line-height: 1.9;
+}
+
+.ot-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 13px;
+  margin-top: 30px;
+}
+
+.ot-button {
+  display: inline-flex;
+  min-height: 49px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 13px 20px;
+  border: 1px solid transparent;
+  border-radius: 9px;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 750;
+  line-height: 1.45;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    background-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.ot-button:hover {
+  transform: translateY(-2px);
+}
+
+.ot-button-primary {
+  color: #ffffff;
+  background: var(--ot-blue);
+  box-shadow: 0 7px 18px rgba(7, 80, 155, 0.16);
+}
+
+.ot-button-primary:hover {
+  color: #ffffff;
+  background: var(--ot-blue-dark);
+  box-shadow: 0 10px 22px rgba(7, 80, 155, 0.20);
+}
+
+.ot-button-outline {
+  color: var(--ot-blue);
+  border-color: #cfdeef;
+  background: #ffffff;
+}
+
+.ot-button-outline:hover {
+  color: var(--ot-blue-dark);
+  background: #f2f7ff;
+}
+
+.ot-hero-points {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 17px;
+  margin-top: 25px;
+}
+
+.ot-hero-points span {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: #5e7185;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.ot-hero-points svg {
+  flex-shrink: 0;
+  color: #18845b;
+}
+
+/* Hero visual */
+
+.ot-hero-art {
+  position: relative;
+  padding: 18px 14px 24px;
+}
+
+.ot-art-main {
+  padding: 25px 26px 24px;
+  border: 1px solid #e2eaf4;
+  border-radius: 23px;
+  background: #ffffff;
+  box-shadow: 0 24px 55px rgba(16, 47, 82, 0.11);
+}
+
+.ot-art-topline {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: #66798c;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.25px;
+}
+
+.ot-art-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--ot-orange);
+}
+
+.ot-laptop-illustration {
+  width: min(100%, 310px);
+  margin: 30px auto 22px;
+}
+
+.ot-laptop-screen {
+  min-height: 200px;
+  padding: 11px;
+  border: 8px solid #153b62;
+  border-bottom-width: 12px;
+  border-radius: 14px 14px 5px 5px;
+  background: linear-gradient(135deg, #eaf4ff, #f7faff);
+}
+
+.ot-screen-header {
+  display: flex;
+  gap: 5px;
+  padding: 3px 0 13px;
+  border-bottom: 1px solid #d8e5f3;
+}
+
+.ot-screen-header span {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #9db6d3;
+}
+
+.ot-screen-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 14px;
+  padding: 18px 9px 12px;
+}
+
+.ot-screen-avatar {
+  display: grid;
+  width: 73px;
+  height: 73px;
+  place-items: center;
+  color: #ffffff;
+  border-radius: 20px;
+  background: linear-gradient(145deg, #07509b, #4b8dd0);
+}
+
+.ot-screen-lines {
+  display: grid;
+  gap: 9px;
+}
+
+.ot-screen-lines i {
+  display: block;
+  height: 8px;
+  border-radius: 10px;
+  background: #c8d9ec;
+}
+
+.ot-screen-lines i:first-child {
+  width: 100%;
+  background: #8eb5df;
+}
+
+.ot-screen-lines i:nth-child(2) {
+  width: 76%;
+}
+
+.ot-screen-lines i:nth-child(3) {
+  width: 55%;
+}
+
+.ot-screen-book {
+  display: grid;
+  width: 47px;
+  height: 47px;
+  place-items: center;
+  color: #bd690c;
+  border-radius: 12px;
+  background: #ffecd6;
+}
+
+.ot-laptop-base {
+  width: 114%;
+  height: 10px;
+  margin-left: -7%;
+  border-radius: 0 0 14px 14px;
+  background: linear-gradient(#a9b9ca, #dbe3ec);
+}
+
+.ot-art-caption {
+  display: grid;
+  gap: 6px;
+  text-align: center;
+}
+
+.ot-art-caption strong {
+  color: var(--ot-navy);
+  font-size: 16px;
+}
+
+.ot-art-caption span {
+  color: var(--ot-muted);
+  font-size: 12px;
+}
+
+.ot-floating-note {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 12px 15px;
+  border: 1px solid #e5ebf3;
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow: 0 12px 28px rgba(16, 47, 82, 0.10);
+}
+
+.ot-floating-note-top {
+  top: 0;
+  right: -5px;
+}
+
+.ot-floating-note-bottom {
+  bottom: 0;
+  left: -4px;
+}
+
+.ot-floating-icon {
+  display: grid;
+  width: 39px;
+  height: 39px;
+  flex-shrink: 0;
+  place-items: center;
+  color: var(--ot-blue);
+  border-radius: 10px;
+  background: #eaf3ff;
+}
+
+.ot-floating-icon.orange {
+  color: #bc690b;
+  background: #fff0df;
+}
+
+.ot-floating-note > span:last-child {
+  display: grid;
+  gap: 4px;
+}
+
+.ot-floating-note strong {
+  color: var(--ot-navy);
+  font-size: 12px;
+}
+
+.ot-floating-note small {
+  color: var(--ot-muted);
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+/* Section headings */
+
+.ot-benefits-section,
+.ot-process-section,
+.ot-subject-section,
+.ot-requirements-section {
+  padding: 82px 0;
+}
+
+.ot-section-heading {
+  max-width: 710px;
+  margin: 0 auto 36px;
+  text-align: center;
+}
+
+.ot-section-heading h2,
+.ot-process-intro h2,
+.ot-requirements-copy h2 {
+  margin: 12px 0;
+  color: var(--ot-navy);
+  font-size: clamp(28px, 3vw, 38px);
+  font-weight: 800;
+  line-height: 1.25;
+  letter-spacing: -0.8px;
+}
+
+.ot-section-heading p,
+.ot-process-intro > p,
+.ot-requirements-copy > p {
+  margin: 0;
+  color: var(--ot-muted);
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+/* Benefits */
+
+.ot-benefits-section {
+  background: #ffffff;
+}
+
+.ot-benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 17px;
+}
+
+.ot-benefit-card {
+  padding: 25px 21px;
+  border: 1px solid var(--ot-border);
+  border-radius: 14px;
+  background: #ffffff;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.ot-benefit-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(16, 47, 82, 0.07);
+}
+
+.ot-benefit-icon {
+  display: grid;
+  width: 54px;
+  height: 54px;
+  place-items: center;
+  margin-bottom: 19px;
+  color: var(--ot-blue);
+  border-radius: 13px;
+  background: #eaf3ff;
+}
+
+.ot-benefit-card:nth-child(2) .ot-benefit-icon {
+  color: #bc690b;
+  background: #fff0df;
+}
+
+.ot-benefit-card:nth-child(3) .ot-benefit-icon {
+  color: #6a50b8;
+  background: #f0eaff;
+}
+
+.ot-benefit-card:nth-child(4) .ot-benefit-icon {
+  color: #16845a;
+  background: #e6f7ef;
+}
+
+.ot-benefit-card h3 {
+  margin: 0 0 10px;
+  color: var(--ot-navy);
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 1.5;
+}
+
+.ot-benefit-card p {
+  margin: 0;
+  color: var(--ot-muted);
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+/* Process */
+
+.ot-process-section {
+  background: #f5f8fc;
+}
+
+.ot-process-layout {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 70px;
+  align-items: start;
+}
+
+.ot-process-intro h2 {
+  font-size: clamp(28px, 3vw, 36px);
+}
+
+.ot-process-intro > p {
+  max-width: 440px;
+}
+
+.ot-text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  margin-top: 24px;
+  color: var(--ot-blue);
+  font-size: 14px;
+  font-weight: 800;
+  line-height: 1.6;
+  text-decoration: none;
+}
+
+.ot-text-link svg {
+  transition: transform 0.2s ease;
+}
+
+.ot-text-link:hover {
+  color: var(--ot-orange);
+}
+
+.ot-text-link:hover svg {
+  transform: translateX(4px);
+}
+
+.ot-steps {
+  display: grid;
+  gap: 16px;
+}
+
+.ot-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 19px;
+  padding: 22px;
+  border: 1px solid #e3eaf2;
+  border-radius: 13px;
+  background: #ffffff;
+}
+
+.ot-step-number {
+  display: grid;
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  place-items: center;
+  color: #ffffff;
+  border-radius: 12px;
+  background: var(--ot-blue);
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.ot-step:nth-child(2) .ot-step-number {
+  color: #9a5105;
+  background: #ffedd8;
+}
+
+.ot-step:nth-child(3) .ot-step-number {
+  color: #14744f;
+  background: #e2f6eb;
+}
+
+.ot-step h3 {
+  margin: 2px 0 7px;
+  color: var(--ot-navy);
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 1.5;
+}
+
+.ot-step p {
+  margin: 0;
+  color: var(--ot-muted);
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+/* Subjects */
+
+.ot-subject-section {
+  background: #ffffff;
+}
+
+.ot-subject-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.ot-subject-item {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 10px;
+  padding: 15px 13px;
+  border: 1px solid var(--ot-border);
+  border-radius: 10px;
+  background: #ffffff;
+  text-decoration: none;
+  transition:
+    border-color 0.2s ease,
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.ot-subject-item:hover {
+  transform: translateY(-2px);
+  border-color: #b8d1ed;
+  background: #f7fbff;
+}
+
+.ot-subject-item > span {
+  display: grid;
+  width: 34px;
+  height: 34px;
+  flex-shrink: 0;
+  place-items: center;
+  color: var(--ot-blue);
+  border-radius: 8px;
+  background: #eaf3ff;
+}
+
+.ot-subject-item strong {
+  flex: 1;
+  min-width: 0;
+  color: var(--ot-navy);
+  font-size: 12px;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.ot-subject-arrow {
+  flex-shrink: 0;
+  color: #7890a8;
+}
+
+.ot-subject-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  margin: 23px 0 0;
+  color: var(--ot-muted);
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.ot-subject-note svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: #18845b;
+}
+
+/* Setup section */
+
+.ot-requirements-section {
+  background: #f5f8fc;
+}
+
+.ot-requirements-panel {
+  display: grid;
+  grid-template-columns: 1fr 0.8fr;
+  align-items: center;
+  gap: 50px;
+  padding: 42px;
+  border: 1px solid #e1eaf5;
+  border-radius: 21px;
+  background: #ffffff;
+}
+
+.ot-requirements-copy h2 {
+  font-size: clamp(27px, 3vw, 35px);
+}
+
+.ot-requirements-copy ul {
+  display: grid;
+  gap: 14px;
+  margin: 24px 0 28px;
+  padding: 0;
+  list-style: none;
+}
+
+.ot-requirements-copy li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  color: #4c6075;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.ot-requirements-copy li svg {
+  flex-shrink: 0;
+  margin-top: 1px;
+  color: #18845b;
+}
+
+.ot-requirements-visual {
+  position: relative;
+  display: flex;
+  min-height: 320px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px;
+  background:
+    radial-gradient(circle at 50% 40%, #d9eaff 0%, transparent 48%),
+    #f4f8fe;
+}
+
+.ot-device-circle {
+  display: grid;
+  width: 170px;
+  height: 170px;
+  place-items: center;
+  color: #ffffff;
+  border: 13px solid #e0edfc;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #0a5aa6, #06396f);
+  box-shadow: 0 17px 35px rgba(7, 80, 155, 0.20);
+}
+
+.ot-device-chip {
+  position: absolute;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 13px;
+  color: var(--ot-navy);
+  border: 1px solid #e4ebf3;
+  border-radius: 9px;
+  background: #ffffff;
+  box-shadow: 0 8px 20px rgba(16, 47, 82, 0.08);
+  font-size: 12px;
+  font-weight: 750;
+}
+
+.ot-device-chip svg {
+  color: var(--ot-blue);
+}
+
+.ot-device-chip.chip-one {
+  top: 35px;
+  right: 18px;
+}
+
+.ot-device-chip.chip-two {
+  bottom: 42px;
+  left: 12px;
+}
+
+.ot-device-chip.chip-three {
+  right: 17px;
+  bottom: 38px;
+}
+
+/* Final CTA */
+
+.ot-final-cta {
+  padding: 61px 0;
+  background: linear-gradient(120deg, #07509b, #06396f);
+}
+
+.ot-final-cta-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 35px;
+}
+
+.ot-final-cta .ot-section-label {
+  color: #ffca8b;
+}
+
+.ot-final-cta h2 {
+  max-width: 680px;
+  margin: 11px 0 10px;
+  color: #ffffff;
+  font-size: clamp(27px, 3vw, 36px);
+  font-weight: 800;
+  line-height: 1.3;
+}
+
+.ot-final-cta p {
+  max-width: 600px;
+  margin: 0;
+  color: #d9e7f6;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.ot-button-light {
+  flex-shrink: 0;
+  color: var(--ot-blue-dark);
+  background: #ffffff;
+}
+
+.ot-button-light:hover {
+  color: var(--ot-blue-dark);
+  background: #fff0df;
+}
+
+/* Tablet */
+
+@media (max-width: 1000px) {
+  .ot-hero-grid {
+    gap: 30px;
+  }
+
+  .ot-benefits-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .ot-subject-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .ot-process-layout {
+    gap: 35px;
+  }
+
+  .ot-requirements-panel {
+    gap: 25px;
+    padding: 30px;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 700px) {
+  .ot-container {
+    width: calc(100% - 32px);
+  }
+
+  .ot-hero {
+    padding: 52px 0 65px;
+  }
+
+  .ot-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 42px;
+  }
+
+  .ot-hero-content h1 {
+    margin-top: 21px;
+    font-size: clamp(36px, 9vw, 48px);
+    letter-spacing: -1.1px;
+  }
+
+  .ot-hero-description {
+    font-size: 14px;
+    line-height: 1.85;
+  }
+
+  .ot-hero-actions .ot-button {
+    flex: 1;
+    padding: 12px 13px;
+    font-size: 13px;
+  }
+
+  .ot-hero-points {
+    gap: 10px 15px;
+  }
+
+  .ot-hero-points span {
+    font-size: 11px;
+  }
+
+  .ot-hero-art {
+    padding: 15px 4px 25px;
+  }
+
+  .ot-art-main {
+    padding: 22px 17px;
+    border-radius: 17px;
+  }
+
+  .ot-laptop-screen {
+    min-height: 180px;
+  }
+
+  .ot-floating-note-top {
+    right: -2px;
+  }
+
+  .ot-floating-note-bottom {
+    left: -2px;
+  }
+
+  .ot-floating-note {
+    gap: 8px;
+    padding: 10px;
+  }
+
+  .ot-floating-icon {
+    width: 33px;
+    height: 33px;
+  }
+
+  .ot-floating-note strong {
+    font-size: 11px;
+  }
+
+  .ot-floating-note small {
+    font-size: 9px;
+  }
+
+  .ot-benefits-section,
+  .ot-process-section,
+  .ot-subject-section,
+  .ot-requirements-section {
+    padding: 58px 0;
+  }
+
+  .ot-section-heading {
+    margin-bottom: 27px;
+  }
+
+  .ot-section-heading h2,
+  .ot-process-intro h2,
+  .ot-requirements-copy h2 {
+    font-size: 28px;
+    letter-spacing: -0.5px;
+  }
+
+  .ot-section-heading p,
+  .ot-process-intro > p,
+  .ot-requirements-copy > p {
+    font-size: 13px;
+  }
+
+  .ot-benefits-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .ot-benefit-card {
+    padding: 21px;
+  }
+
+  .ot-benefit-card p {
+    font-size: 13px;
+  }
+
+  .ot-process-layout {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .ot-step {
+    gap: 14px;
+    padding: 18px 15px;
+  }
+
+  .ot-step-number {
+    width: 42px;
+    height: 42px;
+    font-size: 12px;
+  }
+
+  .ot-step h3 {
+    font-size: 15px;
+  }
+
+  .ot-step p {
+    font-size: 12px;
+  }
+
+  .ot-subject-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 9px;
+  }
+
+  .ot-subject-item {
+    gap: 8px;
+    padding: 11px 9px;
+  }
+
+  .ot-subject-item > span {
+    width: 29px;
+    height: 29px;
+  }
+
+  .ot-subject-item strong {
+    font-size: 11px;
+  }
+
+  .ot-subject-arrow {
+    width: 14px;
+    height: 14px;
+  }
+
+  .ot-requirements-panel {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 23px 17px;
+    border-radius: 16px;
+  }
+
+  .ot-requirements-copy ul {
+    gap: 12px;
+  }
+
+  .ot-requirements-copy li {
+    font-size: 12px;
+  }
+
+  .ot-requirements-copy .ot-button {
+    width: 100%;
+    padding: 13px 12px;
+    font-size: 13px;
+  }
+
+  .ot-requirements-visual {
+    min-height: 270px;
+  }
+
+  .ot-device-circle {
+    width: 140px;
+    height: 140px;
+  }
+
+  .ot-device-chip {
+    padding: 9px;
+    font-size: 10px;
+  }
+
+  .ot-device-chip.chip-one {
+    top: 24px;
+    right: 9px;
+  }
+
+  .ot-device-chip.chip-two {
+    bottom: 25px;
+    left: 7px;
+  }
+
+  .ot-device-chip.chip-three {
+    right: 8px;
+    bottom: 25px;
+  }
+
+  .ot-final-cta {
+    padding: 45px 0;
+  }
+
+  .ot-final-cta-inner {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .ot-final-cta h2 {
+    font-size: 28px;
+  }
+
+  .ot-final-cta p {
+    font-size: 13px;
+  }
+
+  .ot-button-light {
+    width: 100%;
+  }
+}
+
+@media (max-width: 380px) {
+  .ot-container {
+    width: calc(100% - 24px);
+  }
+
+  .ot-hero-content h1 {
+    font-size: 34px;
+  }
+
+  .ot-hero-actions {
+    flex-direction: column;
+  }
+
+  .ot-hero-actions .ot-button {
+    width: 100%;
+  }
+
+  .ot-floating-note {
+    max-width: 100%;
+  }
+
+  .ot-floating-note small {
+    font-size: 8px;
+  }
+
+  .ot-subject-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ot-device-chip.chip-two {
+    left: 5px;
+  }
+}
+
+/* Accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+  .ot-page *,
+  .ot-page *::before,
+  .ot-page *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
