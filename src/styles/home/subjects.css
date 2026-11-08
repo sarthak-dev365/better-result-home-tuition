@@ -1,0 +1,317 @@
+/* =========================================
+   SUBJECTS SECTION
+========================================= */
+
+.subjects-section {
+  width: 100%;
+  padding: 90px 24px 100px;
+  background: #f8faff;
+}
+
+.subjects-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* =========================================
+   HEADING
+========================================= */
+
+.subjects-heading {
+  max-width: 780px;
+  margin: 0 auto 55px;
+  text-align: center;
+}
+
+.subjects-badge {
+  display: inline-block;
+  padding: 8px 17px;
+  margin-bottom: 17px;
+
+  color: #28558b;
+  background: #eaf2ff;
+  border-radius: 30px;
+
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.subjects-heading h2 {
+  margin: 0;
+  color: #142b49;
+
+  font-size: clamp(30px, 3.5vw, 43px);
+  line-height: 1.2;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+.subjects-heading h2 span {
+  display: block;
+  color: #e97822;
+}
+
+.subjects-heading p {
+  margin: 15px auto 0;
+  color: #718096;
+
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+/* =========================================
+   CATEGORY
+========================================= */
+
+.subjects-categories {
+  display: flex;
+  flex-direction: column;
+  gap: 38px;
+}
+
+.subject-category {
+  width: 100%;
+}
+
+.subject-category-title {
+  margin: 0 0 17px;
+  padding-left: 13px;
+
+  color: #172e4b;
+  border-left: 4px solid #ed791f;
+
+  font-size: 20px;
+  font-weight: 750;
+  line-height: 1.4;
+}
+
+/* =========================================
+   SUBJECT GRID
+========================================= */
+
+.subjects-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 17px;
+}
+
+/* =========================================
+   SUBJECT CARD
+========================================= */
+
+.subject-card {
+  --subject-color: #3474e9;
+  --subject-light: #edf4ff;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+
+  min-width: 0;
+  min-height: 125px;
+  padding: 19px 20px;
+
+  background: #ffffff;
+  border: 1px solid #e9edf4;
+  border-radius: 14px;
+
+  box-shadow: 0 4px 13px rgba(20, 40, 75, 0.025);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.subject-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--subject-color);
+
+  box-shadow: 0 12px 27px rgba(20, 40, 75, 0.08);
+}
+
+/* =========================================
+   COLOR THEMES
+========================================= */
+
+.subject-blue {
+  --subject-color: #3474e9;
+  --subject-light: #edf4ff;
+}
+
+.subject-purple {
+  --subject-color: #9271df;
+  --subject-light: #f3edff;
+}
+
+.subject-green {
+  --subject-color: #18a75b;
+  --subject-light: #eaf8ef;
+}
+
+.subject-red {
+  --subject-color: #d94158;
+  --subject-light: #fff0f1;
+}
+
+.subject-orange {
+  --subject-color: #df7b30;
+  --subject-light: #fff3e9;
+}
+
+.subject-cyan {
+  --subject-color: #20a3c6;
+  --subject-light: #e9f8fc;
+}
+
+.subject-teal {
+  --subject-color: #159d83;
+  --subject-light: #e9f8f4;
+}
+
+/* =========================================
+   ICON
+========================================= */
+
+.subject-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 45px;
+  height: 45px;
+  margin-bottom: 13px;
+
+  color: #ffffff;
+  background: var(--subject-color);
+  border-radius: 11px;
+
+  transition: transform 0.3s ease;
+}
+
+.subject-card:hover .subject-icon {
+  transform: translateY(-2px);
+}
+
+/* =========================================
+   SUBJECT NAME
+========================================= */
+
+.subject-card h4 {
+  margin: 0;
+
+  color: #202b3d;
+  font-size: 15px;
+  font-weight: 750;
+  line-height: 1.45;
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1024px) {
+  .subjects-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 15px;
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+  .subjects-section {
+    padding: 60px 17px 70px;
+  }
+
+  .subjects-heading {
+    margin-bottom: 38px;
+  }
+
+  .subjects-heading h2 {
+    font-size: 28px;
+  }
+
+  .subjects-heading p {
+    font-size: 13px;
+  }
+
+  .subjects-categories {
+    gap: 30px;
+  }
+
+  .subject-category-title {
+    margin-bottom: 14px;
+    font-size: 18px;
+  }
+
+  .subjects-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
+  }
+
+  .subject-card {
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+
+    min-height: 76px;
+    padding: 13px 16px;
+    border-radius: 12px;
+  }
+
+  .subject-icon {
+    flex-shrink: 0;
+    width: 43px;
+    height: 43px;
+    margin: 0 15px 0 0;
+  }
+
+  .subject-icon svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  .subject-card h4 {
+    font-size: 14px;
+  }
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 360px) {
+  .subjects-section {
+    padding-right: 13px;
+    padding-left: 13px;
+  }
+
+  .subjects-heading h2 {
+    font-size: 25px;
+  }
+
+  .subject-card {
+    padding: 12px;
+  }
+}
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .subject-card,
+  .subject-icon {
+    transition: none;
+  }
+
+  .subject-card:hover {
+    transform: none;
+  }
+}

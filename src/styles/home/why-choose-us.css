@@ -1,0 +1,147 @@
+.why-section {
+  position: relative;
+  width: 100%;
+  padding: 100px 24px;
+  background: #f7f9fc;
+  overflow: hidden;
+}
+
+.why-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.why-heading {
+  max-width: 760px;
+  margin: 0 auto 55px;
+  text-align: center;
+}
+
+.why-eyebrow {
+  display: inline-block;
+  margin-bottom: 16px;
+  color: #ed7a24;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.why-heading h2 {
+  margin: 0;
+  color: #10213c;
+  font-size: clamp(30px, 4vw, 44px);
+  line-height: 1.2;
+  font-weight: 800;
+}
+
+.why-heading h2 span {
+  color: #ed7a24;
+}
+
+.why-heading p {
+  max-width: 650px;
+  margin: 18px auto 0;
+  color: #68758a;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.why-card {
+  position: relative;
+  min-height: 245px;
+  padding: 28px 23px;
+  background: #ffffff;
+  border: 1px solid #e9edf3;
+  border-radius: 16px;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.why-card:hover {
+  transform: translateY(-7px);
+  border-color: #f0b17f;
+  box-shadow: 0 16px 35px rgba(16, 33, 60, 0.09);
+}
+
+.why-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 54px;
+  height: 54px;
+  margin-bottom: 24px;
+  color: #ed7a24;
+  background: #fff1e6;
+  border-radius: 13px;
+}
+
+.why-number {
+  position: absolute;
+  top: 28px;
+  right: 22px;
+  color: #e9edf3;
+  font-size: 23px;
+  font-weight: 800;
+}
+
+.why-card h3 {
+  margin: 0 0 11px;
+  color: #10213c;
+  font-size: 17px;
+  font-weight: 750;
+  line-height: 1.4;
+}
+
+.why-card p {
+  margin: 0;
+  color: #68758a;
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+/* Large tablets */
+
+@media (max-width: 1100px) {
+  .why-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Tablets and mobile */
+
+@media (max-width: 600px) {
+  .why-section {
+    padding: 75px 18px;
+  }
+
+  .why-heading {
+    margin-bottom: 38px;
+  }
+
+  .why-heading p {
+    font-size: 14px;
+  }
+
+  .why-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .why-card {
+    min-height: auto;
+    padding: 25px 22px;
+  }
+
+  .why-icon {
+    margin-bottom: 19px;
+  }
+}

@@ -1,0 +1,457 @@
+
+/* =========================================
+   ACADEMIC PROGRAMMES SECTION
+========================================= */
+
+.classes-section {
+  position: relative;
+  width: 100%;
+  padding: 95px 24px 100px;
+  background:
+    radial-gradient(
+      circle at 0% 10%,
+      rgba(37, 99, 235, 0.045),
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at 100% 90%,
+      rgba(249, 115, 22, 0.045),
+      transparent 30%
+    ),
+    #ffffff;
+  overflow: hidden;
+}
+
+.classes-container {
+  position: relative;
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+/* =========================================
+   HEADING
+========================================= */
+
+.classes-heading {
+  max-width: 750px;
+  margin: 0 auto 54px;
+  text-align: center;
+}
+
+.classes-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 17px;
+  color: #ed791f;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.classes-heading h2 {
+  margin: 0;
+  color: #132744;
+  font-size: clamp(32px, 4vw, 45px);
+  line-height: 1.2;
+  font-weight: 800;
+  letter-spacing: -1.5px;
+}
+
+.classes-heading h2 span {
+  display: block;
+  background: linear-gradient(
+    100deg,
+    #f08a32,
+    #e96b18
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.classes-heading > p {
+  max-width: 660px;
+  margin: 18px auto 0;
+  color: #718096;
+  font-size: 15px;
+  line-height: 1.85;
+}
+
+/* =========================================
+   GRID
+========================================= */
+
+.classes-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+/* =========================================
+   CARD
+========================================= */
+
+.class-card {
+  --card-color: #3474e9;
+  --card-light: #edf4ff;
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 350px;
+  padding: 27px 26px 23px;
+  background: #ffffff;
+  border: 1px solid #e9edf4;
+  border-radius: 17px;
+  overflow: hidden;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.class-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    var(--card-color),
+    transparent
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.class-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--card-light);
+  box-shadow: 0 17px 40px rgba(20, 40, 75, 0.09);
+}
+
+.class-card:hover::before {
+  opacity: 1;
+}
+
+/* =========================================
+   CARD COLOR THEMES
+========================================= */
+
+.class-blue {
+  --card-color: #3474e9;
+  --card-light: #edf4ff;
+}
+
+.class-orange {
+  --card-color: #ed791f;
+  --card-light: #fff2e8;
+}
+
+.class-purple {
+  --card-color: #8b5cf6;
+  --card-light: #f3edff;
+}
+
+.class-green {
+  --card-color: #16a36a;
+  --card-light: #eaf8f1;
+}
+
+.class-teal {
+  --card-color: #0891b2;
+  --card-light: #e8f8fb;
+}
+
+.class-pink {
+  --card-color: #db5790;
+  --card-light: #fff0f6;
+}
+
+.class-indigo {
+  --card-color: #5865d9;
+  --card-light: #eef0ff;
+}
+
+/* =========================================
+   CARD HEADER
+========================================= */
+
+.class-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 22px;
+}
+
+.class-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 51px;
+  height: 51px;
+  color: var(--card-color);
+  background: var(--card-light);
+  border-radius: 13px;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.class-card:hover .class-icon {
+  color: #ffffff;
+  background: var(--card-color);
+  transform: rotate(-5deg);
+}
+
+.class-number {
+  color: #e5eaf2;
+  font-size: 25px;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+/* =========================================
+   CARD CONTENT
+========================================= */
+
+.class-range {
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+  margin-bottom: 11px;
+  padding: 6px 11px;
+  color: var(--card-color);
+  background: var(--card-light);
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 750;
+  letter-spacing: 0.3px;
+}
+
+.class-card h3 {
+  margin: 0 0 11px;
+  color: #142945;
+  font-size: 19px;
+  font-weight: 750;
+  line-height: 1.4;
+  letter-spacing: -0.35px;
+}
+
+.class-description {
+  margin: 0;
+  color: #718096;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+/* =========================================
+   SUBJECT AREAS
+========================================= */
+
+.class-subjects {
+  margin-top: 23px;
+  padding-top: 17px;
+  border-top: 1px solid #edf0f5;
+}
+
+.class-subject-label {
+  display: block;
+  margin-bottom: 13px;
+  color: #98a3b4;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.3px;
+}
+
+.class-subjects ul {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 11px 9px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.class-subjects li {
+  display: flex;
+  align-items: flex-start;
+  gap: 7px;
+  min-width: 0;
+  color: #52647b;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.class-subject-check {
+  display: flex;
+  flex-shrink: 0;
+  width: 15px;
+  height: 15px;
+  margin-top: 1px;
+  color: var(--card-color);
+}
+
+.class-subject-check svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* =========================================
+   BOARD / EXAM LABEL
+========================================= */
+
+.class-board {
+  margin-top: auto;
+  padding-top: 20px;
+  color: #758399;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.25px;
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1024px) {
+  .classes-section {
+    padding: 80px 24px;
+  }
+
+  .classes-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+  }
+
+  .class-card {
+    min-height: 350px;
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+  .classes-section {
+    padding: 65px 17px 70px;
+  }
+
+  .classes-heading {
+    margin-bottom: 35px;
+  }
+
+  .classes-eyebrow {
+    font-size: 10px;
+    letter-spacing: 1.5px;
+  }
+
+  .classes-heading h2 {
+    font-size: 29px;
+    line-height: 1.25;
+    letter-spacing: -1px;
+  }
+
+  .classes-heading > p {
+    margin-top: 13px;
+    font-size: 13px;
+    line-height: 1.75;
+  }
+
+  .classes-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+  }
+
+  .class-card {
+    min-height: auto;
+    padding: 23px 21px 20px;
+    border-radius: 15px;
+  }
+
+  .class-card-top {
+    margin-bottom: 18px;
+  }
+
+  .class-icon {
+    width: 47px;
+    height: 47px;
+  }
+
+  .class-number {
+    font-size: 22px;
+  }
+
+  .class-card h3 {
+    font-size: 18px;
+  }
+
+  .class-description {
+    font-size: 13px;
+  }
+
+  .class-subjects {
+    margin-top: 19px;
+    padding-top: 15px;
+  }
+
+  .class-subjects ul {
+    gap: 11px 8px;
+  }
+
+  .class-subjects li {
+    font-size: 12px;
+  }
+
+  .class-board {
+    margin-top: 19px;
+    padding-top: 15px;
+  }
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 360px) {
+  .classes-section {
+    padding-right: 13px;
+    padding-left: 13px;
+  }
+
+  .classes-heading h2 {
+    font-size: 26px;
+  }
+
+  .class-card {
+    padding: 20px 17px;
+  }
+
+  .class-subjects ul {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .class-card,
+  .class-icon {
+    transition: none;
+  }
+
+  .class-card:hover {
+    transform: none;
+  }
+}

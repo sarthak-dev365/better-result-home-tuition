@@ -1,0 +1,1306 @@
+
+/* =========================================
+   FIND A TUTOR PAGE
+   Better Result Home Tuition
+   Complete Responsive Stylesheet
+========================================= */
+
+.find-tutor-page {
+  --ft-primary: #1765d1;
+  --ft-primary-dark: #1053b4;
+  --ft-primary-light: #eaf2ff;
+  --ft-heading: #14233c;
+  --ft-text: #68758a;
+  --ft-muted: #8792a2;
+  --ft-border: #e5ebf3;
+  --ft-surface: #ffffff;
+
+  width: 100%;
+  overflow: hidden;
+  color: #17243b;
+  background: #ffffff;
+}
+
+.find-tutor-page *,
+.find-tutor-page *::before,
+.find-tutor-page *::after {
+  box-sizing: border-box;
+}
+
+.ft-container {
+  width: min(1160px, calc(100% - 48px));
+  margin: 0 auto;
+}
+
+.ft-section-label {
+  display: inline-block;
+  margin-bottom: 13px;
+  color: var(--ft-primary);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+}
+
+/* =========================================
+   HERO SECTION
+========================================= */
+
+.ft-hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 440px;
+  padding: 80px 24px;
+  overflow: hidden;
+  isolation: isolate;
+  background:
+    radial-gradient(
+      circle at 85% 20%,
+      rgba(65, 132, 255, 0.22),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 10% 100%,
+      rgba(42, 113, 206, 0.16),
+      transparent 35%
+    ),
+    linear-gradient(
+      120deg,
+      #101f3b 0%,
+      #142d55 60%,
+      #174b88 100%
+    );
+}
+
+.ft-hero::before,
+.ft-hero::after {
+  position: absolute;
+  z-index: -1;
+  content: "";
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.ft-hero::before {
+  width: 420px;
+  height: 420px;
+  top: -190px;
+  right: 5%;
+}
+
+.ft-hero::after {
+  width: 300px;
+  height: 300px;
+  bottom: -190px;
+  right: 25%;
+}
+
+.ft-hero-content {
+  position: relative;
+  z-index: 1;
+  width: min(1160px, 100%);
+  margin: 0 auto;
+}
+
+.ft-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #d8e8ff;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.ft-hero h1 {
+  max-width: 790px;
+  margin: 24px 0 18px;
+  color: #ffffff;
+  font-size: clamp(38px, 5.5vw, 61px);
+  font-weight: 800;
+  line-height: 1.13;
+  letter-spacing: -1.8px;
+}
+
+.ft-hero h1 span {
+  display: block;
+  color: #78b4ff;
+}
+
+.ft-hero-content > p {
+  max-width: 690px;
+  margin: 0;
+  color: #d5e0f0;
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+.ft-hero-button {
+  display: inline-flex;
+  min-height: 52px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 28px;
+  padding: 0 23px;
+  border: 1px solid transparent;
+  border-radius: 9px;
+  background: #ffffff;
+  color: #1558ad;
+  font-size: 14px;
+  font-weight: 800;
+  text-decoration: none;
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.ft-hero-button:hover {
+  background: #e9f2ff;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.14);
+  transform: translateY(-3px);
+}
+
+.ft-hero-button:focus-visible {
+  outline: 3px solid rgba(255, 255, 255, 0.55);
+  outline-offset: 4px;
+}
+
+.ft-hero-features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 23px;
+  margin-top: 27px;
+}
+
+.ft-hero-features span {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #d6e5fa;
+  font-size: 13px;
+}
+
+.ft-hero-features svg {
+  flex-shrink: 0;
+  color: #8bc4ff;
+}
+
+/* =========================================
+   INTRO SECTION
+========================================= */
+
+.ft-intro {
+  padding: 85px 0;
+  background: #ffffff;
+}
+
+.ft-intro-content {
+  max-width: 720px;
+  margin: 0 auto 42px;
+  text-align: center;
+}
+
+.ft-intro-content h2,
+.ft-form-heading h2 {
+  margin: 0;
+  color: var(--ft-heading);
+  font-size: clamp(30px, 4vw, 42px);
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -1px;
+}
+
+.ft-intro-content h2 span,
+.ft-form-heading h2 span {
+  color: var(--ft-primary);
+}
+
+.ft-intro-content > p,
+.ft-form-heading > p {
+  max-width: 650px;
+  margin: 15px auto 0;
+  color: var(--ft-text);
+  font-size: 15px;
+  line-height: 1.85;
+}
+
+.ft-info-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.ft-info-card {
+  position: relative;
+  min-width: 0;
+  padding: 28px;
+  border: 1px solid #e7edf5;
+  border-radius: 15px;
+  background: #ffffff;
+  box-shadow: 0 5px 18px rgba(30, 75, 135, 0.025);
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
+}
+
+.ft-info-card:hover {
+  border-color: #b8d3fa;
+  box-shadow: 0 15px 35px rgba(30, 75, 135, 0.09);
+  transform: translateY(-5px);
+}
+
+.ft-info-icon {
+  display: grid;
+  width: 57px;
+  height: 57px;
+  place-items: center;
+  border: 1px solid #dceaff;
+  border-radius: 14px;
+  background: var(--ft-primary-light);
+  color: var(--ft-primary);
+}
+
+.ft-info-icon svg {
+  width: 25px;
+  height: 25px;
+}
+
+.ft-info-card h3 {
+  margin: 19px 0 9px;
+  color: #192941;
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 1.4;
+}
+
+.ft-info-card p {
+  margin: 0;
+  color: #738096;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+/* =========================================
+   ENQUIRY SECTION
+========================================= */
+
+.ft-enquiry {
+  padding: 90px 0;
+  background:
+    radial-gradient(
+      circle at 5% 10%,
+      rgba(23, 101, 209, 0.045),
+      transparent 25%
+    ),
+    #f5f8fd;
+}
+
+.ft-form-heading {
+  max-width: 720px;
+  margin: 0 auto 45px;
+  text-align: center;
+}
+
+.ft-form-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 310px;
+  align-items: start;
+  gap: 28px;
+}
+
+/* =========================================
+   MAIN FORM
+========================================= */
+
+.ft-form {
+  min-width: 0;
+  padding: 38px;
+  border: 1px solid #e5ebf3;
+  border-radius: 17px;
+  background: #ffffff;
+  box-shadow: 0 12px 40px rgba(30, 60, 100, 0.045);
+}
+
+.ft-form-section-title {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 27px;
+}
+
+.ft-form-section-icon {
+  display: grid;
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  place-items: center;
+  border: 1px solid #dceaff;
+  border-radius: 13px;
+  background: var(--ft-primary-light);
+  color: var(--ft-primary);
+}
+
+.ft-form-section-icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.ft-form-section-title h3 {
+  margin: 0 0 5px;
+  color: #192941;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.ft-form-section-title p {
+  margin: 0;
+  color: #7a8799;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.ft-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 18px;
+}
+
+.ft-field {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 9px;
+  margin-bottom: 23px;
+}
+
+.ft-field label {
+  color: #26364d;
+  font-size: 13px;
+  font-weight: 750;
+}
+
+.ft-field label span {
+  color: #e04444;
+}
+
+.ft-field input:not([type="radio"]):not([type="checkbox"]),
+.ft-field select,
+.ft-field textarea {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  min-height: 49px;
+  padding: 12px 14px;
+  border: 1px solid #dce4ef;
+  border-radius: 8px;
+  outline: none;
+  background: #ffffff;
+  color: #25354c;
+  font-family: inherit;
+  font-size: 13px;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.ft-field input::placeholder,
+.ft-field textarea::placeholder {
+  color: #9aa6b6;
+  opacity: 1;
+}
+
+.ft-field select {
+  cursor: pointer;
+}
+
+.ft-field select:invalid {
+  color: #9aa6b6;
+}
+
+.ft-field textarea {
+  min-height: 115px;
+  resize: vertical;
+  line-height: 1.7;
+}
+
+.ft-field input:focus,
+.ft-field select:focus,
+.ft-field textarea:focus {
+  border-color: #4388e5;
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(23, 101, 209, 0.09);
+}
+
+.ft-field input:focus-visible,
+.ft-field select:focus-visible,
+.ft-field textarea:focus-visible {
+  outline: none;
+}
+
+.ft-field small {
+  color: #7a8799;
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.ft-full-width {
+  grid-column: 1 / -1;
+}
+
+.ft-form-divider {
+  height: 1px;
+  margin: 13px 0 30px;
+  border: 0;
+  background: #e9eef5;
+}
+
+/* =========================================
+   TUITION MODE OPTIONS
+========================================= */
+
+.ft-mode-options {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.ft-mode-option {
+  position: relative;
+  display: block;
+  min-width: 0;
+  cursor: pointer;
+}
+
+.ft-mode-option input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+
+.ft-mode-option-content {
+  display: flex;
+  min-height: 115px;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: center;
+  gap: 7px;
+  padding: 17px;
+  border: 1px solid #dce4ef;
+  border-radius: 11px;
+  background: #ffffff;
+  color: #52637a;
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+.ft-mode-option-content svg {
+  color: var(--ft-primary);
+}
+
+.ft-mode-option-content strong {
+  color: #26364d;
+  font-size: 13px;
+}
+
+.ft-mode-option-content small {
+  color: #7a8799;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.ft-mode-option:hover .ft-mode-option-content {
+  border-color: #9bbff0;
+  transform: translateY(-2px);
+}
+
+.ft-mode-option input:checked + .ft-mode-option-content {
+  border-color: var(--ft-primary);
+  background: #f0f6ff;
+  box-shadow: 0 0 0 2px rgba(23, 101, 209, 0.08);
+}
+
+.ft-mode-option input:focus-visible + .ft-mode-option-content {
+  outline: 3px solid rgba(23, 101, 209, 0.2);
+  outline-offset: 3px;
+}
+
+/* =========================================
+   PREFERRED DAYS
+========================================= */
+
+.ft-days-grid {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.ft-day-option {
+  position: relative;
+  display: block;
+  min-width: 0;
+  cursor: pointer;
+}
+
+.ft-day-option input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+
+.ft-day-option span {
+  display: grid;
+  min-height: 43px;
+  place-items: center;
+  border: 1px solid #dce4ef;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #596a80;
+  font-size: 12px;
+  font-weight: 750;
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.ft-day-option:hover span {
+  border-color: #9bbff0;
+  transform: translateY(-1px);
+}
+
+.ft-day-option input:checked + span {
+  border-color: var(--ft-primary);
+  background: var(--ft-primary);
+  color: #ffffff;
+}
+
+.ft-day-option input:focus-visible + span {
+  outline: 3px solid rgba(23, 101, 209, 0.2);
+  outline-offset: 3px;
+}
+
+/* =========================================
+   CUSTOM DATE PICKER
+========================================= */
+
+.ft-calendar-field {
+  position: relative;
+  z-index: 5;
+}
+
+.ft-date-trigger {
+  display: flex;
+  width: 100%;
+  min-height: 49px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 14px;
+  border: 1px solid #dce4ef;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #9aa6b6;
+  font-family: inherit;
+  font-size: 13px;
+  text-align: left;
+  cursor: pointer;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.ft-date-trigger:hover,
+.ft-date-trigger:focus-visible {
+  border-color: #4388e5;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(23, 101, 209, 0.09);
+}
+
+.ft-date-trigger.has-date {
+  color: #25354c;
+  font-weight: 650;
+}
+
+.ft-date-trigger svg {
+  flex-shrink: 0;
+  color: var(--ft-primary);
+}
+
+.ft-calendar-popup {
+  position: absolute;
+  z-index: 1000;
+  top: calc(100% + 10px);
+  left: 0;
+  width: min(100%, 340px);
+  min-width: 290px;
+  padding: 17px;
+  border: 1px solid #e1e9f4;
+  border-radius: 15px;
+  background: #ffffff;
+  box-shadow:
+    0 18px 45px rgba(20, 45, 85, 0.15),
+    0 3px 10px rgba(20, 45, 85, 0.04);
+  animation: ft-calendar-appear 0.18s ease-out;
+}
+
+@keyframes ft-calendar-appear {
+  from {
+    opacity: 0;
+    transform: translateY(-7px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.ft-calendar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 17px;
+}
+
+.ft-calendar-header > div {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.ft-calendar-header strong {
+  color: #192941;
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.ft-calendar-header small {
+  color: #8792a2;
+  font-size: 11px;
+}
+
+.ft-calendar-nav {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.ft-calendar-nav button {
+  display: grid;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  border: 1px solid #e2eaf5;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #42536b;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.ft-calendar-nav button:hover:not(:disabled) {
+  border-color: #b7d1f6;
+  background: #eef5ff;
+  color: var(--ft-primary);
+}
+
+.ft-calendar-nav button:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.ft-calendar-nav button:focus-visible,
+.ft-calendar-footer button:focus-visible,
+.ft-calendar-day:focus-visible {
+  outline: 3px solid rgba(23, 101, 209, 0.2);
+  outline-offset: 2px;
+}
+
+.ft-calendar-weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 4px;
+  margin-bottom: 7px;
+}
+
+.ft-calendar-weekdays span {
+  display: grid;
+  min-height: 29px;
+  place-items: center;
+  color: #8995a6;
+  font-size: 10px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.ft-calendar-days {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 4px;
+}
+
+.ft-calendar-day {
+  display: grid;
+  width: 100%;
+  aspect-ratio: 1;
+  min-width: 0;
+  place-items: center;
+  padding: 0;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  background: transparent;
+  color: #34445b;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 650;
+  cursor: pointer;
+  transition:
+    background 0.18s ease,
+    color 0.18s ease,
+    border-color 0.18s ease;
+}
+
+.ft-calendar-day:hover:not(:disabled):not(.ft-calendar-empty) {
+  border-color: #c6dcfa;
+  background: #edf5ff;
+  color: var(--ft-primary);
+}
+
+.ft-calendar-day.ft-calendar-today {
+  border-color: #b9d4f8;
+  background: #f0f6ff;
+  color: var(--ft-primary);
+  font-weight: 800;
+}
+
+.ft-calendar-day.ft-calendar-selected {
+  border-color: var(--ft-primary);
+  background: var(--ft-primary);
+  color: #ffffff;
+  font-weight: 800;
+}
+
+.ft-calendar-day.ft-calendar-past {
+  color: #c4ccd7;
+  cursor: not-allowed;
+  text-decoration: line-through;
+}
+
+.ft-calendar-day:disabled {
+  cursor: not-allowed;
+}
+
+.ft-calendar-empty {
+  cursor: default;
+}
+
+.ft-calendar-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 14px;
+  padding-top: 13px;
+  border-top: 1px solid #edf1f6;
+}
+
+.ft-calendar-footer span {
+  color: #8792a2;
+  font-size: 10px;
+}
+
+.ft-calendar-footer button {
+  min-height: 32px;
+  padding: 0 11px;
+  border: 1px solid #d6e6fc;
+  border-radius: 7px;
+  background: #f0f6ff;
+  color: var(--ft-primary);
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.ft-calendar-footer button:hover {
+  border-color: var(--ft-primary);
+  background: var(--ft-primary);
+  color: #ffffff;
+}
+
+/* =========================================
+   SUBMIT BUTTON & STATUS
+========================================= */
+
+.ft-submit-button {
+  display: flex;
+  width: 100%;
+  min-height: 54px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 9px;
+  background: linear-gradient(110deg, #1765d1, #2678e5);
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 800;
+  cursor: pointer;
+  transition:
+    background 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.25s ease;
+}
+
+.ft-submit-button:hover {
+  background: linear-gradient(110deg, #1053b4, #1765d1);
+  box-shadow: 0 8px 20px rgba(23, 101, 209, 0.2);
+  transform: translateY(-2px);
+}
+
+.ft-submit-button:active {
+  transform: translateY(0);
+}
+
+.ft-submit-button:focus-visible {
+  outline: 3px solid rgba(23, 101, 209, 0.25);
+  outline-offset: 3px;
+}
+
+.ft-submit-button svg {
+  flex-shrink: 0;
+}
+
+.ft-form-status {
+  margin: 17px 0 0;
+  padding: 13px 15px;
+  border: 1px solid #b9d5f9;
+  border-radius: 8px;
+  background: #eff6ff;
+  color: #174b88;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.ft-form-disclaimer {
+  margin: 17px 0 0;
+  color: #8792a2;
+  font-size: 11px;
+  line-height: 1.7;
+  text-align: center;
+}
+
+/* =========================================
+   SIDEBAR
+========================================= */
+
+.ft-form-sidebar {
+  display: grid;
+  gap: 18px;
+}
+
+.ft-sidebar-card,
+.ft-sidebar-contact {
+  padding: 27px 23px;
+  border: 1px solid #e5ebf3;
+  border-radius: 15px;
+  background: #ffffff;
+  box-shadow: 0 8px 25px rgba(30, 60, 100, 0.025);
+}
+
+.ft-sidebar-icon {
+  display: grid;
+  width: 53px;
+  height: 53px;
+  place-items: center;
+  border: 1px solid #dceaff;
+  border-radius: 14px;
+  background: #eaf2ff;
+  color: var(--ft-primary);
+}
+
+.ft-sidebar-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.ft-sidebar-card h3,
+.ft-sidebar-contact h3 {
+  margin: 20px 0 23px;
+  color: #192941;
+  font-size: 19px;
+  font-weight: 800;
+}
+
+.ft-sidebar-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-top: 19px;
+}
+
+.ft-sidebar-step > span {
+  display: grid;
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  place-items: center;
+  border-radius: 9px;
+  background: #eaf2ff;
+  color: var(--ft-primary);
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.ft-sidebar-step p {
+  margin: 3px 0 0;
+  color: #68778d;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.ft-sidebar-contact h3 {
+  margin-bottom: 10px;
+}
+
+.ft-sidebar-contact > p {
+  margin: 0 0 15px;
+  color: #738096;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.ft-sidebar-contact > a:not(.ft-contact-link) {
+  display: block;
+  color: var(--ft-primary);
+  font-size: 17px;
+  font-weight: 800;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.ft-sidebar-contact > a:not(.ft-contact-link):hover {
+  color: var(--ft-primary-dark);
+}
+
+.ft-contact-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 20px;
+  color: var(--ft-primary);
+  font-size: 13px;
+  font-weight: 800;
+  text-decoration: none;
+  transition: gap 0.2s ease;
+}
+
+.ft-contact-link:hover {
+  gap: 12px;
+}
+
+/* =========================================
+   TABLET RESPONSIVE
+========================================= */
+
+@media (max-width: 1000px) {
+  .ft-form-layout {
+    grid-template-columns: minmax(0, 1fr) 270px;
+    gap: 18px;
+  }
+
+  .ft-form {
+    padding: 28px;
+  }
+
+  .ft-info-grid {
+    gap: 15px;
+  }
+
+  .ft-info-card {
+    padding: 23px;
+  }
+
+  .ft-sidebar-card,
+  .ft-sidebar-contact {
+    padding: 23px 19px;
+  }
+}
+
+/* =========================================
+   MOBILE RESPONSIVE
+========================================= */
+
+@media (max-width: 760px) {
+  .ft-container {
+    width: min(100% - 36px, 540px);
+  }
+
+  .ft-hero {
+    min-height: auto;
+    padding: 70px 20px;
+  }
+
+  .ft-hero::before {
+    width: 300px;
+    height: 300px;
+    right: -100px;
+  }
+
+  .ft-hero::after {
+    width: 220px;
+    height: 220px;
+    right: 15%;
+  }
+
+  .ft-hero h1 {
+    font-size: clamp(35px, 9vw, 46px);
+    letter-spacing: -1.2px;
+  }
+
+  .ft-hero-content > p {
+    font-size: 14px;
+  }
+
+  .ft-hero-features {
+    gap: 13px 18px;
+  }
+
+  .ft-intro,
+  .ft-enquiry {
+    padding: 70px 0;
+  }
+
+  .ft-intro-content {
+    margin-bottom: 32px;
+  }
+
+  .ft-info-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .ft-info-card {
+    padding: 23px;
+  }
+
+  .ft-info-card h3 {
+    margin-top: 15px;
+  }
+
+  .ft-form-layout {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .ft-form-sidebar {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .ft-form-heading {
+    margin-bottom: 34px;
+  }
+
+  .ft-form {
+    padding: 25px 20px;
+  }
+
+  .ft-days-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .ft-calendar-popup {
+    width: min(100%, 340px);
+  }
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+  .ft-container {
+    width: calc(100% - 30px);
+  }
+
+  .ft-hero {
+    padding: 58px 17px;
+  }
+
+  .ft-eyebrow {
+    padding: 8px 12px;
+    font-size: 9px;
+    letter-spacing: 1.4px;
+  }
+
+  .ft-hero h1 {
+    margin-top: 20px;
+    font-size: 34px;
+    letter-spacing: -1px;
+  }
+
+  .ft-hero-content > p {
+    font-size: 13px;
+    line-height: 1.8;
+  }
+
+  .ft-hero-button {
+    min-height: 49px;
+    padding: 0 17px;
+    font-size: 13px;
+  }
+
+  .ft-hero-features {
+    gap: 12px 14px;
+  }
+
+  .ft-hero-features span {
+    font-size: 11px;
+  }
+
+  .ft-intro,
+  .ft-enquiry {
+    padding: 58px 0;
+  }
+
+  .ft-form-grid {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .ft-full-width {
+    grid-column: auto;
+  }
+
+  .ft-mode-options {
+    grid-template-columns: 1fr;
+  }
+
+  .ft-form-sidebar {
+    grid-template-columns: 1fr;
+  }
+
+  .ft-form {
+    padding: 22px 16px;
+    border-radius: 13px;
+  }
+
+  .ft-form-section-title {
+    gap: 11px;
+  }
+
+  .ft-form-section-icon {
+    width: 43px;
+    height: 43px;
+  }
+
+  .ft-form-section-title h3 {
+    font-size: 16px;
+  }
+
+  .ft-form-section-title p {
+    font-size: 11px;
+  }
+
+  .ft-intro-content h2,
+  .ft-form-heading h2 {
+    font-size: 30px;
+  }
+
+  .ft-intro-content > p,
+  .ft-form-heading > p {
+    font-size: 13px;
+  }
+
+  .ft-day-option span {
+    min-height: 40px;
+  }
+
+  .ft-calendar-popup {
+    left: 0;
+    width: 100%;
+    min-width: 0;
+    padding: 13px;
+  }
+
+  .ft-calendar-day {
+    font-size: 11px;
+    border-radius: 6px;
+  }
+
+  .ft-sidebar-card,
+  .ft-sidebar-contact {
+    padding: 23px 20px;
+  }
+}
+
+/* =========================================
+   EXTRA SMALL DEVICES
+========================================= */
+
+@media (max-width: 360px) {
+  .ft-container {
+    width: calc(100% - 24px);
+  }
+
+  .ft-hero h1 {
+    font-size: 31px;
+  }
+
+  .ft-form {
+    padding: 19px 13px;
+  }
+
+  .ft-days-grid {
+    gap: 6px;
+  }
+
+  .ft-day-option span {
+    font-size: 11px;
+  }
+
+  .ft-calendar-header strong {
+    font-size: 13px;
+  }
+
+  .ft-calendar-popup {
+    padding: 11px;
+  }
+}
+
+/* =========================================
+   REDUCED MOTION ACCESSIBILITY
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .find-tutor-page *,
+  .find-tutor-page *::before,
+  .find-tutor-page *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

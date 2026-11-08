@@ -1,0 +1,745 @@
+
+/* =========================================
+   BECOME A TEACHER PAGE
+========================================= */
+
+.become-teacher-page {
+  width: 100%;
+  overflow: hidden;
+  color: #17233d;
+  background: #ffffff;
+}
+
+.become-teacher-page * {
+  box-sizing: border-box;
+}
+
+.become-teacher-page a {
+  text-decoration: none;
+}
+
+.section-padding {
+  padding: 85px 7%;
+}
+
+/* =========================================
+   HERO SECTION
+========================================= */
+
+.teacher-hero {
+  min-height: 590px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 90px 7%;
+  background:
+    radial-gradient(circle at 85% 20%, rgba(48, 125, 226, 0.25), transparent 30%),
+    linear-gradient(120deg, #071b3b 0%, #102e5d 55%, #164b85 100%);
+  isolation: isolate;
+}
+
+.teacher-hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image: radial-gradient(
+    rgba(255, 255, 255, 0.12) 1px,
+    transparent 1px
+  );
+  background-size: 28px 28px;
+  opacity: 0.3;
+}
+
+.teacher-hero-content {
+  width: 100%;
+  max-width: 850px;
+  position: relative;
+  z-index: 1;
+}
+
+.teacher-eyebrow,
+.teacher-section-heading > span,
+.teacher-fee-content > span,
+.teacher-final-cta-content > span {
+  display: inline-block;
+  color: #f4b942;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  margin-bottom: 18px;
+}
+
+.teacher-hero-content h1 {
+  color: #ffffff;
+  font-size: clamp(38px, 5.2vw, 65px);
+  line-height: 1.13;
+  font-weight: 800;
+  letter-spacing: -1.5px;
+  margin: 0 0 22px;
+  max-width: 800px;
+}
+
+.teacher-hero-content h1 span {
+  display: block;
+  color: #f5bd50;
+}
+
+.teacher-hero-content > p {
+  max-width: 690px;
+  color: #e0eaf8;
+  font-size: 17px;
+  line-height: 1.85;
+  margin: 0 0 32px;
+}
+
+.teacher-hero-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.teacher-primary-btn,
+.teacher-secondary-btn {
+  min-height: 52px;
+  padding: 0 24px;
+  border-radius: 9px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 15px;
+  font-weight: 700;
+  transition: 0.3s ease;
+}
+
+.teacher-primary-btn {
+  background: #f5b942;
+  color: #10213b;
+  border: 2px solid #f5b942;
+}
+
+.teacher-primary-btn:hover {
+  background: #ffffff;
+  border-color: #ffffff;
+  color: #10213b;
+  transform: translateY(-3px);
+}
+
+.teacher-secondary-btn {
+  color: #ffffff;
+  border: 2px solid rgba(255, 255, 255, 0.65);
+  background: transparent;
+}
+
+.teacher-secondary-btn:hover {
+  background: #ffffff;
+  color: #10213b;
+  border-color: #ffffff;
+}
+
+.teacher-hero-note {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-top: 28px;
+  color: #dce9f9;
+  font-size: 13px;
+}
+
+/* =========================================
+   COMMON SECTION HEADING
+========================================= */
+
+.teacher-section-heading {
+  max-width: 760px;
+  margin: 0 auto 48px;
+  text-align: center;
+}
+
+.teacher-section-heading > span {
+  color: #d38a13;
+  margin-bottom: 12px;
+}
+
+.teacher-section-heading h2 {
+  color: #102746;
+  font-size: clamp(29px, 3.5vw, 42px);
+  line-height: 1.25;
+  font-weight: 800;
+  margin: 0 0 15px;
+}
+
+.teacher-section-heading h2 span {
+  color: #1765b5;
+}
+
+.teacher-section-heading > p {
+  color: #64748b;
+  font-size: 16px;
+  line-height: 1.8;
+  margin: 0;
+}
+
+/* =========================================
+   INTRODUCTION
+========================================= */
+
+.teacher-intro {
+  padding-top: 75px;
+  padding-bottom: 35px;
+}
+
+.teacher-intro .teacher-section-heading {
+  margin-bottom: 0;
+}
+
+/* =========================================
+   OPPORTUNITIES
+========================================= */
+
+.teacher-opportunities {
+  background: #f5f8fc;
+}
+
+.teacher-opportunity-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  max-width: 1150px;
+  margin: 0 auto;
+}
+
+.teacher-opportunity-card {
+  padding: 35px 28px;
+  border: 1px solid #e5edf6;
+  border-radius: 15px;
+  background: #ffffff;
+  box-shadow: 0 8px 28px rgba(22, 50, 85, 0.05);
+  transition: 0.3s ease;
+}
+
+.teacher-opportunity-card:hover {
+  transform: translateY(-7px);
+  border-color: #9bc5ef;
+  box-shadow: 0 15px 35px rgba(22, 50, 85, 0.1);
+}
+
+.teacher-card-icon,
+.teacher-benefit-icon {
+  width: 58px;
+  height: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #1765b5;
+  background: #eaf3ff;
+  border-radius: 13px;
+  margin-bottom: 22px;
+}
+
+.teacher-opportunity-card h3,
+.teacher-benefit-card h3 {
+  color: #142b4a;
+  font-size: 20px;
+  font-weight: 750;
+  margin: 0 0 12px;
+}
+
+.teacher-opportunity-card p,
+.teacher-benefit-card p {
+  color: #64748b;
+  font-size: 14px;
+  line-height: 1.8;
+  margin: 0;
+}
+
+/* =========================================
+   BENEFITS
+========================================= */
+
+.teacher-benefits {
+  background: #ffffff;
+}
+
+.teacher-benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.teacher-benefit-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 27px;
+  border: 1px solid #e6edf5;
+  border-radius: 13px;
+  background: #ffffff;
+  transition: 0.3s ease;
+}
+
+.teacher-benefit-card:hover {
+  border-color: #a7c9ed;
+  background: #f8fbff;
+  transform: translateY(-3px);
+}
+
+.teacher-benefit-icon {
+  flex-shrink: 0;
+  width: 52px;
+  height: 52px;
+  margin: 0;
+  border-radius: 12px;
+}
+
+.teacher-benefit-card h3 {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+/* =========================================
+   ELIGIBILITY
+========================================= */
+
+.teacher-eligibility {
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  align-items: center;
+  gap: 55px;
+  background: #f5f8fc;
+}
+
+.teacher-heading-left {
+  text-align: left;
+  margin: 0 0 30px;
+}
+
+.teacher-requirements-list {
+  display: flex;
+  flex-direction: column;
+  gap: 19px;
+}
+
+.teacher-requirement-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 13px;
+}
+
+.teacher-requirement-item svg {
+  flex-shrink: 0;
+  color: #16865b;
+  margin-top: 2px;
+}
+
+.teacher-requirement-item p {
+  color: #475569;
+  font-size: 15px;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.teacher-eligibility-visual {
+  padding: 42px 32px;
+  border-radius: 18px;
+  color: #ffffff;
+  background: linear-gradient(145deg, #102b52, #1765a8);
+  box-shadow: 0 18px 40px rgba(16, 43, 82, 0.15);
+}
+
+.teacher-visual-icon {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #f5bd50;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 22px;
+  margin-bottom: 27px;
+}
+
+.teacher-eligibility-visual h3 {
+  color: #ffffff;
+  font-size: 25px;
+  margin: 0 0 14px;
+}
+
+.teacher-eligibility-visual > p {
+  color: #dce9f8;
+  font-size: 14px;
+  line-height: 1.85;
+  margin: 0;
+}
+
+.teacher-visual-bottom {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-top: 22px;
+  margin-top: 25px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 650;
+}
+
+/* =========================================
+   APPLICATION PROCESS
+========================================= */
+
+.teacher-process {
+  background: #ffffff;
+}
+
+.teacher-process-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 22px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.teacher-process-card {
+  position: relative;
+  padding: 28px 23px;
+  border: 1px solid #e6edf5;
+  border-radius: 13px;
+  background: #ffffff;
+  transition: 0.3s ease;
+}
+
+.teacher-process-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(22, 50, 85, 0.08);
+}
+
+.teacher-step-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  color: #ffffff;
+  background: #1765b5;
+  border-radius: 12px;
+  font-size: 17px;
+  font-weight: 800;
+}
+
+.teacher-step-line {
+  width: 42px;
+  height: 3px;
+  background: #f2b743;
+  margin: 22px 0;
+}
+
+.teacher-process-card h3 {
+  color: #142b4a;
+  font-size: 17px;
+  line-height: 1.4;
+  margin: 0 0 11px;
+}
+
+.teacher-process-card p {
+  color: #64748b;
+  font-size: 13px;
+  line-height: 1.8;
+  margin: 0;
+}
+
+/* =========================================
+   REGISTRATION FEE
+========================================= */
+
+.teacher-fee-section {
+  background: #f5f8fc;
+}
+
+.teacher-fee-card {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 35px 40px;
+  display: flex;
+  align-items: center;
+  gap: 27px;
+  border: 1px solid #e2eaf4;
+  border-radius: 17px;
+  background: #ffffff;
+  box-shadow: 0 10px 30px rgba(22, 50, 85, 0.06);
+}
+
+.teacher-fee-icon {
+  width: 65px;
+  height: 65px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  background: #1765b5;
+  border-radius: 15px;
+}
+
+.teacher-fee-content {
+  flex: 1;
+}
+
+.teacher-fee-content > span {
+  color: #d38a13;
+  font-size: 11px;
+  margin-bottom: 8px;
+}
+
+.teacher-fee-content h2 {
+  color: #142b4a;
+  font-size: 25px;
+  margin: 0 0 9px;
+}
+
+.teacher-fee-content p {
+  color: #64748b;
+  font-size: 14px;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.teacher-fee-amount {
+  flex-shrink: 0;
+  color: #1765b5;
+  font-size: 42px;
+  font-weight: 850;
+  white-space: nowrap;
+}
+
+.teacher-fee-amount > span {
+  font-size: 25px;
+}
+
+.teacher-fee-amount small {
+  display: block;
+  color: #64748b;
+  font-size: 11px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.teacher-fee-note {
+  max-width: 1000px;
+  margin: 18px auto 0;
+  color: #64748b;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+/* =========================================
+   FINAL CTA
+========================================= */
+
+.teacher-final-cta {
+  background: linear-gradient(120deg, #071b3b, #164b85);
+  text-align: center;
+}
+
+.teacher-final-cta-content {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.teacher-final-cta-content > span {
+  color: #f5bd50;
+}
+
+.teacher-final-cta-content h2 {
+  color: #ffffff;
+  font-size: clamp(30px, 4vw, 44px);
+  line-height: 1.25;
+  margin: 0 0 17px;
+}
+
+.teacher-final-cta-content > p {
+  color: #dce9f8;
+  font-size: 15px;
+  line-height: 1.8;
+  margin: 0 auto 28px;
+}
+
+.teacher-final-cta-content > small {
+  display: block;
+  color: #dce9f8;
+  margin-top: 22px;
+  font-size: 13px;
+}
+
+.teacher-final-cta-content > small a {
+  color: #f5bd50;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+/* =========================================
+   RESPONSIVE DESIGN
+========================================= */
+
+@media (max-width: 1000px) {
+  .teacher-process-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .teacher-eligibility {
+    grid-template-columns: 1fr 0.8fr;
+    gap: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .section-padding {
+    padding: 65px 6%;
+  }
+
+  .teacher-hero {
+    min-height: auto;
+    padding: 90px 6%;
+  }
+
+  .teacher-hero-content h1 {
+    font-size: 43px;
+  }
+
+  .teacher-hero-content > p {
+    font-size: 15px;
+  }
+
+  .teacher-opportunity-grid {
+    grid-template-columns: 1fr;
+    gap: 17px;
+  }
+
+  .teacher-benefits-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .teacher-eligibility {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .teacher-heading-left {
+    text-align: center;
+  }
+
+  .teacher-fee-card {
+    flex-wrap: wrap;
+    padding: 28px;
+    gap: 20px;
+  }
+
+  .teacher-fee-amount {
+    width: 100%;
+    padding-top: 15px;
+    border-top: 1px solid #e6edf5;
+  }
+
+  .teacher-fee-amount small {
+    text-align: left;
+  }
+}
+
+@media (max-width: 520px) {
+  .section-padding {
+    padding: 55px 5%;
+  }
+
+  .teacher-hero {
+    padding: 75px 5%;
+  }
+
+  .teacher-eyebrow,
+  .teacher-section-heading > span,
+  .teacher-fee-content > span,
+  .teacher-final-cta-content > span {
+    font-size: 11px;
+    letter-spacing: 1.3px;
+  }
+
+  .teacher-hero-content h1 {
+    font-size: 35px;
+    letter-spacing: -0.8px;
+  }
+
+  .teacher-hero-content > p {
+    font-size: 14px;
+    line-height: 1.75;
+  }
+
+  .teacher-hero-actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .teacher-primary-btn,
+  .teacher-secondary-btn {
+    width: 100%;
+    min-height: 50px;
+  }
+
+  .teacher-hero-note {
+    align-items: flex-start;
+    font-size: 12px;
+    line-height: 1.6;
+  }
+
+  .teacher-section-heading h2 {
+    font-size: 29px;
+  }
+
+  .teacher-section-heading > p {
+    font-size: 14px;
+  }
+
+  .teacher-opportunity-card {
+    padding: 27px 23px;
+  }
+
+  .teacher-benefit-card {
+    padding: 22px 18px;
+    gap: 14px;
+  }
+
+  .teacher-benefit-card h3 {
+    font-size: 16px;
+  }
+
+  .teacher-benefit-card p {
+    font-size: 13px;
+  }
+
+  .teacher-process-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .teacher-process-card {
+    padding: 24px;
+  }
+
+  .teacher-fee-card {
+    padding: 24px 20px;
+  }
+
+  .teacher-fee-content h2 {
+    font-size: 22px;
+  }
+
+  .teacher-fee-amount {
+    font-size: 38px;
+  }
+
+  .teacher-final-cta-content h2 {
+    font-size: 31px;
+  }
+}

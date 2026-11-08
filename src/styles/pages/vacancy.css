@@ -1,0 +1,787 @@
+
+/* =========================================
+   VACANCY PAGE
+========================================= */
+
+.vacancy-page {
+  width: 100%;
+  overflow: hidden;
+  color: #17233d;
+  background: #ffffff;
+}
+
+.vacancy-page * {
+  box-sizing: border-box;
+}
+
+.vacancy-page a {
+  text-decoration: none;
+}
+
+.vacancy-page .section-padding {
+  padding: 85px 7%;
+}
+
+/* =========================================
+   HERO SECTION
+========================================= */
+
+.vacancy-hero {
+  position: relative;
+  min-height: 560px;
+  display: flex;
+  align-items: center;
+  padding: 85px 7%;
+  background:
+    radial-gradient(circle at 85% 18%, rgba(67, 145, 226, 0.25), transparent 30%),
+    linear-gradient(120deg, #071b3b 0%, #102e5d 55%, #164b85 100%);
+  isolation: isolate;
+}
+
+.vacancy-hero-pattern {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  opacity: 0.28;
+  background-image: radial-gradient(
+    rgba(255, 255, 255, 0.14) 1px,
+    transparent 1px
+  );
+  background-size: 28px 28px;
+}
+
+.vacancy-hero-content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 850px;
+}
+
+.vacancy-eyebrow,
+.vacancy-section-heading > span,
+.vacancy-fee-text > span,
+.vacancy-cta-content > span {
+  display: inline-block;
+  margin-bottom: 17px;
+  color: #f5bd50;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 1.8px;
+}
+
+.vacancy-hero-content h1 {
+  max-width: 800px;
+  margin: 0 0 22px;
+  color: #ffffff;
+  font-size: clamp(39px, 5.2vw, 64px);
+  font-weight: 800;
+  line-height: 1.13;
+  letter-spacing: -1.4px;
+}
+
+.vacancy-hero-content h1 span {
+  display: block;
+  color: #f5bd50;
+}
+
+.vacancy-hero-content > p {
+  max-width: 690px;
+  margin: 0 0 30px;
+  color: #e0eaf8;
+  font-size: 16px;
+  line-height: 1.85;
+}
+
+.vacancy-hero-actions,
+.vacancy-cta-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 15px;
+}
+
+.vacancy-primary-btn,
+.vacancy-outline-btn,
+.vacancy-contact-btn {
+  min-height: 52px;
+  padding: 0 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border: 2px solid transparent;
+  border-radius: 9px;
+  font-size: 15px;
+  font-weight: 700;
+  transition: 0.3s ease;
+}
+
+.vacancy-primary-btn {
+  color: #10213b;
+  background: #f5bd50;
+  border-color: #f5bd50;
+}
+
+.vacancy-primary-btn:hover {
+  color: #10213b;
+  background: #ffffff;
+  border-color: #ffffff;
+  transform: translateY(-3px);
+}
+
+.vacancy-outline-btn {
+  color: #ffffff;
+  background: transparent;
+  border-color: rgba(255, 255, 255, 0.65);
+}
+
+.vacancy-outline-btn:hover {
+  color: #10213b;
+  background: #ffffff;
+  border-color: #ffffff;
+}
+
+.vacancy-hero-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.vacancy-hero-info span {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: #e0eaf8;
+  font-size: 13px;
+}
+
+/* =========================================
+   COMMON SECTION HEADING
+========================================= */
+
+.vacancy-section-heading {
+  max-width: 760px;
+  margin: 0 auto 48px;
+  text-align: center;
+}
+
+.vacancy-section-heading > span {
+  margin-bottom: 12px;
+  color: #d38a13;
+}
+
+.vacancy-section-heading h2 {
+  margin: 0 0 15px;
+  color: #102746;
+  font-size: clamp(29px, 3.5vw, 42px);
+  font-weight: 800;
+  line-height: 1.25;
+}
+
+.vacancy-section-heading > p {
+  margin: 0;
+  color: #64748b;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+/* =========================================
+   INTRODUCTION
+========================================= */
+
+.vacancy-intro {
+  padding-top: 75px !important;
+  padding-bottom: 35px !important;
+}
+
+.vacancy-intro .vacancy-section-heading {
+  margin-bottom: 0;
+}
+
+/* =========================================
+   OPPORTUNITY CARDS
+========================================= */
+
+.vacancy-opportunities {
+  background: #f5f8fc;
+}
+
+.vacancy-card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  max-width: 1150px;
+  margin: 0 auto;
+}
+
+.vacancy-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 32px;
+  border: 1px solid #e4ebf4;
+  border-radius: 15px;
+  background: #ffffff;
+  box-shadow: 0 8px 28px rgba(22, 50, 85, 0.045);
+  transition: 0.3s ease;
+}
+
+.vacancy-card:hover {
+  transform: translateY(-6px);
+  border-color: #9bc5ef;
+  box-shadow: 0 15px 35px rgba(22, 50, 85, 0.09);
+}
+
+.vacancy-card-icon {
+  width: 58px;
+  height: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 22px;
+  color: #1765b5;
+  background: #eaf3ff;
+  border-radius: 13px;
+}
+
+.vacancy-card h3 {
+  margin: 0 0 12px;
+  color: #142b4a;
+  font-size: 21px;
+  font-weight: 750;
+}
+
+.vacancy-card > p {
+  margin: 0 0 20px;
+  color: #64748b;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.vacancy-card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-bottom: 24px;
+}
+
+.vacancy-card-tags span {
+  padding: 7px 11px;
+  color: #24588c;
+  background: #edf5ff;
+  border: 1px solid #dceafa;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 650;
+}
+
+.vacancy-card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: auto;
+  color: #1765b5;
+  font-size: 14px;
+  font-weight: 750;
+  transition: 0.2s ease;
+}
+
+.vacancy-card-link:hover {
+  color: #0c3d73;
+  gap: 13px;
+}
+
+/* =========================================
+   TEACHING MODES
+========================================= */
+
+.vacancy-modes {
+  background: #ffffff;
+}
+
+.vacancy-mode-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.vacancy-mode-card {
+  padding: 35px;
+  border: 1px solid #e4ebf4;
+  border-radius: 15px;
+  background: #ffffff;
+  transition: 0.3s ease;
+}
+
+.vacancy-mode-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 32px rgba(22, 50, 85, 0.08);
+}
+
+.vacancy-mode-icon {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 21px;
+  color: #1765b5;
+  background: #eaf3ff;
+  border-radius: 14px;
+}
+
+.vacancy-mode-card h3 {
+  margin: 0 0 12px;
+  color: #142b4a;
+  font-size: 21px;
+}
+
+.vacancy-mode-card p {
+  margin: 0;
+  color: #64748b;
+  font-size: 14px;
+  line-height: 1.85;
+}
+
+/* =========================================
+   REQUIREMENTS
+========================================= */
+
+.vacancy-requirements {
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  align-items: center;
+  gap: 50px;
+  background: #f5f8fc;
+}
+
+.vacancy-heading-left {
+  margin: 0 0 30px;
+  text-align: left;
+}
+
+.vacancy-requirements-list {
+  display: flex;
+  flex-direction: column;
+  gap: 19px;
+}
+
+.vacancy-requirement {
+  display: flex;
+  align-items: flex-start;
+  gap: 13px;
+}
+
+.vacancy-requirement svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: #16865b;
+}
+
+.vacancy-requirement p {
+  margin: 0;
+  color: #475569;
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+.vacancy-requirements-side {
+  padding: 38px 30px;
+  color: #ffffff;
+  background: linear-gradient(145deg, #102b52, #1765a8);
+  border-radius: 18px;
+  box-shadow: 0 18px 40px rgba(16, 43, 82, 0.14);
+}
+
+.vacancy-side-icon {
+  width: 75px;
+  height: 75px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 25px;
+  color: #f5bd50;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 17px;
+}
+
+.vacancy-requirements-side h3 {
+  margin: 0 0 13px;
+  color: #ffffff;
+  font-size: 23px;
+}
+
+.vacancy-requirements-side > p {
+  margin: 0;
+  color: #dce9f8;
+  font-size: 14px;
+  line-height: 1.85;
+}
+
+.vacancy-side-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding-top: 20px;
+  margin-top: 22px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+/* =========================================
+   APPLICATION PROCESS
+========================================= */
+
+.vacancy-process {
+  background: #ffffff;
+}
+
+.vacancy-process-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.vacancy-process-card {
+  padding: 27px 22px;
+  border: 1px solid #e5edf6;
+  border-radius: 13px;
+  background: #ffffff;
+  transition: 0.3s ease;
+}
+
+.vacancy-process-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(22, 50, 85, 0.08);
+}
+
+.vacancy-process-number {
+  width: 48px;
+  height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 22px;
+  color: #ffffff;
+  background: #1765b5;
+  border-radius: 12px;
+  font-size: 17px;
+  font-weight: 800;
+}
+
+.vacancy-process-card h3 {
+  margin: 0 0 11px;
+  color: #142b4a;
+  font-size: 17px;
+  line-height: 1.45;
+}
+
+.vacancy-process-card p {
+  margin: 0;
+  color: #64748b;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+/* =========================================
+   REGISTRATION FEE
+========================================= */
+
+.vacancy-fee {
+  background: #f5f8fc;
+}
+
+.vacancy-fee-card {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 34px 38px;
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  border: 1px solid #e2eaf4;
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 10px 30px rgba(22, 50, 85, 0.055);
+}
+
+.vacancy-fee-icon {
+  width: 64px;
+  height: 64px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  background: #1765b5;
+  border-radius: 15px;
+}
+
+.vacancy-fee-text {
+  flex: 1;
+}
+
+.vacancy-fee-text > span {
+  margin-bottom: 8px;
+  color: #d38a13;
+  font-size: 11px;
+}
+
+.vacancy-fee-text h2 {
+  margin: 0 0 9px;
+  color: #142b4a;
+  font-size: 25px;
+}
+
+.vacancy-fee-text p {
+  margin: 0;
+  color: #64748b;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.vacancy-fee-btn {
+  min-height: 49px;
+  padding: 0 19px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  flex-shrink: 0;
+  color: #ffffff;
+  background: #1765b5;
+  border: 2px solid #1765b5;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  transition: 0.3s ease;
+}
+
+.vacancy-fee-btn:hover {
+  color: #1765b5;
+  background: #ffffff;
+}
+
+.vacancy-fee-disclaimer {
+  max-width: 1100px;
+  margin: 17px auto 0;
+  color: #64748b;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+/* =========================================
+   FINAL CTA
+========================================= */
+
+.vacancy-cta {
+  text-align: center;
+  background: linear-gradient(120deg, #071b3b, #164b85);
+}
+
+.vacancy-cta-content {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.vacancy-cta-content > svg {
+  display: block;
+  margin: 0 auto 22px;
+  color: #f5bd50;
+}
+
+.vacancy-cta-content > span {
+  color: #f5bd50;
+}
+
+.vacancy-cta-content h2 {
+  margin: 0 0 17px;
+  color: #ffffff;
+  font-size: clamp(30px, 4vw, 43px);
+  line-height: 1.25;
+}
+
+.vacancy-cta-content > p {
+  max-width: 650px;
+  margin: 0 auto 28px;
+  color: #dce9f8;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.vacancy-cta-actions {
+  justify-content: center;
+}
+
+.vacancy-contact-btn {
+  color: #ffffff;
+  background: transparent;
+  border-color: rgba(255, 255, 255, 0.65);
+}
+
+.vacancy-contact-btn:hover {
+  color: #10213b;
+  background: #ffffff;
+  border-color: #ffffff;
+}
+
+/* =========================================
+   RESPONSIVE DESIGN
+========================================= */
+
+@media (max-width: 1000px) {
+  .vacancy-process-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .vacancy-requirements {
+    grid-template-columns: 1fr 0.8fr;
+    gap: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .vacancy-page .section-padding {
+    padding: 65px 6%;
+  }
+
+  .vacancy-hero {
+    min-height: auto;
+    padding: 85px 6%;
+  }
+
+  .vacancy-hero-content h1 {
+    font-size: 43px;
+  }
+
+  .vacancy-hero-content > p {
+    font-size: 15px;
+  }
+
+  .vacancy-card-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .vacancy-mode-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .vacancy-requirements {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .vacancy-heading-left {
+    text-align: center;
+  }
+
+  .vacancy-fee-card {
+    flex-wrap: wrap;
+    padding: 28px;
+  }
+
+  .vacancy-fee-btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 520px) {
+  .vacancy-page .section-padding {
+    padding: 55px 5%;
+  }
+
+  .vacancy-hero {
+    padding: 75px 5%;
+  }
+
+  .vacancy-eyebrow,
+  .vacancy-section-heading > span,
+  .vacancy-fee-text > span,
+  .vacancy-cta-content > span {
+    font-size: 11px;
+    letter-spacing: 1.2px;
+  }
+
+  .vacancy-hero-content h1 {
+    font-size: 35px;
+    letter-spacing: -0.7px;
+  }
+
+  .vacancy-hero-content > p {
+    font-size: 14px;
+    line-height: 1.75;
+  }
+
+  .vacancy-hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .vacancy-primary-btn,
+  .vacancy-outline-btn {
+    width: 100%;
+  }
+
+  .vacancy-hero-info {
+    flex-direction: column;
+    gap: 13px;
+  }
+
+  .vacancy-section-heading h2 {
+    font-size: 28px;
+  }
+
+  .vacancy-section-heading > p {
+    font-size: 14px;
+  }
+
+  .vacancy-card {
+    padding: 26px 22px;
+  }
+
+  .vacancy-mode-card {
+    padding: 27px 23px;
+  }
+
+  .vacancy-process-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .vacancy-process-card {
+    padding: 24px;
+  }
+
+  .vacancy-requirements-side {
+    padding: 30px 24px;
+  }
+
+  .vacancy-fee-card {
+    padding: 24px 20px;
+    gap: 18px;
+  }
+
+  .vacancy-fee-text h2 {
+    font-size: 22px;
+  }
+
+  .vacancy-cta-content h2 {
+    font-size: 30px;
+  }
+
+  .vacancy-cta-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .vacancy-contact-btn {
+    width: 100%;
+  }
+}

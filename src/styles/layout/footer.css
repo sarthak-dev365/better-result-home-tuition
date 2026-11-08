@@ -1,0 +1,382 @@
+/* ================================
+   Main Footer
+================================ */
+
+.site-footer {
+  width: 100%;
+  padding: 70px 24px 0;
+  color: #d6e2ef;
+  background: linear-gradient(135deg, #10243d 0%, #0b1b30 100%);
+  box-sizing: border-box;
+}
+
+.footer-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ================================
+   Footer Main Layout
+================================ */
+
+.footer-main {
+  display: grid;
+  grid-template-columns: 1.35fr 0.85fr 0.95fr 1.25fr;
+  gap: 42px;
+  padding-bottom: 52px;
+}
+
+.footer-about {
+  max-width: 330px;
+}
+
+/* ================================
+   Footer Logo
+================================ */
+
+.footer-logo {
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: 18px;
+  text-decoration: none;
+}
+
+.footer-logo-image {
+  display: block;
+  width: 190px;
+  height: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.footer-logo:hover .footer-logo-image {
+  transform: translateY(-2px);
+}
+
+/* ================================
+   About Description
+================================ */
+
+.footer-about > p {
+  margin: 0 0 23px;
+  color: #bdccdc;
+  font-size: 14px;
+  line-height: 1.85;
+}
+
+/* ================================
+   WhatsApp Button
+================================ */
+
+.footer-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  padding: 12px 16px;
+  color: #ffffff;
+  background: #159b63;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.footer-whatsapp:hover {
+  color: #ffffff;
+  background: #108553;
+  transform: translateY(-3px);
+  box-shadow: 0 7px 18px rgba(21, 155, 99, 0.22);
+}
+
+.footer-whatsapp:active {
+  transform: translateY(-1px);
+}
+
+/* ================================
+   Footer Links
+================================ */
+
+.footer-links h3,
+.footer-contact h3 {
+  margin: 5px 0 22px;
+  color: #ffffff;
+  font-size: 17px;
+  font-weight: 750;
+  line-height: 1.4;
+}
+
+.footer-links ul {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.footer-links a {
+  display: inline-block;
+  color: #bdccdc;
+  font-size: 13px;
+  line-height: 1.5;
+  text-decoration: none;
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.footer-links a:hover {
+  color: #ffffff;
+  transform: translateX(4px);
+}
+
+/* ================================
+   Contact Information
+================================ */
+
+.footer-contact {
+  min-width: 0;
+}
+
+.footer-contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 19px;
+  color: #bdccdc;
+  font-size: 13px;
+  line-height: 1.8;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+  transition: color 0.2s ease;
+}
+
+.footer-contact-item svg {
+  flex-shrink: 0;
+  margin-top: 3px;
+  color: #43aaf0;
+  transition: transform 0.2s ease;
+}
+
+a.footer-contact-item:hover {
+  color: #ffffff;
+}
+
+a.footer-contact-item:hover svg {
+  transform: translateY(-2px);
+}
+
+/* ================================
+   Footer Bottom
+================================ */
+
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 18px;
+  padding: 22px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.13);
+}
+
+.footer-bottom > p {
+  margin: 0;
+  color: #aebfd1;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+/* ================================
+   Developer Credit
+================================ */
+
+.br-footer-credit-label {
+  display: inline-block;
+  margin-left: 5px;
+  color: #aebfd1;
+}
+
+.br-footer-developer-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-left: 5px;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 650;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.br-footer-developer-link svg {
+  flex-shrink: 0;
+}
+
+.br-footer-developer-link:hover {
+  color: #43aaf0;
+}
+
+/* ================================
+   Legal Links
+================================ */
+
+.footer-legal-links {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 22px;
+}
+
+.footer-legal-links a {
+  color: #bdccdc;
+  font-size: 12px;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-legal-links a:hover {
+  color: #ffffff;
+}
+
+/* ================================
+   Keyboard Accessibility
+================================ */
+
+.site-footer a:focus-visible {
+  outline: 2px solid #43aaf0;
+  outline-offset: 4px;
+  border-radius: 3px;
+}
+
+/* ================================
+   Tablet Responsive
+================================ */
+
+@media (max-width: 1000px) {
+  .footer-main {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 38px 30px;
+  }
+
+  .footer-about {
+    max-width: 380px;
+  }
+
+  .footer-contact {
+    max-width: 380px;
+  }
+
+  .footer-bottom {
+    align-items: flex-start;
+  }
+}
+
+/* ================================
+   Mobile Responsive
+================================ */
+
+@media (max-width: 600px) {
+  .site-footer {
+    padding: 52px 20px 0;
+  }
+
+  .footer-main {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding-bottom: 35px;
+  }
+
+  .footer-about {
+    max-width: 100%;
+  }
+
+  .footer-logo-image {
+    width: 175px;
+  }
+
+  .footer-about > p {
+    font-size: 13px;
+    line-height: 1.8;
+  }
+
+  .footer-links h3,
+  .footer-contact h3 {
+    margin-bottom: 16px;
+    font-size: 16px;
+  }
+
+  .footer-links ul {
+    gap: 12px;
+  }
+
+  .footer-contact-item {
+    font-size: 13px;
+  }
+
+  .footer-bottom {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 14px;
+    padding: 20px 0;
+  }
+
+  .footer-bottom > p {
+    font-size: 11px;
+  }
+
+  .footer-legal-links {
+    gap: 12px 18px;
+  }
+
+  .footer-legal-links a {
+    font-size: 11px;
+  }
+}
+
+/* ================================
+   Small Mobile Devices
+================================ */
+
+@media (max-width: 380px) {
+  .site-footer {
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+
+  .footer-whatsapp {
+    padding: 11px 12px;
+    font-size: 12px;
+  }
+
+  .footer-legal-links {
+    gap: 12px;
+  }
+
+  .br-footer-credit-label,
+  .br-footer-developer-link {
+    margin-left: 2px;
+  }
+}
+
+/* ================================
+   Reduced Motion
+================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .site-footer *,
+  .site-footer *::before,
+  .site-footer *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

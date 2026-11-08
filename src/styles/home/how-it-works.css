@@ -1,0 +1,373 @@
+/* =========================================
+   HOW IT WORKS SECTION
+========================================= */
+
+.how-section {
+  position: relative;
+  width: 100%;
+  padding: 90px 24px 100px;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+.how-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* =========================================
+   SECTION HEADING
+========================================= */
+
+.how-heading {
+  max-width: 750px;
+  margin: 0 auto 65px;
+  text-align: center;
+}
+
+.how-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 8px 17px;
+  margin-bottom: 17px;
+
+  color: #28558b;
+  background: #eaf2ff;
+  border-radius: 30px;
+
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.how-heading h2 {
+  margin: 0;
+  color: #142b49;
+
+  font-size: clamp(31px, 3.6vw, 44px);
+  line-height: 1.2;
+  font-weight: 800;
+  letter-spacing: -1.2px;
+}
+
+.how-heading h2 span {
+  color: #e97822;
+}
+
+.how-heading p {
+  max-width: 580px;
+  margin: 16px auto 0;
+
+  color: #718096;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+/* =========================================
+   STEPS LAYOUT
+========================================= */
+
+.how-steps {
+  position: relative;
+
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 25px;
+}
+
+/* Horizontal connecting line */
+
+.how-connector {
+  position: absolute;
+  top: 38px;
+  left: 16.66%;
+  right: 16.66%;
+
+  height: 2px;
+
+  background: linear-gradient(
+    90deg,
+    #dce8f7,
+    #dce8f7 50%,
+    #dce8f7
+  );
+}
+
+/* =========================================
+   INDIVIDUAL STEP
+========================================= */
+
+.how-step {
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  min-width: 0;
+  text-align: center;
+}
+
+/* =========================================
+   ICON AND NUMBER
+========================================= */
+
+.how-step-visual {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 78px;
+  height: 78px;
+  margin-bottom: 23px;
+
+  background: #ffffff;
+  border: 1px solid #e9edf4;
+  border-radius: 50%;
+}
+
+.how-step-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 60px;
+  height: 60px;
+
+  color: var(--step-color);
+  background: var(--step-light);
+  border-radius: 50%;
+
+  transition:
+    transform 0.3s ease,
+    color 0.3s ease,
+    background 0.3s ease;
+}
+
+.how-step:hover .how-step-icon {
+  color: #ffffff;
+  background: var(--step-color);
+  transform: scale(1.06);
+}
+
+.how-step-number {
+  position: absolute;
+  top: -5px;
+  right: -7px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 29px;
+  height: 29px;
+
+  color: #ffffff;
+  background: var(--step-color);
+  border: 3px solid #ffffff;
+  border-radius: 50%;
+
+  font-size: 9px;
+  font-weight: 800;
+}
+
+/* =========================================
+   STEP COLORS
+========================================= */
+
+.how-blue {
+  --step-color: #3474e9;
+  --step-light: #edf4ff;
+}
+
+.how-green {
+  --step-color: #16a36a;
+  --step-light: #eaf8f1;
+}
+
+.how-orange {
+  --step-color: #ed791f;
+  --step-light: #fff2e8;
+}
+
+/* =========================================
+   STEP CONTENT
+========================================= */
+
+.how-step-content {
+  max-width: 310px;
+}
+
+.how-step-content h3 {
+  margin: 0 0 11px;
+
+  color: #172e4b;
+
+  font-size: 19px;
+  font-weight: 750;
+  line-height: 1.4;
+}
+
+.how-step-content p {
+  margin: 0;
+
+  color: #718096;
+
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 768px) {
+  .how-section {
+    padding: 75px 22px 80px;
+  }
+
+  .how-heading {
+    margin-bottom: 50px;
+  }
+
+  .how-steps {
+    gap: 15px;
+  }
+
+  .how-step-content h3 {
+    font-size: 17px;
+  }
+
+  .how-step-content p {
+    font-size: 13px;
+  }
+}
+
+/* =========================================
+   MOBILE - VERTICAL TIMELINE
+========================================= */
+
+@media (max-width: 600px) {
+  .how-section {
+    padding: 60px 19px 70px;
+  }
+
+  .how-heading {
+    margin-bottom: 40px;
+  }
+
+  .how-heading h2 {
+    font-size: 29px;
+  }
+
+  .how-heading p {
+    font-size: 13px;
+  }
+
+  .how-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .how-connector {
+    top: 39px;
+    bottom: 39px;
+    left: 37px;
+    right: auto;
+
+    width: 2px;
+    height: auto;
+    background: #dce8f7;
+  }
+
+  .how-step {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 20px;
+
+    padding-bottom: 32px;
+    text-align: left;
+  }
+
+  .how-step:last-child {
+    padding-bottom: 0;
+  }
+
+  .how-step-visual {
+    flex-shrink: 0;
+
+    width: 76px;
+    height: 76px;
+    margin-bottom: 0;
+  }
+
+  .how-step-icon {
+    width: 57px;
+    height: 57px;
+  }
+
+  .how-step-content {
+    max-width: none;
+    padding-top: 10px;
+  }
+
+  .how-step-content h3 {
+    margin-bottom: 7px;
+    font-size: 17px;
+  }
+
+  .how-step-content p {
+    font-size: 13px;
+    line-height: 1.7;
+  }
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 360px) {
+  .how-section {
+    padding-right: 14px;
+    padding-left: 14px;
+  }
+
+  .how-step {
+    gap: 15px;
+  }
+
+  .how-step-visual {
+    width: 68px;
+    height: 68px;
+  }
+
+  .how-step-icon {
+    width: 51px;
+    height: 51px;
+  }
+
+  .how-connector {
+    left: 33px;
+  }
+}
+
+/* =========================================
+   ACCESSIBILITY
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .how-step-icon {
+    transition: none;
+  }
+
+  .how-step:hover .how-step-icon {
+    transform: none;
+  }
+}
