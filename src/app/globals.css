@@ -1,68 +1,115 @@
+
+/* =========================================
+   GLOBAL ROOT SETTINGS
+========================================= */
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
+
+  color-scheme: light;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* =========================================
+   UNIVERSAL RESET
+========================================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
+
+/* =========================================
+   HTML
+========================================= */
 
 html {
-  height: 100%;
-}
-
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-body {
+  width: 100%;
   min-height: 100%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+/* =========================================
+   BODY
+========================================= */
+
+body {
+  width: 100%;
+  min-height: 100vh;
+
   display: flex;
   flex-direction: column;
+
+  overflow-x: hidden;
+
   color: var(--foreground);
   background: var(--background);
+
   font-family: Arial, Helvetica, sans-serif;
+
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+/* =========================================
+   MAIN CONTENT
+========================================= */
+
+main {
+  flex: 1;
+  width: 100%;
+  min-width: 0;
 }
+
+/* =========================================
+   LINKS
+========================================= */
 
 a {
   color: inherit;
   text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
+/* =========================================
+   FORM ELEMENTS
+========================================= */
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+/* =========================================
+   MEDIA ELEMENTS
+========================================= */
+
+img,
+video,
+svg {
+  max-width: 100%;
+}
+
+/* =========================================
+   ACCESSIBILITY
+========================================= */
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
   html {
-    color-scheme: dark;
+    scroll-behavior: auto;
   }
-}
-
-
-html,
-body {
-  width: 100%;
-  min-height: 100%;
-  margin: 0;
-  padding: 0;
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-body {
-  overflow-x: hidden;
 }

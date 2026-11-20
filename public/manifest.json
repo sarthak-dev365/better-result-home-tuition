@@ -1,0 +1,11 @@
+{
+  "name": "Better Result Home Tuition",
+  "short_name": "Better Result",
+  "description": "Home and online tuition support for Classes 1–12.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#123f70",
+  "lang": "en-IN",
+  "icons": []
+}

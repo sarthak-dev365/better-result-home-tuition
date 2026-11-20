@@ -60,7 +60,7 @@ export default function TrustUs() {
     <section className="trust-section">
       <div className="trust-container">
         <div className="trust-heading">
-          <span className="trust-eyebrow">WHY CHOOSE US</span>
+          <span className="trust-eyebrow">WHY PARENTS TRUST US</span>
 
           <h2>
             A Better Learning Experience

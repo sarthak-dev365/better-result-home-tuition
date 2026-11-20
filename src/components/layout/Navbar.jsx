@@ -4,8 +4,8 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+
 import {
-  ChevronDown,
   Menu,
   X,
   ArrowUpRight,
@@ -13,37 +13,24 @@ import {
 
 import "@/styles/layout/navbar.css";
 
-const serviceLinks = [
-  { label: "All Services", href: "/services" },
-  { label: "Home Tuition", href: "/home-tuition" },
-  { label: "Online Tuition", href: "/online-tuition" },
-];
-
 const navigationLinks = [
   { label: "Home", href: "/" },
-  { label: "About", href: "/about" },
+  { label: "About Us", href: "/about" },
+  { label: "Our Services", href: "/services" },
   { label: "Find a Tutor", href: "/find-a-tutor" },
   { label: "Become a Teacher", href: "/become-a-teacher" },
-  { label: "Vacancy", href: "/vacancy" },
-  { label: "Contact", href: "/contact" },
+  { label: "Contact Us", href: "/contact" },
 ];
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [servicesOpen, setServicesOpen] = useState(false);
 
   const closeMenu = () => {
     setMenuOpen(false);
-    setServicesOpen(false);
   };
 
   const toggleMenu = () => {
     setMenuOpen((previous) => !previous);
-    setServicesOpen(false);
-  };
-
-  const toggleServices = () => {
-    setServicesOpen((previous) => !previous);
   };
 
   useEffect(() => {
@@ -55,12 +42,13 @@ export default function Navbar() {
 
     const handleResize = () => {
       if (window.innerWidth > 1100) {
-        setMenuOpen(false);
-        setServicesOpen(false);
+        closeMenu();
       }
     };
 
-    if (menuOpen) {
+    const previousOverflow = document.body.style.overflow;
+
+    if (menuOpen && window.innerWidth <= 1100) {
       document.body.style.overflow = "hidden";
     }
 
@@ -68,7 +56,7 @@ export default function Navbar() {
     window.addEventListener("resize", handleResize);
 
     return () => {
-      document.body.style.overflow = "";
+      document.body.style.overflow = previousOverflow;
       document.removeEventListener("keydown", handleEscape);
       window.removeEventListener("resize", handleResize);
     };
@@ -77,6 +65,9 @@ export default function Navbar() {
   return (
     <header className="site-header">
       <nav className="navbar" aria-label="Main navigation">
+
+        {/* LOGO */}
+
         <Link
           href="/"
           className="navbar-brand"
@@ -93,6 +84,8 @@ export default function Navbar() {
             sizes="(max-width: 480px) 155px, (max-width: 1100px) 180px, 200px"
           />
         </Link>
+
+        {/* MOBILE MENU BUTTON */}
 
         <button
           type="button"
@@ -113,12 +106,15 @@ export default function Navbar() {
           )}
         </button>
 
+        {/* NAVIGATION */}
+
         <div
           id="navbar-navigation"
           className={`navbar-navigation ${menuOpen ? "is-open" : ""}`}
         >
           <div className="navbar-links">
-            {navigationLinks.slice(0, 2).map((link) => (
+
+            {navigationLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
@@ -129,84 +125,18 @@ export default function Navbar() {
               </Link>
             ))}
 
-            <div
-              className={`nav-dropdown ${
-                servicesOpen ? "dropdown-active" : ""
-              }`}
-            >
-              <button
-                type="button"
-                className="nav-link dropdown-trigger"
-                onClick={toggleServices}
-                aria-expanded={servicesOpen}
-                aria-haspopup="true"
-              >
-                <span>Our Services</span>
-
-                <ChevronDown
-                  size={16}
-                  strokeWidth={2}
-                  className="dropdown-arrow"
-                />
-              </button>
-
-              <div className="dropdown-menu">
-                <div className="dropdown-heading">
-                  <span>OUR SERVICES</span>
-                  <span className="dropdown-heading-line" />
-                </div>
-
-                {serviceLinks.map((service) => (
-                  <Link
-                    key={service.href}
-                    href={service.href}
-                    className="dropdown-link"
-                    onClick={closeMenu}
-                  >
-                    <span>{service.label}</span>
-
-                    <ArrowUpRight
-                      size={15}
-                      className="dropdown-item-icon"
-                    />
-                  </Link>
-                ))}
-              </div>
-            </div>
-
-            {navigationLinks.slice(2).map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="nav-link"
-                onClick={closeMenu}
-              >
-                {link.label}
-              </Link>
-            ))}
           </div>
+
+          {/* FREE DEMO BUTTON */}
 
           <div className="navbar-actions">
             <Link
-              href="/#login"
-              className="login-link"
+              href="/free-demo"
+              className="demo-link"
               onClick={closeMenu}
             >
-              Login
-            </Link>
-
-            <Link
-              href="/#register"
-              className="register-link"
-              onClick={closeMenu}
-            >
-              Register
-
-              <ArrowUpRight
-                size={16}
-                strokeWidth={2}
-                className="register-icon"
-              />
+              <span>Book a Free Demo</span>
+              <ArrowUpRight size={17} strokeWidth={2} />
             </Link>
           </div>
         </div>
@@ -214,3 +144,4 @@ export default function Navbar() {
     </header>
   );
 }
+8

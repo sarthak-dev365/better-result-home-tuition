@@ -2,48 +2,55 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
+import Image from "next/image";
+
 import {
   Phone,
   Mail,
   MapPin,
-  Send,
-  MessageCircle,
-  CheckCircle2,
   ArrowRight,
-  Headphones,
-  GraduationCap,
+  MessageCircle,
+  Send,
   ShieldCheck,
+  CheckCircle2,
+  Copy,
+  UserRound,
+  GraduationCap,
   Clock3,
 } from "lucide-react";
 
 import "@/styles/pages/contact.css";
 
-const CONTACT_PHONE = "+917037374833";
-const CONTACT_EMAIL = "betterresulthometuition@gmail.com";
+const PHONE = "+917037374833";
+const PHONE_DISPLAY = "+91 70373 74833";
+const EMAIL = "betterresulthometuition@gmail.com";
+const WHATSAPP = "https://wa.me/917037374833";
 
-const CONTACT_ADDRESS =
+const ADDRESS =
   "Shivalock Colony, Chakshha Nagar, Near Vidhan Sabha, Dehradun, Uttarakhand";
 
-const WHATSAPP_URL = "https://wa.me/917037374833";
+const initialForm = {
+  name: "",
+  email: "",
+  phone: "",
+  enquiry: "",
+  message: "",
+};
 
 export default function ContactPage() {
-  const [form, setForm] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    enquiry: "",
-    message: "",
-  });
-
+  const [form, setForm] = useState(initialForm);
   const [notice, setNotice] = useState("");
+  const [noticeType, setNoticeType] = useState("success");
 
   function handleChange(event) {
     const { name, value } = event.target;
 
     setForm((previous) => ({
       ...previous,
-      [name]: value,
+      [name]:
+        name === "phone"
+          ? value.replace(/\D/g, "").slice(0, 10)
+          : value,
     }));
 
     setNotice("");
@@ -52,248 +59,256 @@ export default function ContactPage() {
   function handleSubmit(event) {
     event.preventDefault();
 
-    setNotice(
-      "Your enquiry form is ready. Message delivery will be enabled after backend/API integration."
-    );
+    const name = form.name.trim();
+    const email = form.email.trim();
+    const phone = form.phone.trim();
+    const message = form.message.trim();
+
+    if (name.length < 2) {
+      setNoticeType("error");
+      setNotice("Please enter your full name.");
+      return;
+    }
+
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      setNoticeType("error");
+      setNotice("Please enter a valid email address.");
+      return;
+    }
+
+    if (!/^[6-9]\d{9}$/.test(phone)) {
+      setNoticeType("error");
+      setNotice("Please enter a valid 10-digit Indian mobile number.");
+      return;
+    }
+
+    if (!form.enquiry) {
+      setNoticeType("error");
+      setNotice("Please select your enquiry type.");
+      return;
+    }
+
+    if (message.length < 5) {
+      setNoticeType("error");
+      setNotice("Please write a message of at least 5 characters.");
+      return;
+    }
+
+    const whatsappMessage = [
+      "Hello Better Result Home Tuition!",
+      "",
+      "I would like to make an enquiry.",
+      "",
+      `Name: ${name}`,
+      `Email: ${email}`,
+      `Phone: ${phone}`,
+      `Enquiry Type: ${form.enquiry}`,
+      "",
+      "Message:",
+      message,
+      "",
+      "Sent through the Contact Us page.",
+    ].join("\n");
+
+    const link = `${WHATSAPP}?text=${encodeURIComponent(whatsappMessage)}`;
+
+    window.open(link, "_blank", "noopener,noreferrer");
+
+    setNoticeType("success");
+    setNotice("WhatsApp opened. Please review your message and press Send.");
+  }
+
+  async function handleCopyAddress() {
+    try {
+      await navigator.clipboard.writeText(ADDRESS);
+      setNoticeType("success");
+      setNotice("Address copied successfully.");
+    } catch {
+      setNoticeType("error");
+      setNotice("Unable to copy. Please select and copy the address manually.");
+    }
   }
 
   return (
     <main className="contact-page">
 
       {/* HERO */}
-      <section className="contact-hero">
-        <div className="contact-hero-bg">
-          <span className="contact-orb contact-orb-one" />
-          <span className="contact-orb contact-orb-two" />
-          <span className="contact-grid-pattern" />
-        </div>
 
-        <div className="contact-container contact-hero-inner">
+      <section className="contact-hero">
+        <div className="contact-container contact-hero-grid">
+
           <div className="contact-hero-content">
-            <div className="contact-eyebrow">
-              <span className="contact-eyebrow-dot" />
-              WE ARE HERE TO HELP
-            </div>
+            <span className="contact-kicker">
+              <span className="contact-kicker-dot" />
+              CONTACT OUR TEAM
+            </span>
 
             <h1>
-              Let&apos;s Start a
-              <span> Conversation</span>
+              We&apos;re Here
+              <span> To Help You.</span>
             </h1>
 
             <p>
-              Have questions about home tuition, online tuition,
-              teacher registration or our services? Get in touch
-              with our team. We would be happy to hear from you.
+              Looking for the right tutor for your child?
+              Have questions about our tuition services?
+              We&apos;re just a message away.
             </p>
 
             <div className="contact-hero-actions">
-              <a href="#contact-form" className="contact-primary-btn">
+              <a href="#contact-form" className="contact-btn-primary">
                 Send an Enquiry
-                <ArrowRight size={19} />
+                <ArrowRight size={17} />
               </a>
 
-              <a
-                href={`tel:${CONTACT_PHONE}`}
-                className="contact-outline-btn"
-              >
-                <Phone size={18} />
+              <a href={`tel:${PHONE}`} className="contact-btn-outline">
+                <Phone size={16} />
                 Call Us
               </a>
             </div>
 
-            <div className="contact-hero-trust">
-              <div>
-                <ShieldCheck size={19} />
-                <span>Personalised Assistance</span>
-              </div>
-
-              <div>
-                <GraduationCap size={20} />
-                <span>Learning Support</span>
-              </div>
+            <div className="contact-hero-note">
+              <ShieldCheck size={17} />
+              Personalised guidance for parents, students and teachers
             </div>
           </div>
 
           <div className="contact-hero-visual">
-            <div className="contact-visual-card">
-              <div className="contact-visual-top">
-                <div className="contact-visual-icon">
-                  <Headphones size={27} />
-                </div>
-                <span>We&apos;re Listening</span>
-              </div>
-
-              <div className="contact-visual-heading">
-                <span>BETTER RESULT HOME TUITION</span>
-                <h2>
-                  Your Learning Journey Starts With a Conversation.
-                </h2>
-              </div>
-
-              <div className="contact-visual-divider" />
-
-              <div className="contact-visual-contact">
-                <div className="contact-visual-contact-icon">
-                  <Phone size={18} />
-                </div>
-                <div>
-                  <span>Call our team</span>
-                  <strong>{CONTACT_PHONE}</strong>
-                </div>
-              </div>
-
-              <div className="contact-visual-contact">
-                <div className="contact-visual-contact-icon">
-                  <Mail size={18} />
-                </div>
-                <div>
-                  <span>Write to us</span>
-                  <strong>{CONTACT_EMAIL}</strong>
-                </div>
-              </div>
-
-              <div className="contact-visual-decoration">
-                <MessageCircle size={34} />
-              </div>
+            <div className="contact-hero-image-frame">
+              <Image
+                src="/images/contact/contact-hero.jpg"
+                alt="Family discussing a student's learning needs with an education consultant"
+                width={1536}
+                height={512}
+                priority
+                sizes="(max-width: 760px) 100vw, 55vw"
+                className="contact-hero-image"
+              />
             </div>
 
-            <div className="contact-floating-note">
-              <span className="contact-floating-check">
-                <CheckCircle2 size={19} />
+            <div className="contact-image-note">
+              <span className="contact-image-note-icon">
+                <GraduationCap size={20} />
               </span>
-              <div>
-                <strong>We&apos;re here to help</strong>
-                <span>Let&apos;s discuss your requirements</span>
-              </div>
+              <span>
+                <strong>Your child&apos;s learning matters.</strong>
+                <small>Let&apos;s find the right support together.</small>
+              </span>
             </div>
+          </div>
+
+        </div>
+      </section>
+
+      {/* CONTACT METHODS */}
+
+      <section className="contact-methods">
+        <div className="contact-container">
+
+          <div className="contact-heading">
+            <span className="contact-section-label">GET IN TOUCH</span>
+            <h2>We&apos;d Love to Hear From You</h2>
+            <p>Choose how you would like to connect with our team.</p>
+          </div>
+
+          <div className="contact-method-grid">
+
+            <a href={`tel:${PHONE}`} className="contact-method-card">
+              <span className="contact-method-icon method-blue">
+                <Phone size={21} />
+              </span>
+
+              <span className="contact-method-copy">
+                <small>GIVE US A CALL</small>
+                <strong>{PHONE_DISPLAY}</strong>
+                <span>Speak directly with our team</span>
+              </span>
+
+              <ArrowRight size={17} className="contact-method-arrow" />
+            </a>
+
+            <a href={`mailto:${EMAIL}`} className="contact-method-card">
+              <span className="contact-method-icon method-orange">
+                <Mail size={21} />
+              </span>
+
+              <span className="contact-method-copy">
+                <small>WRITE TO US</small>
+                <strong>{EMAIL}</strong>
+                <span>Send your questions by email</span>
+              </span>
+
+              <ArrowRight size={17} className="contact-method-arrow" />
+            </a>
+
+            <div className="contact-method-card">
+              <span className="contact-method-icon method-green">
+                <MapPin size={21} />
+              </span>
+
+              <span className="contact-method-copy">
+                <small>OUR LOCATION</small>
+                <strong>Dehradun, Uttarakhand</strong>
+                <span>Shivalock Colony, Near Vidhan Sabha</span>
+              </span>
+
+              <MapPin size={17} className="contact-method-arrow" />
+            </div>
+
           </div>
         </div>
       </section>
 
-      {/* CONTACT INFORMATION */}
-      <section className="contact-information contact-section">
+      {/* ENQUIRY FORM */}
+
+      <section className="contact-enquiry">
         <div className="contact-container">
-          <div className="contact-section-heading">
-            <span className="contact-section-label">GET IN TOUCH</span>
-            <h2>
-              We Would Love to <span>Hear From You</span>
-            </h2>
+
+          <div className="contact-heading">
+            <span className="contact-section-label">SEND AN ENQUIRY</span>
+            <h2>How Can We Help You?</h2>
             <p>
-              Choose the most convenient way to contact
-              Better Result Home Tuition.
+              Tell us a little about your requirements.
+              Our team will be happy to assist you.
             </p>
           </div>
 
-          <div className="contact-info-grid">
-            <a
-              className="contact-info-card"
-              href={`tel:${CONTACT_PHONE}`}
-            >
-              <div className="contact-info-card-top">
-                <div className="contact-info-icon contact-blue">
-                  <Phone size={25} />
+          <div className="contact-enquiry-grid">
+
+            <div className="contact-form-card" id="contact-form">
+              <div className="contact-form-title">
+                <span className="contact-form-icon">
+                  <Send size={19} />
+                </span>
+
+                <div>
+                  <h3>Send Us a Message</h3>
+                  <p>All fields marked with * are required.</p>
                 </div>
-                <span className="contact-card-arrow">
-                  <ArrowRight size={18} />
-                </span>
               </div>
 
-              <span className="contact-card-label">
-                DIRECT COMMUNICATION
-              </span>
-              <h3>Call Us</h3>
-              <p>
-                Speak with our team for enquiries and assistance.
-              </p>
-              <strong>{CONTACT_PHONE}</strong>
-            </a>
+              <form onSubmit={handleSubmit} className="contact-form">
 
-            <a
-              className="contact-info-card"
-              href={`mailto:${CONTACT_EMAIL}`}
-            >
-              <div className="contact-info-card-top">
-                <div className="contact-info-icon contact-orange">
-                  <Mail size={25} />
-                </div>
-                <span className="contact-card-arrow">
-                  <ArrowRight size={18} />
-                </span>
-              </div>
-
-              <span className="contact-card-label">EMAIL SUPPORT</span>
-              <h3>Email Us</h3>
-              <p>
-                Send us your questions and detailed enquiries.
-              </p>
-              <strong>{CONTACT_EMAIL}</strong>
-            </a>
-
-            <div className="contact-info-card contact-address-card">
-              <div className="contact-info-card-top">
-                <div className="contact-info-icon contact-green">
-                  <MapPin size={25} />
-                </div>
-                <span className="contact-card-arrow">
-                  <MapPin size={18} />
-                </span>
-              </div>
-
-              <span className="contact-card-label">OUR LOCATION</span>
-              <h3>Visit Us</h3>
-              <p>
-                Find Better Result Home Tuition in Dehradun.
-              </p>
-              <strong>{CONTACT_ADDRESS}</strong>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* CONTACT FORM AND SIDEBAR */}
-      <section className="contact-main contact-section">
-        <div className="contact-container">
-          <div className="contact-main-grid">
-
-            {/* CONTACT FORM */}
-            <div className="contact-form-wrapper" id="contact-form">
-              <div className="contact-form-heading">
-                <span className="contact-section-label">
-                  SEND US A MESSAGE
-                </span>
-
-                <h2>
-                  How Can We <span>Help You?</span>
-                </h2>
-
-                <p>
-                  Share your details and tell us what you would
-                  like to know about our services.
-                </p>
-              </div>
-
-              <form
-                className="contact-form"
-                onSubmit={handleSubmit}
-              >
                 <div className="contact-form-row">
                   <div className="contact-field">
                     <label htmlFor="contact-name">
-                      Your Name <span>*</span>
+                      Full Name <span>*</span>
                     </label>
 
-                    <input
-                      id="contact-name"
-                      name="name"
-                      type="text"
-                      placeholder="Enter your full name"
-                      autoComplete="name"
-                      value={form.name}
-                      onChange={handleChange}
-                      required
-                      minLength={2}
-                      maxLength={80}
-                    />
+                    <div className="contact-input-box">
+                      <UserRound size={17} />
+                      <input
+                        id="contact-name"
+                        name="name"
+                        type="text"
+                        placeholder="Enter your name"
+                        autoComplete="name"
+                        value={form.name}
+                        onChange={handleChange}
+                        minLength={2}
+                        maxLength={80}
+                        required
+                      />
+                    </div>
                   </div>
 
                   <div className="contact-field">
@@ -301,45 +316,50 @@ export default function ContactPage() {
                       Email Address <span>*</span>
                     </label>
 
-                    <input
-                      id="contact-email"
-                      name="email"
-                      type="email"
-                      placeholder="your.email@example.com"
-                      autoComplete="email"
-                      value={form.email}
-                      onChange={handleChange}
-                      required
-                      maxLength={120}
-                    />
+                    <div className="contact-input-box">
+                      <Mail size={17} />
+                      <input
+                        id="contact-email"
+                        name="email"
+                        type="email"
+                        placeholder="Enter your email"
+                        autoComplete="email"
+                        value={form.email}
+                        onChange={handleChange}
+                        maxLength={120}
+                        required
+                      />
+                    </div>
                   </div>
                 </div>
 
                 <div className="contact-form-row">
                   <div className="contact-field">
                     <label htmlFor="contact-phone">
-                      Phone Number <span>*</span>
+                      Mobile Number <span>*</span>
                     </label>
 
-                    <input
-                      id="contact-phone"
-                      name="phone"
-                      type="tel"
-                      placeholder="10-digit mobile number"
-                      inputMode="numeric"
-                      pattern="[6-9][0-9]{9}"
-                      maxLength={10}
-                      autoComplete="tel-national"
-                      title="Enter a valid 10-digit Indian mobile number"
-                      value={form.phone}
-                      onChange={handleChange}
-                      required
-                    />
+                    <div className="contact-input-box">
+                      <Phone size={17} />
+                      <input
+                        id="contact-phone"
+                        name="phone"
+                        type="tel"
+                        placeholder="10-digit mobile number"
+                        inputMode="numeric"
+                        autoComplete="tel-national"
+                        value={form.phone}
+                        onChange={handleChange}
+                        maxLength={10}
+                        pattern="[6-9][0-9]{9}"
+                        required
+                      />
+                    </div>
                   </div>
 
                   <div className="contact-field">
                     <label htmlFor="contact-enquiry">
-                      Enquiry Type <span>*</span>
+                      I Need Help With <span>*</span>
                     </label>
 
                     <select
@@ -349,20 +369,21 @@ export default function ContactPage() {
                       onChange={handleChange}
                       required
                     >
-                      <option value="">Select an enquiry type</option>
+                      <option value="">Choose an enquiry type</option>
                       <option value="Home Tuition">Home Tuition</option>
                       <option value="Online Tuition">Online Tuition</option>
+                      <option value="One-to-One Tuition">One-to-One Tuition</option>
+                      <option value="Group Tuition">Group Tuition</option>
                       <option value="Board Exam Preparation">
                         Board Exam Preparation
                       </option>
-                      <option value="Commerce">
-                        Commerce (Classes 11–12)
+                      <option value="JEE / NEET Preparation">
+                        JEE / NEET Preparation
                       </option>
-                      <option value="JEE / NEET">JEE / NEET Preparation</option>
                       <option value="Tutor Registration">
                         Tutor Registration
                       </option>
-                      <option value="Other">Other Enquiry</option>
+                      <option value="Other">Other</option>
                     </select>
                   </div>
                 </div>
@@ -375,176 +396,175 @@ export default function ContactPage() {
                   <textarea
                     id="contact-message"
                     name="message"
-                    placeholder="Tell us how we can help you..."
                     rows={5}
+                    placeholder="Write your requirements or questions here..."
                     value={form.message}
                     onChange={handleChange}
-                    required
                     minLength={5}
                     maxLength={2000}
+                    required
                   />
+
+                  <span className="contact-char-count">
+                    {form.message.length}/2000
+                  </span>
                 </div>
 
-                <button className="contact-submit-btn" type="submit">
-                  <span>Send Message</span>
-                  <Send size={18} />
+                <button type="submit" className="contact-submit">
+                  Continue to WhatsApp
+                  <MessageCircle size={18} />
+                  <ArrowRight size={17} />
                 </button>
 
                 {notice && (
-                  <div className="contact-form-notice" role="status">
-                    <CheckCircle2 size={19} />
+                  <div
+                    className={`contact-notice ${
+                      noticeType === "error" ? "is-error" : "is-success"
+                    }`}
+                    role="status"
+                    aria-live="polite"
+                  >
+                    {noticeType === "error" ? (
+                      <ShieldCheck size={18} />
+                    ) : (
+                      <CheckCircle2 size={18} />
+                    )}
                     <span>{notice}</span>
                   </div>
                 )}
               </form>
 
-              <div className="contact-privacy-note">
-                <ShieldCheck size={19} />
-                <p>
-                  This form is currently a frontend preview.
-                  Messages will not be delivered or stored until
-                  backend/API integration is completed.
-                </p>
+              <div className="contact-form-footnote">
+                <ShieldCheck size={17} />
+                Your details will be added to a WhatsApp message for you
+                to review before sending.
               </div>
             </div>
 
-            {/* SIDEBAR */}
-            <aside className="contact-sidebar">
-              <div className="contact-sidebar-card">
-                <div className="contact-sidebar-icon">
-                  <Headphones size={29} />
-                </div>
+            {/* SUPPORT PANEL */}
 
-                <span className="contact-sidebar-label">
-                  NEED QUICK ASSISTANCE?
+            <aside className="contact-support-panel">
+
+              <div className="contact-support-photo">
+                <Image
+                  src="/images/contact/contact-support.jpg"
+                  alt="Customer support professional ready to help"
+                  width={760}
+                  height={510}
+                  sizes="(max-width: 760px) 100vw, 380px"
+                  className="contact-support-image"
+                />
+              </div>
+
+              <div className="contact-support-content">
+                <span className="contact-section-label">
+                  WE&apos;RE HERE FOR YOU
                 </span>
 
-                <h3>
-                  Let&apos;s Talk About Your Requirements
-                </h3>
+                <h3>Need Quick Assistance?</h3>
 
                 <p>
-                  Whether you are a parent looking for a tutor
-                  or a teacher interested in joining us, our
-                  team is available through the contact details below.
+                  Whether you&apos;re a parent searching for a tutor
+                  or a teacher interested in joining us, connect
+                  with our team directly.
                 </p>
 
-                <div className="contact-sidebar-divider" />
-
-                <a
-                  href={`tel:${CONTACT_PHONE}`}
-                  className="contact-sidebar-link"
-                >
-                  <span className="contact-sidebar-link-icon">
-                    <Phone size={18} />
-                  </span>
+                <a href={`tel:${PHONE}`} className="contact-support-link">
+                  <Phone size={17} />
                   <span>
                     <small>Call our team</small>
-                    <strong>{CONTACT_PHONE}</strong>
+                    <strong>{PHONE_DISPLAY}</strong>
                   </span>
-                  <ArrowRight size={17} />
-                </a>
-
-                <a
-                  href={`mailto:${CONTACT_EMAIL}`}
-                  className="contact-sidebar-link"
-                >
-                  <span className="contact-sidebar-link-icon">
-                    <Mail size={18} />
-                  </span>
-                  <span>
-                    <small>Email us</small>
-                    <strong>Email Our Team</strong>
-                  </span>
-                  <ArrowRight size={17} />
-                </a>
-
-                <a
-                  href={WHATSAPP_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="contact-whatsapp-btn"
-                >
-                  <MessageCircle size={20} />
-                  Chat on WhatsApp
                   <ArrowRight size={16} />
                 </a>
+
+                <a href={`mailto:${EMAIL}`} className="contact-support-link">
+                  <Mail size={17} />
+                  <span>
+                    <small>Email us</small>
+                    <strong>Send an Email</strong>
+                  </span>
+                  <ArrowRight size={16} />
+                </a>
+
+                <a
+                  href={WHATSAPP}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="contact-support-whatsapp"
+                >
+                  <MessageCircle size={18} />
+                  Chat on WhatsApp
+                </a>
               </div>
 
-              <div className="contact-hours-card">
-                <div className="contact-hours-icon">
-                  <Clock3 size={23} />
-                </div>
-                <div>
-                  <h3>Contact Information</h3>
-                  <p>
-                    For enquiries, please call or email us using
-                    the contact details provided on this page.
-                  </p>
-                </div>
+              <div className="contact-support-note">
+                <span>
+                  <Clock3 size={19} />
+                </span>
+                <p>
+                  <strong>We&apos;re happy to help.</strong>
+                  Contact us for tuition and teaching-related enquiries.
+                </p>
               </div>
+
             </aside>
 
           </div>
         </div>
       </section>
 
-      {/* SIMPLE ADDRESS SECTION */}
-      <section className="contact-location contact-section">
+      {/* OFFICE ADDRESS */}
+
+      <section className="contact-office">
         <div className="contact-container">
-          <div className="contact-location-card">
-            <div className="contact-location-icon">
-              <MapPin size={29} />
+
+          <div className="contact-office-card">
+
+            <div className="contact-office-photo">
+              <Image
+                src="/images/contact/contact-office.jpg"
+                alt="Better Result Home Tuition office reception visual"
+                width={760}
+                height={510}
+                sizes="(max-width: 760px) 100vw, 420px"
+                className="contact-office-image"
+              />
             </div>
 
-            <div className="contact-location-content">
-              <span className="contact-location-label">
-                OUR ADDRESS
+            <div className="contact-office-content">
+              <span className="contact-section-label">
+                <MapPin size={14} />
+                FIND US
               </span>
 
-              <h2>Better Result Home Tuition</h2>
+              <h2>Visit Better Result Home Tuition</h2>
 
-              <p>{CONTACT_ADDRESS}</p>
+              <p>{ADDRESS}</p>
 
-              <span className="contact-location-city">
+              <span className="contact-office-city">
                 Dehradun, Uttarakhand, India
               </span>
+
+              <button
+                type="button"
+                className="contact-copy-btn"
+                onClick={handleCopyAddress}
+              >
+                <Copy size={15} />
+                Copy Address
+              </button>
+
+              {notice === "Address copied successfully." && (
+                <span className="contact-copy-success">
+                  <CheckCircle2 size={14} />
+                  Address copied successfully
+                </span>
+              )}
+
             </div>
           </div>
-        </div>
-      </section>
 
-      {/* FINAL CTA */}
-      <section className="contact-final-cta">
-        <div className="contact-final-bg">
-          <span className="contact-final-orb" />
-        </div>
-
-        <div className="contact-container contact-final-content">
-          <div className="contact-final-icon">
-            <GraduationCap size={31} />
-          </div>
-
-          <span>LOOKING FOR A TUTOR?</span>
-
-          <h2>
-            Let&apos;s Find the Right
-            <br />
-            Learning Support
-          </h2>
-
-          <p>
-            Tell us your class, subjects and tuition preferences
-            to start your tutor enquiry.
-          </p>
-
-          <Link
-            href="/find-a-tutor"
-            className="contact-primary-btn"
-          >
-            Find a Tutor
-            <ArrowRight size={19} />
-          </Link>
         </div>
       </section>
 

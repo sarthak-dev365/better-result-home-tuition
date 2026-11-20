@@ -27,7 +27,6 @@ const academicLevels = [
     ],
     boards: "CBSE • ICSE • State Boards",
     icon: BookOpen,
-    color: "blue",
   },
   {
     number: "02",
@@ -44,7 +43,6 @@ const academicLevels = [
     ],
     boards: "CBSE • ICSE • State Boards",
     icon: School,
-    color: "orange",
   },
   {
     number: "03",
@@ -62,7 +60,6 @@ const academicLevels = [
     ],
     boards: "CBSE • ICSE • State Boards",
     icon: GraduationCap,
-    color: "purple",
   },
   {
     number: "04",
@@ -79,7 +76,6 @@ const academicLevels = [
     ],
     boards: "CBSE • ISC • State Boards",
     icon: Brain,
-    color: "green",
   },
   {
     number: "05",
@@ -96,7 +92,6 @@ const academicLevels = [
     ],
     boards: "CBSE • ISC • State Boards",
     icon: Calculator,
-    color: "teal",
   },
   {
     number: "06",
@@ -112,7 +107,6 @@ const academicLevels = [
     ],
     boards: "JEE Main • JEE Advanced",
     icon: Atom,
-    color: "pink",
   },
   {
     number: "07",
@@ -129,7 +123,6 @@ const academicLevels = [
     ],
     boards: "NEET-UG",
     icon: Microscope,
-    color: "indigo",
   },
 ];
 
@@ -141,101 +134,88 @@ export default function Classes() {
         {/* Section Heading */}
         <div className="classes-heading">
           <span className="classes-eyebrow">
-            <GraduationCap size={16} />
-            ACADEMIC PROGRAMMES
+            <GraduationCap size={17} />
+            OUR ACADEMIC PROGRAMMES
           </span>
 
           <h2>
-            Learning Pathways
-            <span> for Every Ambition</span>
+            A Learning Journey
+            <span> for Every Stage</span>
           </h2>
 
           <p>
             From primary education to senior secondary studies
-            and competitive examinations, explore academic
-            programmes designed to support every stage of
-            your learning journey.
+            and competitive examinations, explore our academic
+            programmes designed to support every step of
+            your educational journey.
           </p>
         </div>
 
-        {/* Academic Programme Cards */}
-        <div className="classes-grid">
+        {/* Academic Timeline */}
+        <div className="classes-timeline">
 
-          {academicLevels.map((level) => {
+          {academicLevels.map((level, index) => {
             const Icon = level.icon;
 
             return (
               <article
-                className={`class-card class-${level.color}`}
+                className="class-timeline-item"
                 key={level.number}
+                style={{ "--timeline-index": index }}
               >
-                <div className="class-card-top">
-
-                  <div className="class-icon">
-                    <Icon
-                      size={25}
-                      strokeWidth={1.8}
-                    />
-                  </div>
-
-                  <span className="class-number">
+                {/* Timeline Number */}
+                <div className="class-timeline-marker">
+                  <span className="class-timeline-number">
                     {level.number}
                   </span>
-
                 </div>
 
-                <span className="class-range">
-                  {level.classes}
-                </span>
+                {/* Programme Content */}
+                <div className="class-timeline-content">
 
-                <h3>{level.title}</h3>
+                  <div className="class-timeline-top">
+                    <div className="class-timeline-icon">
+                      <Icon size={23} strokeWidth={1.8} />
+                    </div>
 
-                <p className="class-description">
-                  {level.description}
-                </p>
+                    <span className="class-range">
+                      {level.classes}
+                    </span>
+                  </div>
 
-                <div className="class-subjects">
+                  <h3>{level.title}</h3>
 
-                  <span className="class-subject-label">
-                    SUBJECT AREAS
-                  </span>
+                  <p className="class-description">
+                    {level.description}
+                  </p>
 
-                  <ul>
-                    {level.subjects.map((subject) => (
-                      <li key={subject}>
-                        <span className="class-subject-check">
-                          <svg
-                            viewBox="0 0 20 20"
-                            fill="none"
-                            aria-hidden="true"
-                          >
-                            <path
-                              d="M4 10.5L8 14.5L16 5.5"
-                              stroke="currentColor"
-                              strokeWidth="2"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                            />
-                          </svg>
+                  <div className="class-subjects">
+                    <span className="class-subject-label">
+                      SUBJECT AREAS
+                    </span>
+
+                    <div className="class-subject-list">
+                      {level.subjects.map((subject) => (
+                        <span
+                          className="class-subject"
+                          key={subject}
+                        >
+                          {subject}
                         </span>
+                      ))}
+                    </div>
+                  </div>
 
-                        {subject}
-                      </li>
-                    ))}
-                  </ul>
+                  <div className="class-board">
+                    {level.boards}
+                  </div>
 
                 </div>
-
-                <div className="class-board">
-                  {level.boards}
-                </div>
-
               </article>
             );
           })}
 
         </div>
-
       </div>
     </section>
   );

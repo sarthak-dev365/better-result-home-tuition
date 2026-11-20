@@ -1,64 +1,48 @@
+
 import {
   GraduationCap,
   House,
   Monitor,
   BookOpen,
-  CalendarDays,
   Target,
   Users,
-  Award,
+  ArrowRight,
+  CheckCircle2,
 } from "lucide-react";
 
+import Link from "next/link";
 import "@/styles/home/why-choose-us.css";
 
-const features = [
+const highlights = [
   {
     icon: GraduationCap,
     title: "Experienced Teachers",
-    description:
-      "Learn with qualified and experienced teachers who guide students according to their learning needs.",
+    description: "Qualified and experienced tutors",
   },
   {
     icon: House,
     title: "Home Tuition",
-    description:
-      "Get personalised learning support at your home with a suitable tutor.",
+    description: "Personal learning at your home",
   },
   {
     icon: Monitor,
     title: "Online Tuition",
-    description:
-      "Learn from anywhere through flexible online tuition sessions.",
+    description: "Learn from anywhere",
   },
   {
     icon: BookOpen,
-    title: "Multiple Boards",
-    description:
-      "Tuition support for CBSE, ICSE and State Board students.",
-  },
-  {
-    icon: CalendarDays,
-    title: "Flexible Scheduling",
-    description:
-      "Choose a suitable weekly schedule according to your availability.",
+    title: "Classes 1–12",
+    description: "Academic support for school students",
   },
   {
     icon: Target,
-    title: "Personalised Learning",
-    description:
-      "Learning support based on the student's class, subjects and individual requirements.",
+    title: "Exam Preparation",
+    description: "Board, JEE and NEET guidance",
   },
   {
     icon: Users,
-    title: "Multiple Learning Levels",
-    description:
-      "Tuition options for students from Classes 1 to 12.",
-  },
-  {
-    icon: Award,
-    title: "Exam Preparation",
-    description:
-      "Academic guidance for board examinations, JEE and NEET preparation.",
+    title: "Personalised Learning",
+    description: "Support based on student needs",
   },
 ];
 
@@ -66,46 +50,73 @@ export default function WhyChooseUs() {
   return (
     <section className="why-section">
       <div className="why-container">
+        <div className="why-promo">
+          <div className="why-promo-content">
+            <span className="why-eyebrow">
+              BETTER LEARNING STARTS HERE
+            </span>
 
-        <div className="why-heading">
-          <span className="why-eyebrow">
-            WHY BETTER RESULT HOME TUITION?
-          </span>
+            <h2>
+              Your Search for the
+              <span> Right Home Tutor </span>
+              Ends Here!
+            </h2>
 
-          <h2>
-            A Better Way to
-            <span> Learn and Grow</span>
-          </h2>
+            <p className="why-description">
+              Every student deserves the right guidance to learn,
+              improve and achieve better results. Find suitable
+              home and online tuition support with experienced
+              teachers for different classes and subjects.
+            </p>
 
-          <p>
-            Every student has a different learning journey.
-            We help students find suitable tuition support
-            through personalised guidance and flexible learning options.
-          </p>
+            <p className="why-supporting-text">
+              Whether you need regular academic support, board
+              examination preparation or guidance for competitive
+              exams, we are here to help you take the next step
+              in your learning journey.
+            </p>
+
+            <Link href="/free-demo" className="why-demo-button">
+              Book a Free Demo
+              <ArrowRight size={19} />
+            </Link>
+          </div>
+
+          <div className="why-promo-side">
+            <div className="why-side-heading">
+              <span className="why-side-label">LEARNING SUPPORT</span>
+              <h3>Everything You Need to Learn Better</h3>
+              <p>
+                Flexible tuition options and academic guidance
+                for every learning journey.
+              </p>
+            </div>
+
+            <div className="why-highlight-list">
+              {highlights.map((item) => {
+                const Icon = item.icon;
+
+                return (
+                  <div className="why-highlight" key={item.title}>
+                    <div className="why-highlight-icon">
+                      <Icon size={21} strokeWidth={1.9} />
+                    </div>
+
+                    <div className="why-highlight-text">
+                      <h4>{item.title}</h4>
+                      <p>{item.description}</p>
+                    </div>
+
+                    <CheckCircle2
+                      className="why-highlight-check"
+                      size={19}
+                    />
+                  </div>
+                );
+              })}
+            </div>
+          </div>
         </div>
-
-        <div className="why-grid">
-          {features.map((feature, index) => {
-            const Icon = feature.icon;
-
-            return (
-              <article className="why-card" key={feature.title}>
-                <div className="why-icon">
-                  <Icon size={25} strokeWidth={1.8} />
-                </div>
-
-                <span className="why-number">
-                  0{index + 1}
-                </span>
-
-                <h3>{feature.title}</h3>
-
-                <p>{feature.description}</p>
-              </article>
-            );
-          })}
-        </div>
-
       </div>
     </section>
   );

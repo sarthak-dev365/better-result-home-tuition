@@ -1,745 +1,1563 @@
 
-/* =========================================
-   BECOME A TEACHER PAGE
-========================================= */
+/* ==========================================
+   BECOME A TEACHER
+   Premium Teacher Application Design
+   Navy Blue | White | Gold
+========================================== */
 
-.become-teacher-page {
+.bt-page {
+  --bt-navy: #102b50;
+  --bt-navy-dark: #091d38;
+  --bt-navy-light: #1b4779;
+  --bt-gold: #d8ad59;
+  --bt-gold-dark: #a47a32;
+  --bt-gold-soft: #fff8e9;
+  --bt-text: #27384d;
+  --bt-muted: #718096;
+  --bt-border: #e3e9f0;
+  --bt-surface: #ffffff;
+  --bt-background: #f5f7fa;
+
   width: 100%;
   overflow: hidden;
-  color: #17233d;
-  background: #ffffff;
+  color: var(--bt-text);
+  background: var(--bt-background);
 }
 
-.become-teacher-page * {
+.bt-page *,
+.bt-page *::before,
+.bt-page *::after {
   box-sizing: border-box;
 }
 
-.become-teacher-page a {
-  text-decoration: none;
+.bt-page button,
+.bt-page input,
+.bt-page select,
+.bt-page textarea {
+  font: inherit;
 }
 
-.section-padding {
-  padding: 85px 7%;
+.bt-container {
+  width: min(1160px, calc(100% - 48px));
+  margin-inline: auto;
 }
 
-/* =========================================
-   HERO SECTION
-========================================= */
+.bt-required {
+  color: #d44848;
+}
 
-.teacher-hero {
-  min-height: 590px;
+/* ==========================================
+   HERO
+========================================== */
+
+.bt-hero {
   position: relative;
-  display: flex;
-  align-items: center;
-  padding: 90px 7%;
-  background:
-    radial-gradient(circle at 85% 20%, rgba(48, 125, 226, 0.25), transparent 30%),
-    linear-gradient(120deg, #071b3b 0%, #102e5d 55%, #164b85 100%);
   isolation: isolate;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      circle at 83% 28%,
+      rgba(216, 173, 89, 0.18),
+      transparent 28%
+    ),
+    linear-gradient(
+      115deg,
+      #091d38 0%,
+      #102b50 58%,
+      #173d6d 100%
+    );
+  color: #ffffff;
 }
 
-.teacher-hero-overlay {
+.bt-hero-pattern {
   position: absolute;
   inset: 0;
   z-index: -1;
-  background-image: radial-gradient(
-    rgba(255, 255, 255, 0.12) 1px,
-    transparent 1px
-  );
-  background-size: 28px 28px;
-  opacity: 0.3;
+  opacity: 0.11;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.13) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.13) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: linear-gradient(90deg, #000, transparent 90%);
 }
 
-.teacher-hero-content {
-  width: 100%;
-  max-width: 850px;
-  position: relative;
-  z-index: 1;
-}
-
-.teacher-eyebrow,
-.teacher-section-heading > span,
-.teacher-fee-content > span,
-.teacher-final-cta-content > span {
-  display: inline-block;
-  color: #f4b942;
-  font-size: 13px;
-  font-weight: 800;
-  letter-spacing: 2px;
-  margin-bottom: 18px;
-}
-
-.teacher-hero-content h1 {
-  color: #ffffff;
-  font-size: clamp(38px, 5.2vw, 65px);
-  line-height: 1.13;
-  font-weight: 800;
-  letter-spacing: -1.5px;
-  margin: 0 0 22px;
-  max-width: 800px;
-}
-
-.teacher-hero-content h1 span {
-  display: block;
-  color: #f5bd50;
-}
-
-.teacher-hero-content > p {
-  max-width: 690px;
-  color: #e0eaf8;
-  font-size: 17px;
-  line-height: 1.85;
-  margin: 0 0 32px;
-}
-
-.teacher-hero-actions {
-  display: flex;
+.bt-hero-inner {
+  min-height: 485px;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
   align-items: center;
-  flex-wrap: wrap;
-  gap: 15px;
+  gap: 55px;
+  padding-top: 76px;
+  padding-bottom: 76px;
 }
 
-.teacher-primary-btn,
-.teacher-secondary-btn {
+.bt-hero-copy {
+  max-width: 660px;
+}
+
+.bt-eyebrow,
+.bt-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--bt-gold);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.8px;
+}
+
+.bt-eyebrow-dot {
+  width: 8px;
+  height: 8px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--bt-gold);
+  box-shadow: 0 0 0 5px rgba(216, 173, 89, 0.15);
+}
+
+.bt-hero h1 {
+  margin-top: 23px;
+  color: #ffffff;
+  font-size: clamp(44px, 5.2vw, 67px);
+  line-height: 1.08;
+  font-weight: 850;
+  letter-spacing: -2.3px;
+}
+
+.bt-hero h1 span {
+  display: block;
+  color: var(--bt-gold);
+}
+
+.bt-hero-copy > p {
+  max-width: 570px;
+  margin-top: 22px;
+  color: #d8e2ef;
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+.bt-hero-points {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px 22px;
+  margin-top: 27px;
+}
+
+.bt-hero-points span {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #edf3fa;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.bt-hero-points svg {
+  flex-shrink: 0;
+  color: var(--bt-gold);
+}
+
+.bt-hero-button {
   min-height: 52px;
-  padding: 0 24px;
-  border-radius: 9px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
-  font-size: 15px;
-  font-weight: 700;
-  transition: 0.3s ease;
-}
-
-.teacher-primary-btn {
-  background: #f5b942;
-  color: #10213b;
-  border: 2px solid #f5b942;
-}
-
-.teacher-primary-btn:hover {
-  background: #ffffff;
-  border-color: #ffffff;
-  color: #10213b;
-  transform: translateY(-3px);
-}
-
-.teacher-secondary-btn {
-  color: #ffffff;
-  border: 2px solid rgba(255, 255, 255, 0.65);
-  background: transparent;
-}
-
-.teacher-secondary-btn:hover {
-  background: #ffffff;
-  color: #10213b;
-  border-color: #ffffff;
-}
-
-.teacher-hero-note {
-  display: flex;
-  align-items: center;
-  gap: 9px;
-  margin-top: 28px;
-  color: #dce9f9;
+  gap: 11px;
+  margin-top: 32px;
+  padding: 0 24px;
+  border: 1px solid var(--bt-gold);
+  border-radius: 9px;
+  background: var(--bt-gold);
+  color: #172a43;
   font-size: 13px;
+  font-weight: 800;
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
-/* =========================================
-   COMMON SECTION HEADING
-========================================= */
+.bt-hero-button:hover {
+  transform: translateY(-3px);
+  background: #e8c77f;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
 
-.teacher-section-heading {
-  max-width: 760px;
-  margin: 0 auto 48px;
+/* ==========================================
+   HERO VISUAL
+========================================== */
+
+.bt-hero-visual {
+  position: relative;
+  min-height: 330px;
+  display: grid;
+  place-items: center;
+}
+
+.bt-hero-orbit {
+  position: absolute;
+  border: 1px solid rgba(216, 173, 89, 0.3);
+  border-radius: 50%;
+}
+
+.bt-orbit-one {
+  width: 330px;
+  height: 330px;
+}
+
+.bt-orbit-two {
+  width: 260px;
+  height: 260px;
+  border-style: dashed;
+  animation: bt-orbit 28s linear infinite;
+}
+
+.bt-hero-visual-card {
+  position: relative;
+  z-index: 1;
+  width: min(310px, 90%);
+  padding: 35px 25px 24px;
+  border: 1px solid rgba(255,255,255,0.22);
+  border-radius: 22px;
+  background: linear-gradient(
+    145deg,
+    rgba(255,255,255,0.16),
+    rgba(255,255,255,0.06)
+  );
+  box-shadow: 0 24px 65px rgba(0,0,0,0.22);
+  backdrop-filter: blur(14px);
   text-align: center;
 }
 
-.teacher-section-heading > span {
-  color: #d38a13;
-  margin-bottom: 12px;
-}
-
-.teacher-section-heading h2 {
-  color: #102746;
-  font-size: clamp(29px, 3.5vw, 42px);
-  line-height: 1.25;
-  font-weight: 800;
-  margin: 0 0 15px;
-}
-
-.teacher-section-heading h2 span {
-  color: #1765b5;
-}
-
-.teacher-section-heading > p {
-  color: #64748b;
-  font-size: 16px;
-  line-height: 1.8;
-  margin: 0;
-}
-
-/* =========================================
-   INTRODUCTION
-========================================= */
-
-.teacher-intro {
-  padding-top: 75px;
-  padding-bottom: 35px;
-}
-
-.teacher-intro .teacher-section-heading {
-  margin-bottom: 0;
-}
-
-/* =========================================
-   OPPORTUNITIES
-========================================= */
-
-.teacher-opportunities {
-  background: #f5f8fc;
-}
-
-.teacher-opportunity-grid {
+.bt-hero-visual-icon {
+  width: 78px;
+  height: 78px;
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 24px;
-  max-width: 1150px;
-  margin: 0 auto;
-}
-
-.teacher-opportunity-card {
-  padding: 35px 28px;
-  border: 1px solid #e5edf6;
-  border-radius: 15px;
-  background: #ffffff;
-  box-shadow: 0 8px 28px rgba(22, 50, 85, 0.05);
-  transition: 0.3s ease;
-}
-
-.teacher-opportunity-card:hover {
-  transform: translateY(-7px);
-  border-color: #9bc5ef;
-  box-shadow: 0 15px 35px rgba(22, 50, 85, 0.1);
-}
-
-.teacher-card-icon,
-.teacher-benefit-icon {
-  width: 58px;
-  height: 58px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #1765b5;
-  background: #eaf3ff;
-  border-radius: 13px;
-  margin-bottom: 22px;
-}
-
-.teacher-opportunity-card h3,
-.teacher-benefit-card h3 {
-  color: #142b4a;
-  font-size: 20px;
-  font-weight: 750;
-  margin: 0 0 12px;
-}
-
-.teacher-opportunity-card p,
-.teacher-benefit-card p {
-  color: #64748b;
-  font-size: 14px;
-  line-height: 1.8;
-  margin: 0;
-}
-
-/* =========================================
-   BENEFITS
-========================================= */
-
-.teacher-benefits {
-  background: #ffffff;
-}
-
-.teacher-benefits-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 22px;
-  max-width: 1100px;
-  margin: 0 auto;
-}
-
-.teacher-benefit-card {
-  display: flex;
-  align-items: flex-start;
-  gap: 20px;
-  padding: 27px;
-  border: 1px solid #e6edf5;
-  border-radius: 13px;
-  background: #ffffff;
-  transition: 0.3s ease;
-}
-
-.teacher-benefit-card:hover {
-  border-color: #a7c9ed;
-  background: #f8fbff;
-  transform: translateY(-3px);
-}
-
-.teacher-benefit-icon {
-  flex-shrink: 0;
-  width: 52px;
-  height: 52px;
-  margin: 0;
-  border-radius: 12px;
-}
-
-.teacher-benefit-card h3 {
-  font-size: 18px;
-  margin-bottom: 8px;
-}
-
-/* =========================================
-   ELIGIBILITY
-========================================= */
-
-.teacher-eligibility {
-  display: grid;
-  grid-template-columns: 1.25fr 0.75fr;
-  align-items: center;
-  gap: 55px;
-  background: #f5f8fc;
-}
-
-.teacher-heading-left {
-  text-align: left;
-  margin: 0 0 30px;
-}
-
-.teacher-requirements-list {
-  display: flex;
-  flex-direction: column;
-  gap: 19px;
-}
-
-.teacher-requirement-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 13px;
-}
-
-.teacher-requirement-item svg {
-  flex-shrink: 0;
-  color: #16865b;
-  margin-top: 2px;
-}
-
-.teacher-requirement-item p {
-  color: #475569;
-  font-size: 15px;
-  line-height: 1.7;
-  margin: 0;
-}
-
-.teacher-eligibility-visual {
-  padding: 42px 32px;
-  border-radius: 18px;
-  color: #ffffff;
-  background: linear-gradient(145deg, #102b52, #1765a8);
-  box-shadow: 0 18px 40px rgba(16, 43, 82, 0.15);
-}
-
-.teacher-visual-icon {
-  width: 100px;
-  height: 100px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #f5bd50;
-  background: rgba(255, 255, 255, 0.12);
+  place-items: center;
+  margin: 0 auto 20px;
+  border: 1px solid rgba(216,173,89,0.55);
   border-radius: 22px;
-  margin-bottom: 27px;
+  background: rgba(216,173,89,0.16);
+  color: var(--bt-gold);
 }
 
-.teacher-eligibility-visual h3 {
+.bt-hero-visual-card > span {
+  display: block;
+  color: #d6e0ed;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.8px;
+}
+
+.bt-hero-visual-card > strong {
+  display: block;
+  margin-top: 11px;
   color: #ffffff;
   font-size: 25px;
-  margin: 0 0 14px;
+  letter-spacing: -0.6px;
 }
 
-.teacher-eligibility-visual > p {
-  color: #dce9f8;
-  font-size: 14px;
-  line-height: 1.85;
-  margin: 0;
+.bt-hero-visual-card > p {
+  margin-top: 8px;
+  color: #d6e0ed;
+  font-size: 13px;
 }
 
-.teacher-visual-bottom {
+.bt-visual-bottom {
   display: flex;
   align-items: center;
-  gap: 10px;
-  padding-top: 22px;
-  margin-top: 25px;
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
-  color: #ffffff;
+  justify-content: center;
+  gap: 9px;
+  margin-top: 24px;
+  padding-top: 17px;
+  border-top: 1px solid rgba(255,255,255,0.15);
+  color: var(--bt-gold);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.bt-floating-icon {
+  position: absolute;
+  z-index: 2;
+  width: 52px;
+  height: 52px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(216,173,89,0.45);
+  border-radius: 15px;
+  background: #ffffff;
+  color: var(--bt-navy);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.2);
+  animation: bt-float 4s ease-in-out infinite;
+}
+
+.bt-floating-one {
+  top: 28px;
+  right: 7%;
+}
+
+.bt-floating-two {
+  bottom: 25px;
+  left: 5%;
+  animation-delay: 1.2s;
+}
+
+/* ==========================================
+   FORM INTRO
+========================================== */
+
+.bt-form-intro {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  padding-top: 68px;
+  padding-bottom: 30px;
+}
+
+.bt-form-intro h2 {
+  margin-top: 10px;
+  color: var(--bt-navy-dark);
+  font-size: clamp(27px, 3vw, 36px);
+  font-weight: 850;
+  letter-spacing: -1px;
+}
+
+.bt-form-intro p {
+  margin-top: 9px;
+  color: var(--bt-muted);
   font-size: 13px;
+  line-height: 1.75;
+}
+
+.bt-fee-summary {
+  min-width: 290px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 17px 20px;
+  border: 1px solid #eadbbd;
+  border-radius: 13px;
+  background: #fffaf0;
+}
+
+.bt-fee-summary-icon {
+  width: 46px;
+  height: 46px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  background: #f2e4c5;
+  color: #8f6928;
+}
+
+.bt-fee-summary span,
+.bt-fee-summary small {
+  display: block;
+  color: #806b43;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+}
+
+.bt-fee-summary strong {
+  display: block;
+  margin: 3px 0;
+  color: var(--bt-navy);
+  font-size: 26px;
+  line-height: 1.2;
+}
+
+.bt-fee-summary small {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+/* ==========================================
+   FORM LAYOUT
+========================================== */
+
+.bt-form {
+  display: grid;
+  gap: 21px;
+  padding-bottom: 72px;
+}
+
+.bt-card {
+  min-width: 0;
+  padding: 30px;
+  border: 1px solid var(--bt-border);
+  border-radius: 16px;
+  background: var(--bt-surface);
+  box-shadow: 0 7px 25px rgba(19, 44, 75, 0.045);
+  scroll-margin-top: 110px;
+}
+
+.bt-section-heading {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding-bottom: 23px;
+  margin-bottom: 25px;
+  border-bottom: 1px solid #edf0f4;
+}
+
+.bt-section-number {
+  width: 39px;
+  height: 39px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+  background: var(--bt-navy);
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 850;
+}
+
+.bt-section-icon {
+  width: 43px;
+  height: 43px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  background: #f9f2e4;
+  color: #a47b32;
+}
+
+.bt-section-heading-copy h2 {
+  color: var(--bt-navy);
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.bt-section-heading-copy p {
+  margin-top: 5px;
+  color: var(--bt-muted);
+  font-size: 11px;
+  line-height: 1.65;
+}
+
+/* ==========================================
+   INPUTS
+========================================== */
+
+.bt-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 21px 20px;
+}
+
+.bt-field {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.bt-full {
+  grid-column: 1 / -1;
+}
+
+.bt-field > label,
+.bt-field-label {
+  color: #30445c;
+  font-size: 12px;
+  font-weight: 750;
+}
+
+.bt-field input:not([type="checkbox"]):not([type="radio"]):not([type="file"]),
+.bt-field select,
+.bt-field textarea {
+  width: 100%;
+  min-width: 0;
+  min-height: 48px;
+  padding: 12px 14px;
+  outline: none;
+  border: 1px solid #dce4ed;
+  border-radius: 8px;
+  background: #fbfcfe;
+  color: #26364a;
+  font-family: inherit;
+  font-size: 12px;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.bt-field textarea {
+  min-height: 105px;
+  resize: vertical;
+  line-height: 1.7;
+}
+
+.bt-field input::placeholder,
+.bt-field textarea::placeholder {
+  color: #9aa7b6;
+}
+
+.bt-field input:focus,
+.bt-field select:focus,
+.bt-field textarea:focus {
+  border-color: #b68a3e;
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(216,173,89,0.14);
+}
+
+.bt-input-icon {
+  position: relative;
+}
+
+.bt-input-icon > svg {
+  position: absolute;
+  top: 50%;
+  left: 14px;
+  z-index: 1;
+  transform: translateY(-50%);
+  color: #8796a8;
+  pointer-events: none;
+}
+
+.bt-input-icon input {
+  padding-left: 42px !important;
+}
+
+/* ==========================================
+   RADIO CHOICES
+========================================== */
+
+.bt-choice-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.bt-choice-card {
+  position: relative;
+  min-width: 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 17px;
+  border: 1px solid #dfe6ee;
+  border-radius: 11px;
+  background: #fbfcfe;
+  cursor: pointer;
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.bt-choice-card:hover {
+  transform: translateY(-2px);
+  border-color: #c8a45e;
+}
+
+.bt-choice-card.selected {
+  border-color: #c49a4e;
+  background: #fffaf0;
+}
+
+.bt-choice-card input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+
+.bt-choice-radio {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  margin-top: 2px;
+  border: 1.5px solid #a8b4c2;
+  border-radius: 50%;
+  background: #ffffff;
+}
+
+.bt-choice-card.selected .bt-choice-radio {
+  border: 5px solid var(--bt-navy);
+}
+
+.bt-choice-copy {
+  min-width: 0;
+  display: grid;
+  gap: 5px;
+}
+
+.bt-choice-copy strong {
+  color: var(--bt-navy);
+  font-size: 12px;
+}
+
+.bt-choice-copy small {
+  color: var(--bt-muted);
+  font-size: 10px;
+  line-height: 1.6;
+}
+
+/* ==========================================
+   MULTI SELECT
+========================================== */
+
+.bt-option-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+
+.bt-option {
+  position: relative;
+  min-height: 38px;
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 13px;
+  border: 1px solid #dfe6ee;
+  border-radius: 7px;
+  background: #fbfcfe;
+  color: #52647a;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.bt-option:hover {
+  border-color: #c6a05b;
+}
+
+.bt-option.selected {
+  border-color: #c6a05b;
+  background: #fff7e8;
+  color: var(--bt-navy);
+}
+
+.bt-option input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+
+.bt-option span {
+  font-size: 11px;
   font-weight: 650;
 }
 
-/* =========================================
-   APPLICATION PROCESS
-========================================= */
-
-.teacher-process {
-  background: #ffffff;
+.bt-option.selected span::before {
+  content: "✓ ";
+  color: #9a702a;
+  font-weight: 900;
 }
 
-.teacher-process-grid {
+/* ==========================================
+   DOCUMENTS
+========================================== */
+
+.bt-document-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 22px;
-  max-width: 1200px;
-  margin: 0 auto;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
 }
 
-.teacher-process-card {
-  position: relative;
-  padding: 28px 23px;
-  border: 1px solid #e6edf5;
-  border-radius: 13px;
-  background: #ffffff;
-  transition: 0.3s ease;
+.bt-document-item {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
 }
 
-.teacher-process-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 30px rgba(22, 50, 85, 0.08);
+.bt-document-item > label {
+  color: #30445c;
+  font-size: 12px;
+  font-weight: 750;
 }
 
-.teacher-step-number {
-  display: inline-flex;
+.bt-upload-box {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  gap: 9px;
+  padding: 24px 15px;
+  border: 1.5px dashed #cbd5e1;
+  border-radius: 11px;
+  background: #fafbfd;
+  text-align: center;
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease;
+}
+
+.bt-upload-box:hover {
+  border-color: #c29a4f;
+  background: #fffaf1;
+}
+
+.bt-upload-icon {
+  width: 47px;
+  height: 47px;
+  display: grid;
+  place-items: center;
+  border-radius: 13px;
+  background: #f6ecd8;
+  color: #9a742f;
+}
+
+.bt-upload-box > strong {
+  color: var(--bt-navy);
+  font-size: 12px;
+}
+
+.bt-upload-box > span {
+  color: var(--bt-muted);
+  font-size: 10px;
+}
+
+.bt-upload-box input[type="file"] {
+  width: 100%;
+  max-width: 230px;
+  color: #53657a;
+  font-size: 10px;
+}
+
+.bt-upload-box input[type="file"]::file-selector-button {
+  margin-right: 8px;
+  padding: 7px 10px;
+  border: 1px solid #dce4ed;
+  border-radius: 6px;
+  background: #ffffff;
+  color: var(--bt-navy);
+  font-size: 10px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.bt-selected-file {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 9px 11px;
+  border: 1px solid #e1e8ef;
+  border-radius: 7px;
+  background: #ffffff;
+  text-align: left;
+}
+
+.bt-selected-file span {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  color: #30445c;
+  font-size: 10px;
+}
+
+.bt-selected-file button {
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  border: 0;
+  border-radius: 6px;
+  background: #fff0f0;
+  color: #c34242;
+  cursor: pointer;
+}
+
+.bt-document-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+  margin-top: 21px;
+  padding: 14px 15px;
+  border: 1px solid #dce7f2;
+  border-radius: 9px;
+  background: #f4f8fc;
+  color: #49617b;
+}
+
+.bt-document-note svg {
+  flex-shrink: 0;
+  color: var(--bt-navy);
+}
+
+.bt-document-note p {
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+/* ==========================================
+   PROFESSIONAL BACKGROUND
+========================================== */
+
+.bt-profile-tips {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 19px;
+}
+
+.bt-profile-tips > div {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 13px;
+  border: 1px solid #e4ebf2;
+  border-radius: 9px;
+  background: #f8fafc;
+}
+
+.bt-profile-tips svg {
+  flex-shrink: 0;
+  color: #9a762f;
+}
+
+.bt-profile-tips span {
+  color: #5a6b7e;
+  font-size: 10px;
+  line-height: 1.6;
+}
+
+/* ==========================================
+   DECLARATIONS
+========================================== */
+
+.bt-declarations {
+  display: grid;
+  gap: 4px;
+}
+
+.bt-consent-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+  margin-top: 17px;
+  cursor: pointer;
+}
+
+.bt-consent-row input {
+  width: 17px;
+  height: 17px;
+  flex-shrink: 0;
+  margin-top: 2px;
+  accent-color: var(--bt-navy);
+  cursor: pointer;
+}
+
+.bt-consent-row span {
+  color: #596b80;
+  font-size: 11px;
+  line-height: 1.75;
+}
+
+/* ==========================================
+   PAYMENT CARD
+========================================== */
+
+.bt-payment-card {
+  margin-top: 27px;
+  padding: 22px;
+  border: 1px solid #e8d8b8;
+  border-radius: 13px;
+  background: linear-gradient(110deg, #fffaf0, #fffdf8);
+}
+
+.bt-payment-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.bt-payment-brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.bt-payment-brand-icon {
   width: 48px;
   height: 48px;
-  color: #ffffff;
-  background: #1765b5;
-  border-radius: 12px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  border-radius: 13px;
+  background: #f2e4c5;
+  color: #8f6928;
+}
+
+.bt-payment-brand span {
+  color: #94743b;
+  font-size: 9px;
+  font-weight: 850;
+  letter-spacing: 1.1px;
+}
+
+.bt-payment-brand h3 {
+  margin-top: 5px;
+  color: var(--bt-navy);
   font-size: 17px;
   font-weight: 800;
 }
 
-.teacher-step-line {
-  width: 42px;
-  height: 3px;
-  background: #f2b743;
-  margin: 22px 0;
+.bt-payment-amount {
+  text-align: right;
 }
 
-.teacher-process-card h3 {
-  color: #142b4a;
-  font-size: 17px;
-  line-height: 1.4;
-  margin: 0 0 11px;
+.bt-payment-amount strong {
+  display: block;
+  color: var(--bt-navy);
+  font-size: 31px;
+  font-weight: 850;
 }
 
-.teacher-process-card p {
-  color: #64748b;
-  font-size: 13px;
-  line-height: 1.8;
-  margin: 0;
+.bt-payment-amount span {
+  color: #927647;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1px;
 }
 
-/* =========================================
-   REGISTRATION FEE
-========================================= */
-
-.teacher-fee-section {
-  background: #f5f8fc;
+.bt-payment-divider {
+  height: 1px;
+  margin: 20px 0;
+  background: #eadfc9;
 }
 
-.teacher-fee-card {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 35px 40px;
+.bt-payment-bottom {
   display: flex;
   align-items: center;
-  gap: 27px;
-  border: 1px solid #e2eaf4;
-  border-radius: 17px;
-  background: #ffffff;
-  box-shadow: 0 10px 30px rgba(22, 50, 85, 0.06);
+  justify-content: space-between;
+  gap: 15px;
 }
 
-.teacher-fee-icon {
-  width: 65px;
-  height: 65px;
+.bt-payment-method {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.bt-payment-method-mark {
+  width: 35px;
+  height: 35px;
+  display: grid;
+  place-items: center;
+  border-radius: 9px;
+  background: #ffffff;
+  color: var(--bt-navy);
+}
+
+.bt-payment-method > div {
+  display: grid;
+  gap: 3px;
+}
+
+.bt-payment-method strong {
+  color: var(--bt-navy);
+  font-size: 11px;
+}
+
+.bt-payment-method > div > span {
+  color: #766b57;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.bt-payment-secure-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #47734e;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.bt-payment-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-top: 15px;
+  padding: 12px 14px;
+  border-radius: 8px;
+  background: #f5f7fa;
+  color: #53677e;
+}
+
+.bt-payment-note svg {
   flex-shrink: 0;
+  color: #8f6928;
+}
+
+.bt-payment-note p {
+  font-size: 10px;
+  line-height: 1.7;
+}
+
+/* ==========================================
+   SUBMIT BUTTON AND STATUS
+========================================== */
+
+.bt-submit-button {
+  width: 100%;
+  min-height: 55px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #ffffff;
-  background: #1765b5;
-  border-radius: 15px;
-}
-
-.teacher-fee-content {
-  flex: 1;
-}
-
-.teacher-fee-content > span {
-  color: #d38a13;
-  font-size: 11px;
-  margin-bottom: 8px;
-}
-
-.teacher-fee-content h2 {
-  color: #142b4a;
-  font-size: 25px;
-  margin: 0 0 9px;
-}
-
-.teacher-fee-content p {
-  color: #64748b;
-  font-size: 14px;
-  line-height: 1.7;
-  margin: 0;
-}
-
-.teacher-fee-amount {
-  flex-shrink: 0;
-  color: #1765b5;
-  font-size: 42px;
-  font-weight: 850;
-  white-space: nowrap;
-}
-
-.teacher-fee-amount > span {
-  font-size: 25px;
-}
-
-.teacher-fee-amount small {
-  display: block;
-  color: #64748b;
-  font-size: 11px;
-  font-weight: 600;
-  text-align: center;
-}
-
-.teacher-fee-note {
-  max-width: 1000px;
-  margin: 18px auto 0;
-  color: #64748b;
-  font-size: 12px;
-  line-height: 1.7;
-}
-
-/* =========================================
-   FINAL CTA
-========================================= */
-
-.teacher-final-cta {
-  background: linear-gradient(120deg, #071b3b, #164b85);
-  text-align: center;
-}
-
-.teacher-final-cta-content {
-  max-width: 760px;
-  margin: 0 auto;
-}
-
-.teacher-final-cta-content > span {
-  color: #f5bd50;
-}
-
-.teacher-final-cta-content h2 {
-  color: #ffffff;
-  font-size: clamp(30px, 4vw, 44px);
-  line-height: 1.25;
-  margin: 0 0 17px;
-}
-
-.teacher-final-cta-content > p {
-  color: #dce9f8;
-  font-size: 15px;
-  line-height: 1.8;
-  margin: 0 auto 28px;
-}
-
-.teacher-final-cta-content > small {
-  display: block;
-  color: #dce9f8;
+  gap: 11px;
   margin-top: 22px;
+  padding: 13px 20px;
+  border: 0;
+  border-radius: 9px;
+  background: var(--bt-navy);
+  color: #ffffff;
   font-size: 13px;
+  font-weight: 800;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
-.teacher-final-cta-content > small a {
-  color: #f5bd50;
-  font-weight: 700;
-  text-decoration: underline;
+.bt-submit-button:hover {
+  transform: translateY(-2px);
+  background: #1b4779;
+  box-shadow: 0 9px 20px rgba(16,43,80,0.16);
 }
 
-/* =========================================
-   RESPONSIVE DESIGN
-========================================= */
+.bt-status-message {
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+  margin-top: 17px;
+  padding: 14px;
+  border-radius: 9px;
+  font-size: 11px;
+  line-height: 1.7;
+}
 
-@media (max-width: 1000px) {
-  .teacher-process-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+.bt-status-message svg {
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.bt-status-message.success {
+  border: 1px solid #b8dfc5;
+  background: #f0faf3;
+  color: #22683b;
+}
+
+.bt-status-message.error {
+  border: 1px solid #f0caca;
+  background: #fff4f4;
+  color: #a52f2f;
+}
+
+.bt-submit-disclaimer {
+  margin-top: 13px;
+  color: #8995a4;
+  font-size: 10px;
+  line-height: 1.6;
+  text-align: center;
+}
+
+/* ==========================================
+   HELP SECTION
+========================================== */
+
+.bt-help-section {
+  padding: 39px 0;
+  background: #eaf0f7;
+}
+
+.bt-help-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.bt-help-inner h2 {
+  margin-top: 8px;
+  color: var(--bt-navy);
+  font-size: 23px;
+  font-weight: 850;
+}
+
+.bt-help-inner p {
+  margin-top: 7px;
+  color: #68798d;
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+.bt-help-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.bt-help-actions a {
+  min-height: 43px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  padding: 0 16px;
+  border: 1px solid var(--bt-navy);
+  border-radius: 7px;
+  background: var(--bt-navy);
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 750;
+  transition: background 0.2s ease;
+}
+
+.bt-help-actions a:hover {
+  background: #1b4779;
+}
+
+/* ==========================================
+   ANIMATIONS
+========================================== */
+
+@keyframes bt-float {
+  0%, 100% {
+    transform: translateY(0);
   }
 
-  .teacher-eligibility {
-    grid-template-columns: 1fr 0.8fr;
-    gap: 30px;
+  50% {
+    transform: translateY(-12px);
   }
 }
 
-@media (max-width: 768px) {
-  .section-padding {
-    padding: 65px 6%;
+@keyframes bt-orbit {
+  from {
+    transform: rotate(0deg);
   }
 
-  .teacher-hero {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width: 900px) {
+  .bt-hero-inner {
+    grid-template-columns: 1fr 0.75fr;
+    gap: 20px;
+  }
+
+  .bt-hero h1 {
+    font-size: 49px;
+  }
+
+  .bt-hero-visual {
+    transform: scale(0.9);
+  }
+
+  .bt-form-intro {
+    align-items: flex-start;
+  }
+
+  .bt-fee-summary {
+    min-width: 250px;
+  }
+
+  .bt-card {
+    padding: 25px;
+  }
+
+  .bt-profile-tips {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 650px) {
+  .bt-container {
+    width: min(100% - 30px, 540px);
+  }
+
+  .bt-hero-inner {
     min-height: auto;
-    padding: 90px 6%;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding-top: 55px;
+    padding-bottom: 36px;
   }
 
-  .teacher-hero-content h1 {
-    font-size: 43px;
+  .bt-hero h1 {
+    margin-top: 19px;
+    font-size: clamp(39px, 11vw, 52px);
+    letter-spacing: -1.6px;
   }
 
-  .teacher-hero-content > p {
-    font-size: 15px;
+  .bt-hero-copy > p {
+    margin-top: 17px;
+    font-size: 13px;
+    line-height: 1.8;
   }
 
-  .teacher-opportunity-grid {
+  .bt-hero-points {
+    display: grid;
+    gap: 12px;
+    margin-top: 22px;
+  }
+
+  .bt-hero-points span {
+    font-size: 11px;
+  }
+
+  .bt-hero-button {
+    min-height: 49px;
+    margin-top: 24px;
+    font-size: 12px;
+  }
+
+  .bt-hero-visual {
+    min-height: 285px;
+    margin-top: 5px;
+    transform: none;
+  }
+
+  .bt-orbit-one {
+    width: 270px;
+    height: 270px;
+  }
+
+  .bt-orbit-two {
+    width: 220px;
+    height: 220px;
+  }
+
+  .bt-hero-visual-card {
+    width: 265px;
+    padding: 26px 20px 20px;
+  }
+
+  .bt-hero-visual-icon {
+    width: 64px;
+    height: 64px;
+  }
+
+  .bt-hero-visual-card > strong {
+    font-size: 21px;
+  }
+
+  .bt-floating-one {
+    top: 12px;
+    right: 3%;
+  }
+
+  .bt-floating-two {
+    bottom: 12px;
+    left: 3%;
+  }
+
+  .bt-form-intro {
+    display: grid;
+    gap: 20px;
+    padding-top: 43px;
+    padding-bottom: 23px;
+  }
+
+  .bt-form-intro h2 {
+    font-size: 27px;
+  }
+
+  .bt-form-intro p {
+    font-size: 12px;
+  }
+
+  .bt-fee-summary {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .bt-form {
+    gap: 15px;
+    padding-bottom: 48px;
+  }
+
+  .bt-card {
+    padding: 19px 15px;
+    border-radius: 13px;
+  }
+
+  .bt-section-heading {
+    align-items: flex-start;
+    gap: 9px;
+    padding-bottom: 18px;
+    margin-bottom: 19px;
+  }
+
+  .bt-section-number {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    font-size: 10px;
+  }
+
+  .bt-section-icon {
+    width: 35px;
+    height: 35px;
+    border-radius: 9px;
+  }
+
+  .bt-section-icon svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .bt-section-heading-copy h2 {
+    font-size: 14px;
+  }
+
+  .bt-section-heading-copy p {
+    font-size: 10px;
+  }
+
+  .bt-grid {
     grid-template-columns: 1fr;
     gap: 17px;
   }
 
-  .teacher-benefits-grid {
+  .bt-full {
+    grid-column: auto;
+  }
+
+  .bt-field {
+    gap: 8px;
+  }
+
+  .bt-field > label,
+  .bt-field-label {
+    font-size: 11px;
+  }
+
+  .bt-field input:not([type="checkbox"]):not([type="radio"]):not([type="file"]),
+  .bt-field select,
+  .bt-field textarea {
+    min-height: 46px;
+    padding: 11px 12px;
+    font-size: 12px;
+  }
+
+  .bt-field textarea {
+    min-height: 95px;
+  }
+
+  .bt-choice-grid {
     grid-template-columns: 1fr;
-    gap: 16px;
+    gap: 9px;
   }
 
-  .teacher-eligibility {
+  .bt-choice-card {
+    padding: 14px;
+  }
+
+  .bt-option-grid {
+    gap: 7px;
+  }
+
+  .bt-option {
+    min-height: 35px;
+    padding: 7px 10px;
+  }
+
+  .bt-option span {
+    font-size: 10px;
+  }
+
+  .bt-document-grid {
     grid-template-columns: 1fr;
-    gap: 35px;
+    gap: 17px;
   }
 
-  .teacher-heading-left {
-    text-align: center;
+  .bt-upload-box {
+    padding: 20px 12px;
   }
 
-  .teacher-fee-card {
-    flex-wrap: wrap;
-    padding: 28px;
+  .bt-document-note {
+    gap: 9px;
+    padding: 12px;
+  }
+
+  .bt-document-note p {
+    font-size: 10px;
+  }
+
+  .bt-profile-tips {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .bt-profile-tips > div {
+    padding: 11px;
+  }
+
+  .bt-profile-tips span {
+    font-size: 10px;
+  }
+
+  .bt-consent-row {
+    gap: 9px;
+    margin-top: 15px;
+  }
+
+  .bt-consent-row span {
+    font-size: 10px;
+  }
+
+  .bt-payment-card {
+    padding: 15px;
+  }
+
+  .bt-payment-brand {
+    gap: 10px;
+  }
+
+  .bt-payment-brand-icon {
+    width: 42px;
+    height: 42px;
+  }
+
+  .bt-payment-brand span {
+    font-size: 8px;
+  }
+
+  .bt-payment-brand h3 {
+    font-size: 14px;
+  }
+
+  .bt-payment-amount strong {
+    font-size: 25px;
+  }
+
+  .bt-payment-bottom {
+    align-items: flex-start;
+  }
+
+  .bt-payment-secure-label {
+    font-size: 9px;
+  }
+
+  .bt-payment-note {
+    gap: 8px;
+    padding: 11px;
+  }
+
+  .bt-payment-note p {
+    font-size: 10px;
+  }
+
+  .bt-submit-button {
+    min-height: 50px;
+    font-size: 12px;
+  }
+
+  .bt-status-message {
+    font-size: 10px;
+  }
+
+  .bt-help-inner {
+    display: grid;
     gap: 20px;
   }
 
-  .teacher-fee-amount {
-    width: 100%;
-    padding-top: 15px;
-    border-top: 1px solid #e6edf5;
+  .bt-help-inner h2 {
+    font-size: 20px;
   }
 
-  .teacher-fee-amount small {
-    text-align: left;
+  .bt-help-inner p {
+    font-size: 11px;
+  }
+
+  .bt-help-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .bt-help-actions a {
+    padding: 0 9px;
+    font-size: 10px;
   }
 }
 
-@media (max-width: 520px) {
-  .section-padding {
-    padding: 55px 5%;
+/* ==========================================
+   SMALL MOBILE
+========================================== */
+
+@media (max-width: 380px) {
+  .bt-container {
+    width: calc(100% - 22px);
   }
 
-  .teacher-hero {
-    padding: 75px 5%;
+  .bt-card {
+    padding: 16px 12px;
   }
 
-  .teacher-eyebrow,
-  .teacher-section-heading > span,
-  .teacher-fee-content > span,
-  .teacher-final-cta-content > span {
-    font-size: 11px;
-    letter-spacing: 1.3px;
+  .bt-section-heading {
+    gap: 7px;
   }
 
-  .teacher-hero-content h1 {
-    font-size: 35px;
-    letter-spacing: -0.8px;
-  }
-
-  .teacher-hero-content > p {
-    font-size: 14px;
-    line-height: 1.75;
-  }
-
-  .teacher-hero-actions {
-    align-items: stretch;
-    flex-direction: column;
-  }
-
-  .teacher-primary-btn,
-  .teacher-secondary-btn {
-    width: 100%;
-    min-height: 50px;
-  }
-
-  .teacher-hero-note {
-    align-items: flex-start;
-    font-size: 12px;
-    line-height: 1.6;
-  }
-
-  .teacher-section-heading h2 {
-    font-size: 29px;
-  }
-
-  .teacher-section-heading > p {
-    font-size: 14px;
-  }
-
-  .teacher-opportunity-card {
-    padding: 27px 23px;
-  }
-
-  .teacher-benefit-card {
-    padding: 22px 18px;
-    gap: 14px;
-  }
-
-  .teacher-benefit-card h3 {
-    font-size: 16px;
-  }
-
-  .teacher-benefit-card p {
+  .bt-section-heading-copy h2 {
     font-size: 13px;
   }
 
-  .teacher-process-grid {
-    grid-template-columns: 1fr;
-    gap: 15px;
+  .bt-option {
+    padding: 7px 8px;
   }
 
-  .teacher-process-card {
-    padding: 24px;
+  .bt-option span {
+    font-size: 9px;
   }
 
-  .teacher-fee-card {
-    padding: 24px 20px;
+  .bt-payment-top {
+    gap: 10px;
   }
 
-  .teacher-fee-content h2 {
+  .bt-payment-brand {
+    gap: 8px;
+  }
+
+  .bt-payment-brand h3 {
+    font-size: 13px;
+  }
+
+  .bt-payment-amount strong {
     font-size: 22px;
   }
 
-  .teacher-fee-amount {
-    font-size: 38px;
+  .bt-help-actions {
+    grid-template-columns: 1fr;
   }
+}
 
-  .teacher-final-cta-content h2 {
-    font-size: 31px;
+/* ==========================================
+   ACCESSIBILITY
+========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .bt-page *,
+  .bt-page *::before,
+  .bt-page *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
   }
 }

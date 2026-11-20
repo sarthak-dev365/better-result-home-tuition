@@ -9,47 +9,47 @@ const faqs = [
   {
     question: "Which classes do you provide tuition for?",
     answer:
-      "We provide tuition support for students from Classes 1 to 12, along with guidance for JEE and NEET preparation.",
+      "We provide tuition support for students from Classes 1 to 12, along with specialised preparation support for JEE and NEET.",
   },
   {
     question: "Do you offer both home and online tuition?",
     answer:
-      "Yes, you can submit a request for either home tuition or online tuition, depending on your requirements and tutor availability.",
+      "Yes. We offer both home tuition and online tuition options. You can share your preferred learning mode, and our team will help you explore suitable options.",
   },
   {
-    question: "Which boards do you cover?",
+    question: "Which boards and subjects do you cover?",
     answer:
-      "Tuition support is available for CBSE, ICSE, ISC and State Board students, subject to tutor availability.",
+      "We provide academic support for CBSE, ICSE, ISC and State Board students. Subjects include Mathematics, Science, English, Social Science, Physics, Chemistry, Biology, Commerce subjects and more, depending on class and tutor availability.",
   },
   {
-    question: "Do you provide JEE and NEET preparation?",
+    question: "Do you provide preparation for JEE and NEET?",
     answer:
-      "Yes, you can enquire about JEE and NEET preparation support. Suitable tutor availability will be discussed with you.",
+      "Yes. Students can enquire about JEE and NEET preparation, including Physics, Chemistry and Mathematics for JEE, and Physics, Chemistry, Botany and Zoology for NEET.",
   },
   {
     question: "How can I request a free demo class?",
     answer:
-      "Contact us with your class, subject and preferred date and time. Our team will review your request and confirm the demo schedule.",
+      "You can submit your details through our Free Demo form. Share your class, subjects and preferred tuition mode. Our team will review your request and contact you to discuss the demo schedule.",
   },
   {
-    question: "How is a suitable tutor selected?",
+    question: "Will my demo class be confirmed immediately?",
     answer:
-      "We review your class, subjects, location, tuition mode and other preferences to help identify a suitable tutor.",
+      "No. Submitting a demo request does not mean automatic confirmation. Our team will review your requirements, check suitable tutor availability and contact you with the next steps. Your demo will be confirmed after discussion with our team.",
   },
   {
-    question: "Can I choose my preferred tuition timings?",
+    question: "How do you help students find a suitable tutor?",
     answer:
-      "Yes, you can share your preferred days and timings. The final schedule depends on tutor availability and mutual confirmation.",
+      "We review the student's class, subjects, location, preferred tuition mode and learning requirements to help identify a suitable tutor. Tutor availability and final arrangements are discussed with you.",
   },
   {
-    question: "How can I register as a teacher?",
+    question: "Can I choose my preferred tuition days and timings?",
     answer:
-      "You can apply through our Become a Teacher registration process and submit your educational and professional details for review.",
+      "Yes. You can share your preferred days and timings with our team. The final schedule will depend on tutor availability and mutual confirmation.",
   },
 ];
 
 export default function FAQ() {
-  const [activeIndex, setActiveIndex] = useState(0);
+  const [activeIndex, setActiveIndex] = useState(-1);
 
   const toggleFAQ = (index) => {
     setActiveIndex((current) => (current === index ? -1 : index));
@@ -60,10 +60,12 @@ export default function FAQ() {
       <div className="faq-container">
         <div className="faq-heading">
           <span className="faq-eyebrow">GOT QUESTIONS?</span>
+
           <h2>
             Frequently Asked
             <span> Questions</span>
           </h2>
+
           <p>
             Find answers to common questions about our home tuition and
             online tuition services.
@@ -84,8 +86,10 @@ export default function FAQ() {
                   className="faq-question"
                   onClick={() => toggleFAQ(index)}
                   aria-expanded={isOpen}
+                  aria-controls={`faq-answer-${index}`}
                 >
                   <span>{faq.question}</span>
+
                   <ChevronDown
                     size={21}
                     className="faq-chevron"
@@ -94,7 +98,10 @@ export default function FAQ() {
                 </button>
 
                 {isOpen && (
-                  <div className="faq-answer">
+                  <div
+                    className="faq-answer"
+                    id={`faq-answer-${index}`}
+                  >
                     <p>{faq.answer}</p>
                   </div>
                 )}

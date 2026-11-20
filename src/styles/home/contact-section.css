@@ -1,4 +1,8 @@
 
+/* =========================================
+   CONTACT SECTION
+========================================= */
+
 .contact-section {
   width: 100%;
   padding: 90px 24px;
@@ -10,6 +14,10 @@
   width: 100%;
   margin: 0 auto;
 }
+
+/* =========================================
+   SECTION HEADING
+========================================= */
 
 .contact-section .contact-heading {
   max-width: 720px;
@@ -47,12 +55,20 @@
   line-height: 1.8;
 }
 
+/* =========================================
+   MAIN CONTACT LAYOUT
+========================================= */
+
 .contact-section .contact-content {
   display: grid;
   grid-template-columns: 0.85fr 1.15fr;
   gap: 28px;
   align-items: stretch;
 }
+
+/* =========================================
+   LEFT CONTACT INFORMATION
+========================================= */
 
 .contact-section .contact-info {
   padding: 38px 32px;
@@ -74,6 +90,8 @@
   font-size: 14px;
   line-height: 1.8;
 }
+
+/* Contact Details */
 
 .contact-section .contact-details {
   display: flex;
@@ -127,6 +145,10 @@
   text-decoration: underline;
 }
 
+/* =========================================
+   WHATSAPP BUTTON
+========================================= */
+
 .contact-section .contact-whatsapp {
   display: flex;
   align-items: center;
@@ -137,19 +159,39 @@
   padding: 15px 18px;
   color: #ffffff;
   background: #159b63;
+  border: none;
   border-radius: 10px;
+  font-family: inherit;
   font-size: 14px;
   font-weight: 750;
-  text-decoration: none;
-  transition: background 0.25s ease, transform 0.25s ease;
+  cursor: pointer;
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
 .contact-section .contact-whatsapp:hover {
   background: #108553;
   transform: translateY(-2px);
+  box-shadow: 0 7px 18px rgba(21, 155, 99, 0.2);
 }
 
+.contact-section .contact-whatsapp:active {
+  transform: translateY(0);
+}
+
+.contact-section .contact-whatsapp:focus-visible {
+  outline: 3px solid rgba(255, 255, 255, 0.8);
+  outline-offset: 3px;
+}
+
+/* =========================================
+   RIGHT ENQUIRY FORM
+========================================= */
+
 .contact-section .contact-form-wrapper {
+  min-width: 0;
   padding: 38px 35px;
   background: #ffffff;
   border: 1px solid #e7edf4;
@@ -168,6 +210,8 @@
   line-height: 1.7;
 }
 
+/* Form Layout */
+
 .contact-section .contact-form {
   display: flex;
   flex-direction: column;
@@ -179,6 +223,10 @@
   grid-template-columns: 1fr 1fr;
   gap: 16px;
 }
+
+/* =========================================
+   FORM FIELDS
+========================================= */
 
 .contact-section .contact-field {
   display: flex;
@@ -193,10 +241,17 @@
   font-weight: 700;
 }
 
+.contact-section .contact-field label span {
+  color: #e04444;
+}
+
+/* Inputs, Selects and Textarea */
+
 .contact-section .contact-field input,
 .contact-section .contact-field select,
 .contact-section .contact-field textarea {
   width: 100%;
+  min-width: 0;
   padding: 13px 14px;
   color: #172a45;
   background: #fbfcfe;
@@ -205,7 +260,10 @@
   outline: none;
   font-family: inherit;
   font-size: 14px;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
 }
 
 .contact-section .contact-field input,
@@ -216,6 +274,7 @@
 .contact-section .contact-field textarea {
   min-height: 115px;
   resize: vertical;
+  line-height: 1.7;
 }
 
 .contact-section .contact-field input::placeholder,
@@ -223,12 +282,84 @@
   color: #94a3b8;
 }
 
+/* Focus State */
+
 .contact-section .contact-field input:focus,
 .contact-section .contact-field select:focus,
 .contact-section .contact-field textarea:focus {
+  background: #ffffff;
   border-color: #0789e8;
   box-shadow: 0 0 0 3px rgba(7, 137, 232, 0.1);
 }
+
+/* Disabled Subject Dropdown */
+
+.contact-section .contact-field select:disabled {
+  color: #94a3b8;
+  background: #f1f4f8;
+  border-color: #e2e8f0;
+  cursor: not-allowed;
+  opacity: 1;
+}
+
+/* =========================================
+   PHONE INPUT WITH COUNTRY CODE
+========================================= */
+
+.contact-section .contact-phone-input {
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+  min-height: 47px;
+  overflow: hidden;
+  background: #fbfcfe;
+  border: 1px solid #dce4ee;
+  border-radius: 9px;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.contact-section .contact-phone-input:focus-within {
+  background: #ffffff;
+  border-color: #0789e8;
+  box-shadow: 0 0 0 3px rgba(7, 137, 232, 0.1);
+}
+
+.contact-section .contact-country-code {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  padding: 0 12px;
+  color: #263b55;
+  background: #f0f4f9;
+  border-right: 1px solid #dce4ee;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.contact-section .contact-phone-input input {
+  flex: 1;
+  width: 100%;
+  min-width: 0;
+  min-height: 45px;
+  padding: 11px 12px;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.contact-section .contact-phone-input input:focus {
+  border: none;
+  box-shadow: none;
+  outline: none;
+}
+
+/* =========================================
+   SEND ENQUIRY BUTTON
+========================================= */
 
 .contact-section .contact-submit {
   display: flex;
@@ -245,19 +376,31 @@
   font-family: inherit;
   font-size: 15px;
   font-weight: 750;
-  cursor: not-allowed;
-  opacity: 0.85;
+  cursor: pointer;
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
-.contact-section .contact-form-note {
-  margin-top: -7px;
-  color: #8290a2;
-  font-size: 11px;
-  line-height: 1.6;
-  text-align: center;
+.contact-section .contact-submit:hover {
+  background: #0676c9;
+  transform: translateY(-2px);
+  box-shadow: 0 7px 18px rgba(7, 137, 232, 0.2);
 }
 
-/* Tablet */
+.contact-section .contact-submit:active {
+  transform: translateY(0);
+}
+
+.contact-section .contact-submit:focus-visible {
+  outline: 3px solid rgba(7, 137, 232, 0.3);
+  outline-offset: 3px;
+}
+
+/* =========================================
+   TABLET
+========================================= */
 
 @media (max-width: 900px) {
   .contact-section {
@@ -274,7 +417,9 @@
   }
 }
 
-/* Mobile */
+/* =========================================
+   MOBILE
+========================================= */
 
 @media (max-width: 600px) {
   .contact-section {
@@ -308,10 +453,48 @@
   .contact-section .contact-details {
     gap: 21px;
   }
+
+  .contact-section .contact-whatsapp {
+    margin-top: 28px;
+  }
 }
 
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 360px) {
+  .contact-section {
+    padding-right: 14px;
+    padding-left: 14px;
+  }
+
+  .contact-section .contact-info,
+  .contact-section .contact-form-wrapper {
+    padding: 23px 16px;
+  }
+
+  .contact-section .contact-country-code {
+    padding: 0 9px;
+  }
+
+  .contact-section .contact-phone-input input {
+    padding-right: 8px;
+    padding-left: 9px;
+  }
+}
+
+/* =========================================
+   ACCESSIBILITY - REDUCED MOTION
+========================================= */
+
 @media (prefers-reduced-motion: reduce) {
-  .contact-section .contact-whatsapp {
+  .contact-section .contact-whatsapp,
+  .contact-section .contact-submit,
+  .contact-section .contact-field input,
+  .contact-section .contact-field select,
+  .contact-section .contact-field textarea,
+  .contact-section .contact-phone-input {
     transition: none;
   }
 }

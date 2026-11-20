@@ -1,0 +1,121 @@
+
+.offer-bar {
+  width: 100%;
+  position: relative;
+  z-index: 10000;
+  background: #123f70;
+  color: #ffffff;
+}
+
+.offer-bar-inner {
+  width: 100%;
+  max-width: 1600px;
+  min-height: 39px;
+  margin: 0 auto;
+  padding: 7px 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+}
+
+.offer-bar-message {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+}
+
+.offer-bar-message svg {
+  flex-shrink: 0;
+  color: #ffc36c;
+}
+
+.offer-bar-message p {
+  margin: 0;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.offer-bar-message strong {
+  color: #ffc36c;
+  font-weight: 750;
+}
+
+.offer-bar-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  flex-shrink: 0;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 750;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.offer-bar-link svg {
+  color: #ffffff;
+  transition: transform 0.2s ease;
+}
+
+.offer-bar-link:hover {
+  color: #ffc36c;
+}
+
+.offer-bar-link:hover svg {
+  color: #ffc36c;
+  transform: translateX(3px);
+}
+
+.offer-bar-link:focus-visible {
+  outline: 2px solid #ffc36c;
+  outline-offset: 4px;
+  border-radius: 3px;
+}
+
+@media (max-width: 600px) {
+  .offer-bar-inner {
+    min-height: 43px;
+    padding: 7px 12px;
+    gap: 10px;
+  }
+
+  .offer-bar-message {
+    gap: 6px;
+  }
+
+  .offer-bar-message p {
+    font-size: 11px;
+  }
+
+  .offer-bar-message svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .offer-bar-link {
+    gap: 4px;
+    font-size: 10.5px;
+  }
+}
+
+@media (max-width: 360px) {
+  .offer-bar-inner {
+    padding-left: 8px;
+    padding-right: 8px;
+    gap: 7px;
+  }
+
+  .offer-bar-message p {
+    font-size: 10px;
+  }
+
+  .offer-bar-link {
+    font-size: 10px;
+  }
+}

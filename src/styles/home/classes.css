@@ -1,40 +1,28 @@
 
 /* =========================================
-   ACADEMIC PROGRAMMES SECTION
+   ACADEMIC PROGRAMMES TIMELINE
 ========================================= */
 
 .classes-section {
-  position: relative;
   width: 100%;
-  padding: 95px 24px 100px;
-  background:
-    radial-gradient(
-      circle at 0% 10%,
-      rgba(37, 99, 235, 0.045),
-      transparent 32%
-    ),
-    radial-gradient(
-      circle at 100% 90%,
-      rgba(249, 115, 22, 0.045),
-      transparent 30%
-    ),
-    #ffffff;
+  padding: 85px 24px 95px;
+  background: #ffffff;
   overflow: hidden;
 }
 
 .classes-container {
-  position: relative;
-  max-width: 1240px;
+  width: 100%;
+  max-width: 1100px;
   margin: 0 auto;
 }
 
 /* =========================================
-   HEADING
+   SECTION HEADING
 ========================================= */
 
 .classes-heading {
-  max-width: 750px;
-  margin: 0 auto 54px;
+  max-width: 730px;
+  margin: 0 auto 65px;
   text-align: center;
 }
 
@@ -43,266 +31,232 @@
   align-items: center;
   justify-content: center;
   gap: 8px;
-  margin-bottom: 17px;
-  color: #ed791f;
+  margin-bottom: 16px;
+  color: #ed7a24;
   font-size: 12px;
   font-weight: 800;
-  letter-spacing: 2px;
+  letter-spacing: 1.7px;
 }
 
 .classes-heading h2 {
   margin: 0;
-  color: #132744;
-  font-size: clamp(32px, 4vw, 45px);
-  line-height: 1.2;
+  color: #10213c;
+  font-size: clamp(31px, 4vw, 44px);
   font-weight: 800;
-  letter-spacing: -1.5px;
+  line-height: 1.2;
 }
 
 .classes-heading h2 span {
-  display: block;
-  background: linear-gradient(
-    100deg,
-    #f08a32,
-    #e96b18
-  );
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #ed7a24;
 }
 
 .classes-heading > p {
-  max-width: 660px;
-  margin: 18px auto 0;
-  color: #718096;
+  max-width: 650px;
+  margin: 17px auto 0;
+  color: #68758a;
   font-size: 15px;
   line-height: 1.85;
 }
 
 /* =========================================
-   GRID
+   TIMELINE STRUCTURE
 ========================================= */
 
-.classes-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 24px;
-}
-
-/* =========================================
-   CARD
-========================================= */
-
-.class-card {
-  --card-color: #3474e9;
-  --card-light: #edf4ff;
-
+.classes-timeline {
   position: relative;
-  display: flex;
-  flex-direction: column;
-  min-width: 0;
-  min-height: 350px;
-  padding: 27px 26px 23px;
-  background: #ffffff;
-  border: 1px solid #e9edf4;
-  border-radius: 17px;
-  overflow: hidden;
-
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease,
-    border-color 0.3s ease;
+  width: 100%;
+  max-width: 950px;
+  margin: 0 auto;
+  padding: 5px 0;
 }
 
-.class-card::before {
+/* Continuous vertical line */
+
+.classes-timeline::before {
   content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 3px;
+  top: 32px;
+  bottom: 65px;
+  left: 35px;
+  width: 3px;
   background: linear-gradient(
-    90deg,
-    var(--card-color),
-    transparent
+    to bottom,
+    #ed7a24 0%,
+    #f6b77e 50%,
+    #e9edf3 100%
   );
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.class-card:hover {
-  transform: translateY(-6px);
-  border-color: var(--card-light);
-  box-shadow: 0 17px 40px rgba(20, 40, 75, 0.09);
-}
-
-.class-card:hover::before {
-  opacity: 1;
+  border-radius: 10px;
 }
 
 /* =========================================
-   CARD COLOR THEMES
+   TIMELINE ITEM
 ========================================= */
 
-.class-blue {
-  --card-color: #3474e9;
-  --card-light: #edf4ff;
+.class-timeline-item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 72px minmax(0, 1fr);
+  gap: 25px;
+  padding-bottom: 35px;
+  animation: timelineReveal 0.7s ease both;
+  animation-delay: calc(var(--timeline-index) * 100ms);
 }
 
-.class-orange {
-  --card-color: #ed791f;
-  --card-light: #fff2e8;
-}
-
-.class-purple {
-  --card-color: #8b5cf6;
-  --card-light: #f3edff;
-}
-
-.class-green {
-  --card-color: #16a36a;
-  --card-light: #eaf8f1;
-}
-
-.class-teal {
-  --card-color: #0891b2;
-  --card-light: #e8f8fb;
-}
-
-.class-pink {
-  --card-color: #db5790;
-  --card-light: #fff0f6;
-}
-
-.class-indigo {
-  --card-color: #5865d9;
-  --card-light: #eef0ff;
+.class-timeline-item:last-child {
+  padding-bottom: 0;
 }
 
 /* =========================================
-   CARD HEADER
+   NUMBER MARKER
 ========================================= */
 
-.class-card-top {
+.class-timeline-marker {
+  position: relative;
+  z-index: 2;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 22px;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 24px;
 }
 
-.class-icon {
+.class-timeline-number {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 51px;
-  height: 51px;
-  color: var(--card-color);
-  background: var(--card-light);
-  border-radius: 13px;
-
-  transition:
-    background 0.3s ease,
-    color 0.3s ease,
-    transform 0.3s ease;
-}
-
-.class-card:hover .class-icon {
+  width: 49px;
+  height: 49px;
   color: #ffffff;
-  background: var(--card-color);
-  transform: rotate(-5deg);
+  background: #ed7a24;
+  border: 5px solid #fff1e6;
+  border-radius: 50%;
+  box-shadow: 0 0 0 1px #f4c59f;
+  font-size: 12px;
+  font-weight: 800;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  animation: timelinePulse 2.8s ease-in-out infinite;
+  animation-delay: calc(var(--timeline-index) * 180ms);
 }
 
-.class-number {
-  color: #e5eaf2;
-  font-size: 25px;
-  font-weight: 800;
-  letter-spacing: -1px;
+.class-timeline-item:hover .class-timeline-number {
+  transform: scale(1.12);
+  box-shadow: 0 0 0 6px rgba(237, 122, 36, 0.12);
 }
 
 /* =========================================
-   CARD CONTENT
+   PROGRAMME CONTENT
 ========================================= */
+
+.class-timeline-content {
+  min-width: 0;
+  padding: 25px 28px;
+  background: #ffffff;
+  border: 1px solid #e9edf3;
+  border-left: 4px solid #ed7a24;
+  border-radius: 7px;
+  box-shadow: 0 5px 18px rgba(16, 33, 60, 0.035);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    background 0.3s ease;
+}
+
+.class-timeline-item:hover .class-timeline-content {
+  transform: translateX(5px);
+  background: #fffdfb;
+  box-shadow: 0 12px 28px rgba(16, 33, 60, 0.075);
+}
+
+/* =========================================
+   CONTENT TOP
+========================================= */
+
+.class-timeline-top {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  margin-bottom: 15px;
+}
+
+.class-timeline-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 45px;
+  height: 45px;
+  color: #ed7a24;
+  background: #fff1e6;
+  border-radius: 6px;
+}
 
 .class-range {
   display: inline-flex;
   align-items: center;
-  align-self: flex-start;
-  margin-bottom: 11px;
-  padding: 6px 11px;
-  color: var(--card-color);
-  background: var(--card-light);
-  border-radius: 6px;
+  padding: 7px 12px;
+  color: #b95b17;
+  background: #fff4e9;
+  border-radius: 4px;
   font-size: 11px;
   font-weight: 750;
-  letter-spacing: 0.3px;
 }
 
-.class-card h3 {
-  margin: 0 0 11px;
-  color: #142945;
-  font-size: 19px;
-  font-weight: 750;
+/* =========================================
+   TITLE AND DESCRIPTION
+========================================= */
+
+.class-timeline-content h3 {
+  margin: 0 0 9px;
+  color: #10213c;
+  font-size: 20px;
+  font-weight: 800;
   line-height: 1.4;
-  letter-spacing: -0.35px;
 }
 
 .class-description {
+  max-width: 760px;
   margin: 0;
-  color: #718096;
-  font-size: 13px;
+  color: #68758a;
+  font-size: 14px;
   line-height: 1.8;
 }
 
 /* =========================================
-   SUBJECT AREAS
+   SUBJECTS
 ========================================= */
 
 .class-subjects {
-  margin-top: 23px;
-  padding-top: 17px;
-  border-top: 1px solid #edf0f5;
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid #edf0f4;
 }
 
 .class-subject-label {
   display: block;
-  margin-bottom: 13px;
-  color: #98a3b4;
+  margin-bottom: 11px;
+  color: #929eae;
   font-size: 10px;
   font-weight: 800;
   letter-spacing: 1.3px;
 }
 
-.class-subjects ul {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 11px 9px;
-  padding: 0;
-  margin: 0;
-  list-style: none;
+.class-subject-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
 }
 
-.class-subjects li {
-  display: flex;
-  align-items: flex-start;
-  gap: 7px;
-  min-width: 0;
-  color: #52647b;
+.class-subject {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 11px;
+  color: #526176;
+  background: #f6f8fb;
+  border: 1px solid #edf0f4;
+  border-radius: 4px;
   font-size: 12px;
-  line-height: 1.5;
-}
-
-.class-subject-check {
-  display: flex;
-  flex-shrink: 0;
-  width: 15px;
-  height: 15px;
-  margin-top: 1px;
-  color: var(--card-color);
-}
-
-.class-subject-check svg {
-  width: 100%;
-  height: 100%;
+  line-height: 1.4;
 }
 
 /* =========================================
@@ -310,30 +264,59 @@
 ========================================= */
 
 .class-board {
-  margin-top: auto;
-  padding-top: 20px;
-  color: #758399;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.25px;
+  margin: 16px 0 0;
+  color: #ed7a24;
+  font-size: 12px;
+  font-weight: 750;
+  line-height: 1.5;
+}
+
+/* =========================================
+   ANIMATIONS
+========================================= */
+
+@keyframes timelinePulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 1px #f4c59f;
+  }
+
+  50% {
+    box-shadow: 0 0 0 6px rgba(237, 122, 36, 0.12);
+  }
+}
+
+@keyframes timelineReveal {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* =========================================
    TABLET
 ========================================= */
 
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
   .classes-section {
-    padding: 80px 24px;
+    padding: 70px 20px;
   }
 
-  .classes-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 20px;
+  .classes-heading {
+    margin-bottom: 45px;
   }
 
-  .class-card {
-    min-height: 350px;
+  .class-timeline-item {
+    gap: 18px;
+  }
+
+  .class-timeline-content {
+    padding: 22px;
   }
 }
 
@@ -343,101 +326,98 @@
 
 @media (max-width: 600px) {
   .classes-section {
-    padding: 65px 17px 70px;
+    padding: 55px 16px 65px;
   }
 
   .classes-heading {
     margin-bottom: 35px;
   }
 
-  .classes-eyebrow {
-    font-size: 10px;
-    letter-spacing: 1.5px;
-  }
-
   .classes-heading h2 {
     font-size: 29px;
     line-height: 1.25;
-    letter-spacing: -1px;
   }
 
   .classes-heading > p {
-    margin-top: 13px;
     font-size: 13px;
     line-height: 1.75;
   }
 
-  .classes-grid {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 16px;
+  .classes-timeline::before {
+    left: 20px;
+    top: 25px;
+    bottom: 45px;
+    width: 2px;
   }
 
-  .class-card {
-    min-height: auto;
-    padding: 23px 21px 20px;
-    border-radius: 15px;
+  .class-timeline-item {
+    grid-template-columns: 42px minmax(0, 1fr);
+    gap: 11px;
+    padding-bottom: 24px;
   }
 
-  .class-card-top {
-    margin-bottom: 18px;
+  .class-timeline-marker {
+    padding-top: 18px;
   }
 
-  .class-icon {
-    width: 47px;
-    height: 47px;
+  .class-timeline-number {
+    width: 39px;
+    height: 39px;
+    border-width: 4px;
+    font-size: 10px;
   }
 
-  .class-number {
-    font-size: 22px;
+  .class-timeline-content {
+    padding: 19px 15px;
+    border-left-width: 3px;
   }
 
-  .class-card h3 {
-    font-size: 18px;
+  .class-timeline-item:hover .class-timeline-content {
+    transform: translateX(2px);
+  }
+
+  .class-timeline-top {
+    flex-wrap: wrap;
+    gap: 9px;
+    margin-bottom: 13px;
+  }
+
+  .class-timeline-icon {
+    width: 39px;
+    height: 39px;
+  }
+
+  .class-range {
+    padding: 6px 8px;
+    font-size: 10px;
+  }
+
+  .class-timeline-content h3 {
+    font-size: 17px;
   }
 
   .class-description {
-    font-size: 13px;
+    font-size: 12px;
+    line-height: 1.75;
   }
 
   .class-subjects {
-    margin-top: 19px;
-    padding-top: 15px;
+    margin-top: 16px;
+    padding-top: 13px;
   }
 
-  .class-subjects ul {
-    gap: 11px 8px;
+  .class-subject-list {
+    gap: 6px;
   }
 
-  .class-subjects li {
-    font-size: 12px;
+  .class-subject {
+    padding: 5px 8px;
+    font-size: 10px;
   }
 
   .class-board {
-    margin-top: 19px;
-    padding-top: 15px;
-  }
-}
-
-/* =========================================
-   SMALL MOBILE
-========================================= */
-
-@media (max-width: 360px) {
-  .classes-section {
-    padding-right: 13px;
-    padding-left: 13px;
-  }
-
-  .classes-heading h2 {
-    font-size: 26px;
-  }
-
-  .class-card {
-    padding: 20px 17px;
-  }
-
-  .class-subjects ul {
-    grid-template-columns: 1fr;
+    margin-top: 13px;
+    font-size: 11px;
   }
 }
 
@@ -446,12 +426,13 @@
 ========================================= */
 
 @media (prefers-reduced-motion: reduce) {
-  .class-card,
-  .class-icon {
-    transition: none;
+  .class-timeline-item,
+  .class-timeline-number {
+    animation: none;
   }
 
-  .class-card:hover {
-    transform: none;
+  .class-timeline-content,
+  .class-timeline-number {
+    transition: none;
   }
 }
